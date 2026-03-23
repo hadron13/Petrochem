@@ -1,0 +1,316 @@
+{
+  "variants": {
+    "facing=down,powered=false,tank_face=down": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 180
+    },
+    "facing=down,powered=false,tank_face=east": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 180
+    },
+    "facing=down,powered=false,tank_face=north": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 180
+    },
+    "facing=down,powered=false,tank_face=south": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 180
+    },
+    "facing=down,powered=false,tank_face=up": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 180
+    },
+    "facing=down,powered=false,tank_face=west": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 180
+    },
+    "facing=down,powered=true,tank_face=down": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 180
+    },
+    "facing=down,powered=true,tank_face=east": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 180
+    },
+    "facing=down,powered=true,tank_face=north": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 180
+    },
+    "facing=down,powered=true,tank_face=south": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 180
+    },
+    "facing=down,powered=true,tank_face=up": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 180
+    },
+    "facing=down,powered=true,tank_face=west": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 180
+    },
+    "facing=east,powered=false,tank_face=down": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,powered=false,tank_face=east": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,powered=false,tank_face=north": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,powered=false,tank_face=south": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,powered=false,tank_face=up": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,powered=false,tank_face=west": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,powered=true,tank_face=down": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,powered=true,tank_face=east": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,powered=true,tank_face=north": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,powered=true,tank_face=south": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,powered=true,tank_face=up": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,powered=true,tank_face=west": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,powered=false,tank_face=down": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90
+    },
+    "facing=north,powered=false,tank_face=east": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90
+    },
+    "facing=north,powered=false,tank_face=north": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90
+    },
+    "facing=north,powered=false,tank_face=south": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90
+    },
+    "facing=north,powered=false,tank_face=up": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90
+    },
+    "facing=north,powered=false,tank_face=west": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90
+    },
+    "facing=north,powered=true,tank_face=down": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90
+    },
+    "facing=north,powered=true,tank_face=east": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90
+    },
+    "facing=north,powered=true,tank_face=north": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90
+    },
+    "facing=north,powered=true,tank_face=south": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90
+    },
+    "facing=north,powered=true,tank_face=up": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90
+    },
+    "facing=north,powered=true,tank_face=west": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90
+    },
+    "facing=south,powered=false,tank_face=down": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,powered=false,tank_face=east": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,powered=false,tank_face=north": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,powered=false,tank_face=south": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,powered=false,tank_face=up": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,powered=false,tank_face=west": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,powered=true,tank_face=down": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,powered=true,tank_face=east": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,powered=true,tank_face=north": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,powered=true,tank_face=south": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,powered=true,tank_face=up": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,powered=true,tank_face=west": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,powered=false,tank_face=down": {
+      "model": "gearbox:block/distillation_output/block"
+    },
+    "facing=up,powered=false,tank_face=east": {
+      "model": "gearbox:block/distillation_output/block"
+    },
+    "facing=up,powered=false,tank_face=north": {
+      "model": "gearbox:block/distillation_output/block"
+    },
+    "facing=up,powered=false,tank_face=south": {
+      "model": "gearbox:block/distillation_output/block"
+    },
+    "facing=up,powered=false,tank_face=up": {
+      "model": "gearbox:block/distillation_output/block"
+    },
+    "facing=up,powered=false,tank_face=west": {
+      "model": "gearbox:block/distillation_output/block"
+    },
+    "facing=up,powered=true,tank_face=down": {
+      "model": "gearbox:block/distillation_output/block"
+    },
+    "facing=up,powered=true,tank_face=east": {
+      "model": "gearbox:block/distillation_output/block"
+    },
+    "facing=up,powered=true,tank_face=north": {
+      "model": "gearbox:block/distillation_output/block"
+    },
+    "facing=up,powered=true,tank_face=south": {
+      "model": "gearbox:block/distillation_output/block"
+    },
+    "facing=up,powered=true,tank_face=up": {
+      "model": "gearbox:block/distillation_output/block"
+    },
+    "facing=up,powered=true,tank_face=west": {
+      "model": "gearbox:block/distillation_output/block"
+    },
+    "facing=west,powered=false,tank_face=down": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,powered=false,tank_face=east": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,powered=false,tank_face=north": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,powered=false,tank_face=south": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,powered=false,tank_face=up": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,powered=false,tank_face=west": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,powered=true,tank_face=down": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,powered=true,tank_face=east": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,powered=true,tank_face=north": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,powered=true,tank_face=south": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,powered=true,tank_face=up": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,powered=true,tank_face=west": {
+      "model": "gearbox:block/distillation_output/block",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

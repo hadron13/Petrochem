@@ -1,0 +1,18 @@
+{
+  "block.gearbox.mirror.tooltip": "MIRROR",
+  "block.gearbox.mirror.tooltip.summary": "Reflects incoming lasers",
+  "block.gearbox.spectrometer.tooltip": "SPECTROMETER",
+  "block.gearbox.spectrometer.tooltip.summary": "Measures passing laser's _power level_ and _color_",
+  "item.gearbox.tau_cannon.tooltip": "TAU CANNON",
+  "item.gearbox.tau_cannon.tooltip.summary": "Consumes _Geld Ingots_ to shoot tau particle beams",
+  "block.gearbox.kinetic_machine.tooltip": "KINETIC MACHINE",
+  "block.gearbox.kinetic_machine.tooltip.summary": "It spins",
+  "block.gearbox.laser.tooltip": "LASER",
+  "block.gearbox.laser.tooltip.summary": "Emits a powerful laser when powered, _color_ can be changed with a redstone signal.",
+  "block.gearbox.laser.tooltip.condition1": "",
+  "block.gearbox.laser.tooltip.behaviour1": "Consumes _50 FE/t_",
+  "block.gearbox.large_laser.tooltip": "LARGE LASER",
+  "block.gearbox.large_laser.tooltip.summary": "Emits a powerful laser when powered, _color_ can be changed with a redstone signal.",
+  "block.gearbox.large_laser.tooltip.condition1": "",
+  "block.gearbox.large_laser.tooltip.behaviour1": "Consumes _200 FE/t/block_"
+}

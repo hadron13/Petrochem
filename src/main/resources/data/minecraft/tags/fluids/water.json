@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "gearbox:petroleum",
+    "gearbox:flowing_petroleum"
+  ]
+}

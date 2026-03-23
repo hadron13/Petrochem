@@ -1,0 +1,140 @@
+{
+  "sources": [
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/petroleum_still"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/petroleum_flow"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/resin_still"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/resin_flow"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/ammonia_still"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/ammonia_flow"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/argon_still"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/argon_flow"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/chlorine_still"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/chlorine_flow"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/dinitrogen_tetroxide_still"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/dinitrogen_tetroxide_flow"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/hydrogen_still"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/hydrogen_flow"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/hydrogen_sulfide_still"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/hydrogen_sulfide_flow"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/nitrogen_still"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/nitrogen_flow"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/oxygen_still"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/oxygen_flow"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/steam_still"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/steam_flow"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/air_still"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/air_flow"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/volatile_gas_still"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/volatile_gas_flow"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/butane_still"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/butane_flow"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/propane_still"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/propane_flow"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/lpg_still"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/lpg_flow"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/ethylene_still"
+    },
+    {
+      "type": "single",
+      "resource": "gearbox:fluid/ethylene_flow"
+    }
+  ]
+}

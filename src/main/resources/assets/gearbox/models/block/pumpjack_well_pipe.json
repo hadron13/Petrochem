@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "gearbox:block/pumpjack_well_pipe",
+    "end": "gearbox:block/pumpjack_well_pipe_top"
+  }
+}

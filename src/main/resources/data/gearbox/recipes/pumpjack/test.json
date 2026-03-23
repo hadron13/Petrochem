@@ -1,0 +1,11 @@
+{
+  "type": "gearbox:pumpjack",
+  "biome": "minecraft:desert",
+  "ingredients": [],
+  "results": [
+    {
+      "fluid": "gearbox:petroleum",
+      "amount": 50
+    }
+  ]
+}

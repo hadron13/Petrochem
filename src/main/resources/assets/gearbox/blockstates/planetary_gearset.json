@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "axis=x,support_only=true": {
+      "model": "gearbox:block/planetary/support",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,support_only=true": {
+      "model": "gearbox:block/planetary/support"
+    },
+    "axis=z,support_only=true": {
+      "model": "gearbox:block/planetary/support",
+      "x": 90,
+      "y": 180
+    },
+    "axis=x,support_only=false": {
+      "model": "gearbox:block/planetary/all",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,support_only=false": {
+      "model": "gearbox:block/planetary/all"
+    },
+    "axis=z,support_only=false": {
+      "model": "gearbox:block/planetary/all",
+      "x": 90,
+      "y": 180
+    }
+  }
+}

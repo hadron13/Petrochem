@@ -1,0 +1,13 @@
+{
+  "type": "gearbox:laser_drilling",
+  "ingredients": [
+   ],
+  "results": [
+    {
+      "item": "minecraft:andesite"
+    }
+  ],
+  "processingTime": 2000,
+  "color": 16711680,
+  "power": 1.5
+}

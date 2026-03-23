@@ -1,0 +1,10 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "particle": "gearbox:block/mirror"
+  },
+  "elements": [
+  ],
+  "groups": [
+  ]
+}

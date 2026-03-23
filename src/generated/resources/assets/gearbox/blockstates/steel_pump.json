@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "gearbox:block/steel_pump/block",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "gearbox:block/steel_pump/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gearbox:block/steel_pump/block",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "gearbox:block/steel_pump/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "gearbox:block/steel_pump/block"
+    },
+    "facing=west": {
+      "model": "gearbox:block/steel_pump/block",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

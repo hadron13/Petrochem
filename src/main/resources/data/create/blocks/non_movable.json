@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "gearbox:black_hole",
+      "required": false
+    }
+  ]
+}

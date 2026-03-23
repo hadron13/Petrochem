@@ -1,0 +1,13 @@
+{
+  "type": "gearbox:mechanizing",
+  "ingredients": [
+    {
+      "item": "minecraft:andesite"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:oak_log"
+    }
+  ]
+}

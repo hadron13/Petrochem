@@ -1,0 +1,21 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "gearbox:block/laser/irradiator",
+		"1": "gearbox:block/irradiator_lens",
+		"particle": "gearbox:block/laser/irradiator"
+	},
+	"elements": [
+		{
+			"from": [4, 0, 4],
+			"to": [12, 9, 12],
+			"faces": {
+				"north": {"uv": [14, 3.5, 9.5, 7.5], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [14, 3.5, 9.5, 7.5], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [14, 3.5, 9.5, 7.5], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [14, 3.5, 9.5, 7.5], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [0.5, 12.5, 4.5, 8.5], "rotation": 180, "texture": "#1"}
+			}
+		}
+	]
+}

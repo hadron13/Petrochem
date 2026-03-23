@@ -1,0 +1,15 @@
+{
+  "type": "gearbox:compressing",
+  "ingredients": [
+    {
+      "fluid": "minecraft:lava",
+      "amount": 50
+    }
+  ],
+  "results": [
+    {
+      "item" : "minecraft:andesite"
+    }
+  ],
+  "processingTime": 150
+}

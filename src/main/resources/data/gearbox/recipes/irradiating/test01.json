@@ -1,0 +1,21 @@
+{
+  "type": "gearbox:irradiating",
+  "ingredients": [
+    {
+      "fluid": "minecraft:lava",
+      "amount": 50
+    }
+  ],
+  "results": [
+    {
+      "fluid" : "minecraft:water",
+      "amount": 50
+    },
+    {
+      "item": "minecraft:andesite"
+    }
+  ],
+  "processingTime": 150,
+  "color": 16711680,
+  "power": 1.5
+}

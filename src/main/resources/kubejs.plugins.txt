@@ -1,0 +1,1 @@
+io.github.hadron13.gearbox.compat.kubejs.KubeJSGearboxPlugin

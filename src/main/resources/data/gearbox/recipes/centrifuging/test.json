@@ -1,0 +1,24 @@
+{
+  "type": "gearbox:centrifuging",
+  "ingredients": [
+    {
+      "fluid" : "minecraft:lava",
+      "amount": 50
+    }
+  ],
+  "results": [
+    {
+      "fluid" : "minecraft:water",
+      "amount": 50
+    },
+    {
+      "fluid" : "minecraft:lava",
+      "amount": 25
+    },
+    {
+      "fluid" : "create:chocolate",
+      "amount": 25
+    }
+  ],
+  "processingTime": 150
+}

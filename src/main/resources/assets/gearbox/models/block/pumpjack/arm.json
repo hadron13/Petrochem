@@ -1,0 +1,46 @@
+{
+	"credit": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
+	"parent": "block/block",
+	"textures": {
+		"3": "gearbox:block/pumpjack/pumpjack",
+		"particle": "create:block/industrial_iron_block"
+	},
+	"elements": [
+		{
+			"from": [4, 4, -16],
+			"to": [12, 12, 32],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 8, 8], "texture": "#missing"},
+				"east": {"uv": [14, 2, 16, 14], "rotation": 90, "texture": "#3"},
+				"south": {"uv": [0, 0, 8, 8], "texture": "#missing"},
+				"west": {"uv": [14, 2, 16, 14], "rotation": 90, "texture": "#3"},
+				"up": {"uv": [14, 2, 16, 14], "texture": "#3"},
+				"down": {"uv": [14, 2, 16, 14], "rotation": 180, "texture": "#3"}
+			}
+		},
+		{
+			"name": "Axis",
+			"from": [0, 6, 6],
+			"to": [16, 10, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [9.5, 0, 10.5, 4], "rotation": 270, "texture": "#3"},
+				"east": {"uv": [0.75, 4.75, 1.75, 5.75], "texture": "#3"},
+				"south": {"uv": [9.5, 0, 10.5, 4], "rotation": 90, "texture": "#3"},
+				"west": {"uv": [0.75, 4.75, 1.75, 5.75], "rotation": 180, "texture": "#3"},
+				"up": {"uv": [9.5, 0, 10.5, 4], "rotation": 90, "texture": "#3"},
+				"down": {"uv": [9.5, 0, 10.5, 4], "rotation": 90, "texture": "#3"}
+			}
+		}
+	],
+	"groups": [
+		0,
+		{
+			"name": "shaft",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [1]
+		}
+	]
+}

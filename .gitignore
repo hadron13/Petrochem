@@ -1,0 +1,10 @@
+# gradle
+build
+.gradle
+logs
+run
+.idea
+/.idea/
+.idea/*
+out/
+mcmodsrepo/

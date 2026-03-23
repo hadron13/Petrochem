@@ -1,0 +1,145 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"0": "gearbox:block/pumpjack/pumpjack",
+		"2": "gearbox:block/pumpjack/lemanc",
+		"particle": "create:block/industrial_iron_block"
+	},
+	"elements": [
+		{
+			"from": [2, 0, 2],
+			"to": [14, 16, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [13, 0, 11]},
+			"faces": {
+				"north": {"uv": [4.5, 12, 7.5, 16], "texture": "#0"},
+				"east": {"uv": [4.75, 12, 7.5, 16], "texture": "#0"},
+				"south": {"uv": [8.5, 8, 11.5, 12], "texture": "#0"},
+				"west": {"uv": [4.5, 12, 7.25, 16], "texture": "#0"},
+				"up": {"uv": [8.5, 13, 11.5, 15.75], "texture": "#0"},
+				"down": {"uv": [8.5, 13.25, 11.5, 16], "texture": "#0"}
+			}
+		},
+		{
+			"name": "lemanc_0",
+			"from": [2, 13, 13],
+			"to": [14, 16, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, 1, 13]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 3], "texture": "#2"},
+				"east": {"uv": [14.66667, 0, 16, 3], "texture": "#2"},
+				"south": {"uv": [0, 0, 16, 3], "texture": "#2"},
+				"west": {"uv": [0, 0, 1.33333, 3], "texture": "#2"},
+				"up": {"uv": [0, 0, 16, 1], "texture": "#2"},
+				"down": {"uv": [0, 2, 16, 3], "texture": "#2"}
+			}
+		},
+		{
+			"name": "lemanc_1",
+			"from": [2, 0, 13],
+			"to": [4, 13, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, 6, 13]},
+			"faces": {
+				"north": {"uv": [2.66667, 3, 0, 16], "texture": "#2"},
+				"east": {"uv": [1.33333, 3, 2.66667, 16], "texture": "#2"},
+				"south": {"uv": [0, 3, 2.66667, 16], "texture": "#2"},
+				"west": {"uv": [0, 3, 1.33333, 16], "texture": "#2"},
+				"up": {"uv": [0, 3, 2.66667, 4], "texture": "#2"},
+				"down": {"uv": [0, 15, 2.66667, 16], "texture": "#2"}
+			}
+		},
+		{
+			"name": "lemanc_2",
+			"from": [12, 0, 13],
+			"to": [14, 13, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-1, 4, 13]},
+			"faces": {
+				"north": {"uv": [16, 3, 13.33333, 16], "texture": "#2"},
+				"east": {"uv": [14.66667, 3, 16, 16], "texture": "#2"},
+				"south": {"uv": [13.33333, 3, 16, 16], "texture": "#2"},
+				"west": {"uv": [13.33333, 3, 14.66667, 16], "texture": "#2"},
+				"up": {"uv": [13.33333, 3, 16, 4], "texture": "#2"},
+				"down": {"uv": [13.33333, 15, 16, 16], "texture": "#2"}
+			}
+		},
+		{
+			"name": "lemanc_3",
+			"from": [4, 0, 13],
+			"to": [12, 3, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 5, 13]},
+			"faces": {
+				"north": {"uv": [13.33333, 13, 2.66667, 16], "texture": "#2"},
+				"east": {"uv": [12, 13, 13.33333, 16], "texture": "#2"},
+				"south": {"uv": [2.66667, 13, 13.33333, 16], "texture": "#2"},
+				"west": {"uv": [2.66667, 13, 4, 16], "texture": "#2"},
+				"up": {"uv": [2.66667, 13, 13.33333, 14], "texture": "#2"},
+				"down": {"uv": [2.66667, 15, 13.33333, 16], "texture": "#2"}
+			}
+		},
+		{
+			"from": [1, 9, 6],
+			"to": [2, 17, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 9, 7]},
+			"faces": {
+				"north": {"uv": [4, 0.5, 4.25, 2.5], "texture": "#0"},
+				"east": {"uv": [4, 0.5, 5, 2.5], "texture": "#0"},
+				"south": {"uv": [4, 0.5, 4.25, 2.5], "texture": "#0"},
+				"west": {"uv": [4, 0.5, 5, 2.5], "texture": "#0"},
+				"up": {"uv": [0, 0, 1, 4], "texture": "#missing"},
+				"down": {"uv": [4, 2.25, 5, 2.5], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 17, 4],
+			"to": [2, 21, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 15, 7]},
+			"faces": {
+				"north": {"uv": [7.5, 3.5, 8, 4.5], "texture": "#0"},
+				"east": {"uv": [5, 3.5, 7, 4.5], "texture": "#0"},
+				"south": {"uv": [7.5, 3.5, 8, 4.5], "texture": "#0"},
+				"west": {"uv": [5, 3.5, 7, 4.5], "texture": "#0"},
+				"up": {"uv": [4.25, 0, 4.75, 2], "texture": "#0"},
+				"down": {"uv": [4.25, 0, 4.75, 2], "texture": "#0"}
+			}
+		},
+		{
+			"from": [14, 17, 4],
+			"to": [16, 21, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [7.5, 3.5, 8, 4.5], "texture": "#0"},
+				"east": {"uv": [5, 3.5, 7, 4.5], "texture": "#0"},
+				"south": {"uv": [7.5, 3.5, 8, 4.5], "texture": "#0"},
+				"west": {"uv": [5, 3.5, 7, 4.5], "texture": "#0"},
+				"up": {"uv": [4.25, 0, 4.75, 2], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [4.25, 0, 4.75, 2], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"from": [14, 9, 6],
+			"to": [15, 17, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [4, 0.5, 4.25, 2.5], "texture": "#0"},
+				"east": {"uv": [4, 0.5, 5, 2.5], "texture": "#0"},
+				"south": {"uv": [4, 0.5, 4.25, 2.5], "texture": "#0"},
+				"west": {"uv": [4, 0.5, 5, 2.5], "texture": "#0"},
+				"up": {"uv": [0, 0, 1, 4], "rotation": 180, "texture": "#missing"},
+				"down": {"uv": [4, 2.25, 5, 2.5], "rotation": 270, "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		0,
+		{
+			"name": "lemanc",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [1, 2, 3, 4]
+		},
+		5,
+		6,
+		7,
+		8
+	]
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "gearbox:block/pumpjack/crank_holder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gearbox:block/pumpjack/crank_holder"
+    },
+    "facing=south": {
+      "model": "gearbox:block/pumpjack/crank_holder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gearbox:block/pumpjack/crank_holder",
+      "y": 270
+    }
+  }
+}

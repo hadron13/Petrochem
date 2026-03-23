@@ -1,0 +1,16 @@
+{
+  "type": "gearbox:transmuting",
+  "ingredients": [
+    {
+      "item": "minecraft:granite"
+    }
+  ],
+  "results": [
+    {
+      "item" : "minecraft:andesite"
+    }
+  ],
+  "processingTime": 150,
+  "color": 4294967295,
+  "power": 1.5
+}

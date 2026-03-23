@@ -1,0 +1,49 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/item",
+	"textures": {
+		"0": "gearbox:item/tau_cannon/tau_coil",
+		"particle": "gearbox:item/tau_cannon/tau_coil"
+	},
+	"elements": [
+		{
+			"from": [5.5, 6.5, 9.525],
+			"to": [10.5, 11.5, 14.525],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8.5, 9, 10.025]},
+			"faces": {
+				"north": {"uv": [0, 0, 5, 5], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [4, 0, 9, 5], "rotation": 180, "texture": "#0"},
+				"south": {"uv": [0, 0, 5, 5], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [4, 5, 9, 0], "rotation": 180, "texture": "#0"},
+				"up": {"uv": [4, 0, 9, 5], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [4, 0, 9, 5], "rotation": 270, "texture": "#0"}
+			}
+		},
+		{
+			"from": [5.5, 6.5, 9.5],
+			"to": [10.5, 11.5, 14.5],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [8, 9, 12]},
+			"faces": {
+				"north": {"uv": [0, 0, 5, 5], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [4, 0, 9, 5], "rotation": 180, "texture": "#0"},
+				"south": {"uv": [0, 0, 5, 5], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [4, 5, 9, 0], "rotation": 180, "texture": "#0"},
+				"up": {"uv": [4, 0, 9, 5], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [4, 5, 9, 0], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"from": [7, 8, 8.5],
+			"to": [9, 10, 15.5],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 9, 17.5]},
+			"faces": {
+				"north": {"uv": [0, 6, 2, 8], "rotation": 270, "texture": "#0"},
+				"east": {"uv": [2, 6, 9, 8], "rotation": 180, "texture": "#0"},
+				"south": {"uv": [0, 6, 2, 8], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [2, 6, 9, 8], "texture": "#0"},
+				"up": {"uv": [2, 6, 9, 8], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [2, 8, 9, 6], "rotation": 90, "texture": "#0"}
+			}
+		}
+	]
+}

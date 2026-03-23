@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,powered=false": {
+      "model": "gearbox:block/kiln/unpowered",
+      "y": 90
+    },
+    "facing=east,powered=true": {
+      "model": "gearbox:block/kiln/powered",
+      "y": 90
+    },
+    "facing=north,powered=false": {
+      "model": "gearbox:block/kiln/unpowered"
+    },
+    "facing=north,powered=true": {
+      "model": "gearbox:block/kiln/powered"
+    },
+    "facing=south,powered=false": {
+      "model": "gearbox:block/kiln/unpowered",
+      "y": 180
+    },
+    "facing=south,powered=true": {
+      "model": "gearbox:block/kiln/powered",
+      "y": 180
+    },
+    "facing=west,powered=false": {
+      "model": "gearbox:block/kiln/unpowered",
+      "y": 270
+    },
+    "facing=west,powered=true": {
+      "model": "gearbox:block/kiln/powered",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "gearbox:reacting",
+  "ingredients": [
+    {
+      "item": "minecraft:dirt"
+    }
+  ],
+  "results": [
+    {
+      "fluid" : "minecraft:water",
+      "amount": 50
+    }
+  ],
+  "processingTime": 150,
+  "atmosphere": {
+    "fluid": "minecraft:water",
+    "amount": 1000
+  }
+}
