@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "petrochem:block/pumpjack_well_pipe",
+    "end": "petrochem:block/pumpjack_well_pipe_top"
+  }
+}

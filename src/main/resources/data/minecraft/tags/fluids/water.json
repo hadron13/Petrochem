@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "gearbox:petroleum",
-    "gearbox:flowing_petroleum"
+    "petrochem:petroleum",
+    "petrochem:flowing_petroleum"
   ]
 }

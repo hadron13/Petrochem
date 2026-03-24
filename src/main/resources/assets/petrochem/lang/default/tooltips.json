@@ -1,0 +1,18 @@
+{
+  "block.petrochem.mirror.tooltip": "MIRROR",
+  "block.petrochem.mirror.tooltip.summary": "Reflects incoming lasers",
+  "block.petrochem.spectrometer.tooltip": "SPECTROMETER",
+  "block.petrochem.spectrometer.tooltip.summary": "Measures passing laser's _power level_ and _color_",
+  "item.petrochem.tau_cannon.tooltip": "TAU CANNON",
+  "item.petrochem.tau_cannon.tooltip.summary": "Consumes _Geld Ingots_ to shoot tau particle beams",
+  "block.petrochem.kinetic_machine.tooltip": "KINETIC MACHINE",
+  "block.petrochem.kinetic_machine.tooltip.summary": "It spins",
+  "block.petrochem.laser.tooltip": "LASER",
+  "block.petrochem.laser.tooltip.summary": "Emits a powerful laser when powered, _color_ can be changed with a redstone signal.",
+  "block.petrochem.laser.tooltip.condition1": "",
+  "block.petrochem.laser.tooltip.behaviour1": "Consumes _50 FE/t_",
+  "block.petrochem.large_laser.tooltip": "LARGE LASER",
+  "block.petrochem.large_laser.tooltip.summary": "Emits a powerful laser when powered, _color_ can be changed with a redstone signal.",
+  "block.petrochem.large_laser.tooltip.condition1": "",
+  "block.petrochem.large_laser.tooltip.behaviour1": "Consumes _200 FE/t/block_"
+}

@@ -1,0 +1,21 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"2": "petrochem:block/steel_pipes",
+		"particle": "create:block/girder_pole_side"
+	},
+	"elements": [
+		{
+			"name": "Outer",
+			"from": [4, 0, 4],
+			"to": [12, 16, 12],
+			"faces": {
+				"north": {"uv": [4, 0, 8, 8], "texture": "#2"},
+				"east": {"uv": [4, 0, 8, 8], "texture": "#2"},
+				"south": {"uv": [4, 0, 8, 8], "texture": "#2"},
+				"west": {"uv": [4, 0, 8, 8], "texture": "#2"}
+			}
+		}
+	]
+}

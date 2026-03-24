@@ -1,19 +1,19 @@
 {
   "values": [
-    "gearbox:kiln",
-    "gearbox:electrolyzer",
-    "gearbox:centrifuge",
-    "gearbox:pumpjack_arm",
-    "gearbox:pumpjack_crank",
-    "gearbox:pumpjack_well",
-    "gearbox:steel_fluid_tank",
-    "gearbox:steel_fluid_pipe",
-    "gearbox:glass_fluid_pipe",
-    "gearbox:straight_steel_fluid_pipe",
-    "gearbox:distillation_controller",
-    "gearbox:steel_pump",
-    "gearbox:distillation_output",
-    "gearbox:asphalt",
-    "gearbox:flarestack"
+    "petrochem:kiln",
+    "petrochem:electrolyzer",
+    "petrochem:centrifuge",
+    "petrochem:pumpjack_arm",
+    "petrochem:pumpjack_crank",
+    "petrochem:pumpjack_well",
+    "petrochem:steel_fluid_tank",
+    "petrochem:steel_fluid_pipe",
+    "petrochem:glass_fluid_pipe",
+    "petrochem:straight_steel_fluid_pipe",
+    "petrochem:distillation_controller",
+    "petrochem:steel_pump",
+    "petrochem:distillation_output",
+    "petrochem:asphalt",
+    "petrochem:flarestack"
   ]
 }

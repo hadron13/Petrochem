@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "priority": 1100,
+  "package": "io.github.hadron13.petrochem.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "refmap": "petrochem.refmap.json",
+  "mixins": [
+    "FluidPropagatorMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}

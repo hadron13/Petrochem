@@ -1,0 +1,10 @@
+{
+  "parent": "block/block",
+  "loader": "forge:obj",
+  "flip-v": true,
+  "model": "petrochem:models/block/precision_crank/precision_crank.obj",
+  "textures": {
+    "3": "petrochem:block/precision_crank",
+    "particle": "#3"
+  }
+}

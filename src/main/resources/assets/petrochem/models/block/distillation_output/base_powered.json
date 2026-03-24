@@ -1,0 +1,24 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"3": "petrochem:block/steel_redstone_base_powered",
+		"particle": "petrochem:block/steel_pipes"
+	},
+	"elements": [
+		{
+			"name": "Base",
+			"from": [1, 1, 13],
+			"to": [15, 15, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [1, 0, 15, 14], "texture": "#3"},
+				"east": {"uv": [1, 13, 15, 16], "rotation": 90, "texture": "#3"},
+				"south": {"uv": [1, 0, 15, 14], "rotation": 180, "texture": "#3"},
+				"west": {"uv": [1, 13, 15, 16], "rotation": 270, "texture": "#3"},
+				"up": {"uv": [1, 13, 15, 16], "texture": "#3"},
+				"down": {"uv": [1, 13, 15, 16], "rotation": 180, "texture": "#3"}
+			}
+		}
+	]
+}

@@ -1,0 +1,120 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"2": "petrochem:block/laser/spectrometer",
+		"4": "petrochem:block/distillation_controller",
+		"5": "petrochem:block/distillation_gauge",
+		"particle": "petrochem:block/laser/spectrogauge"
+	},
+	"elements": [
+		{
+			"name": "GaugeBody",
+			"from": [2, 2, 1],
+			"to": [14, 14, 15],
+			"faces": {
+				"north": {"uv": [0, 10, 6, 16], "texture": "#4"},
+				"east": {"uv": [9, 10, 16, 16], "texture": "#4"},
+				"south": {"uv": [0, 10, 6, 16], "texture": "#4"},
+				"west": {"uv": [9, 10, 16, 16], "texture": "#4"},
+				"up": {"uv": [9, 10, 16, 16], "rotation": 90, "texture": "#4"},
+				"down": {"uv": [5, 5, 12, 10], "rotation": 270, "texture": "#4"}
+			}
+		},
+		{
+			"name": "GuageBase",
+			"from": [1, 0, 0],
+			"to": [15, 2, 16],
+			"faces": {
+				"north": {"uv": [0, 9, 8, 10], "texture": "#4"},
+				"east": {"uv": [0, 9, 8, 10], "texture": "#4"},
+				"south": {"uv": [0, 9, 7, 10], "texture": "#4"},
+				"west": {"uv": [0, 9, 8, 10], "texture": "#4"},
+				"up": {"uv": [0, 0, 8, 7], "rotation": 270, "texture": "#4"},
+				"down": {"uv": [0, 0, 8, 7], "texture": "#4"}
+			}
+		},
+		{
+			"name": "Gauge",
+			"from": [16.075, 4, 4],
+			"to": [16.075, 12, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [9, 8, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#5"}
+			}
+		},
+		{
+			"name": "GuageMetalBack",
+			"from": [14, 3, 3],
+			"to": [16, 13, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [9, 8, 8]},
+			"faces": {
+				"north": {"uv": [13, 5, 14, 10], "texture": "#2"},
+				"east": {"uv": [9, 5, 14, 10], "texture": "#2"},
+				"south": {"uv": [13, 5, 14, 10], "texture": "#2"},
+				"west": {"uv": [9, 5, 14, 10], "texture": "#2"},
+				"up": {"uv": [9, 5, 10, 10], "texture": "#2"},
+				"down": {"uv": [9, 5, 10, 10], "texture": "#2"}
+			}
+		},
+		{
+			"name": "GaugeColorBar",
+			"from": [14.5, 2.9, 2.9],
+			"to": [15.5, 13.1, 13.1],
+			"rotation": {"angle": 0, "axis": "y", "origin": [9, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 8.5, 5, 9], "rotation": 90, "texture": "#4"},
+				"south": {"uv": [0, 8.5, 5, 9], "rotation": 90, "texture": "#4"},
+				"west": {"uv": [9, 5, 14, 10], "texture": "#4"},
+				"up": {"uv": [0, 8, 5, 8.5], "rotation": 90, "texture": "#4"},
+				"down": {"uv": [0, 8, 5, 8.5], "rotation": 90, "texture": "#4"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -165, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 23, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, 225, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"rotation": [0, 89, 0],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "Gauge",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4]
+		},
+		{
+			"name": "shaft",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": []
+		}
+	]
+}

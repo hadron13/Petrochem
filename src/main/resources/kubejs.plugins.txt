@@ -1,1 +1,1 @@
-io.github.hadron13.gearbox.compat.kubejs.KubeJSPetrochemPlugin
+io.github.hadron13.petrochem.compat.kubejs.KubeJSPetrochemPlugin

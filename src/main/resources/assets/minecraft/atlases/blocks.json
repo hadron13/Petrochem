@@ -2,139 +2,139 @@
   "sources": [
     {
       "type": "single",
-      "resource": "gearbox:fluid/petroleum_still"
+      "resource": "petrochem:fluid/petroleum_still"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/petroleum_flow"
+      "resource": "petrochem:fluid/petroleum_flow"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/resin_still"
+      "resource": "petrochem:fluid/resin_still"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/resin_flow"
+      "resource": "petrochem:fluid/resin_flow"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/ammonia_still"
+      "resource": "petrochem:fluid/ammonia_still"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/ammonia_flow"
+      "resource": "petrochem:fluid/ammonia_flow"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/argon_still"
+      "resource": "petrochem:fluid/argon_still"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/argon_flow"
+      "resource": "petrochem:fluid/argon_flow"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/chlorine_still"
+      "resource": "petrochem:fluid/chlorine_still"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/chlorine_flow"
+      "resource": "petrochem:fluid/chlorine_flow"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/dinitrogen_tetroxide_still"
+      "resource": "petrochem:fluid/dinitrogen_tetroxide_still"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/dinitrogen_tetroxide_flow"
+      "resource": "petrochem:fluid/dinitrogen_tetroxide_flow"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/hydrogen_still"
+      "resource": "petrochem:fluid/hydrogen_still"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/hydrogen_flow"
+      "resource": "petrochem:fluid/hydrogen_flow"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/hydrogen_sulfide_still"
+      "resource": "petrochem:fluid/hydrogen_sulfide_still"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/hydrogen_sulfide_flow"
+      "resource": "petrochem:fluid/hydrogen_sulfide_flow"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/nitrogen_still"
+      "resource": "petrochem:fluid/nitrogen_still"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/nitrogen_flow"
+      "resource": "petrochem:fluid/nitrogen_flow"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/oxygen_still"
+      "resource": "petrochem:fluid/oxygen_still"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/oxygen_flow"
+      "resource": "petrochem:fluid/oxygen_flow"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/steam_still"
+      "resource": "petrochem:fluid/steam_still"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/steam_flow"
+      "resource": "petrochem:fluid/steam_flow"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/air_still"
+      "resource": "petrochem:fluid/air_still"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/air_flow"
+      "resource": "petrochem:fluid/air_flow"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/volatile_gas_still"
+      "resource": "petrochem:fluid/volatile_gas_still"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/volatile_gas_flow"
+      "resource": "petrochem:fluid/volatile_gas_flow"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/butane_still"
+      "resource": "petrochem:fluid/butane_still"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/butane_flow"
+      "resource": "petrochem:fluid/butane_flow"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/propane_still"
+      "resource": "petrochem:fluid/propane_still"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/propane_flow"
+      "resource": "petrochem:fluid/propane_flow"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/lpg_still"
+      "resource": "petrochem:fluid/lpg_still"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/lpg_flow"
+      "resource": "petrochem:fluid/lpg_flow"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/ethylene_still"
+      "resource": "petrochem:fluid/ethylene_still"
     },
     {
       "type": "single",
-      "resource": "gearbox:fluid/ethylene_flow"
+      "resource": "petrochem:fluid/ethylene_flow"
     }
   ]
 }

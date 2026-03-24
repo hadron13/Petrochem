@@ -23,8 +23,8 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 //def refmap
 mixin {
-    //refmap = add sourceSets.main, 'gearbox.refmap.json'
-    config 'gearbox.mixins.json'
+    //refmap = add sourceSets.main, 'petrochem.refmap.json'
+    config 'petrochem.mixins.json'
 }
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
@@ -50,7 +50,7 @@ legacyForge {
         mappingsVersion = parchment_version
     }
     mods {
-        gearbox {
+        petrochem {
             sourceSet sourceSets.main
         }
     }
@@ -63,7 +63,7 @@ legacyForge {
 
             systemProperty 'mixin.debug.export', 'true'
             systemProperty 'mixin.debug.verbose', 'true'
-            programArgument '-mixin.config=gearbox.mixins.json'
+            programArgument '-mixin.config=petrochem.mixins.json'
         }
         client {
             client()
@@ -204,7 +204,7 @@ jar {
     }
 
     manifest.attributes([
-            "MixinConfigs": "gearbox.mixins.json"
+            "MixinConfigs": "petrochem.mixins.json"
     ])
 }
 
@@ -214,7 +214,7 @@ final slimJar = tasks.register("slimJar", Jar) {
     from(sourceSets.main.output)
     //from(refmap)
     manifest.attributes([
-            "MixinConfigs": "gearbox.mixins.json"
+            "MixinConfigs": "petrochem.mixins.json"
     ])
 }
 obfuscation.reobfuscate(slimJar, sourceSets.main)

@@ -3,27 +3,27 @@ modLoader="javafml" #mandatory
 loaderVersion="[47,)"
 license="MIT License"
 [[mods]]
-modId="gearbox"
+modId="petrochem"
 version="${file.jarVersion}"
 displayName="Gearbox"
-credits="simibubi, oierbravo, & latvian dev"
+credits="#devchat folks"
 authors="Redz aka terentre4e25caracteres" #optional
 description='''
-Mod made for use in Create: Back on Track modpack
+The definitive petrol experience
 '''
-[[dependencies.gearbox]]
-modId="forge"
-mandatory=true
-versionRange="[47,)"
-ordering="NONE"
-side="BOTH"
-[[dependencies.gearbox]]
-modId="minecraft"
-mandatory=true
-versionRange="[1.20.1,1.21)"
-ordering="NONE"
-side="BOTH"
-[[dependencies.gearbox]]
+[[dependencies.petrochem]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.petrochem]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.petrochem]]
     modId="create"
     mandatory=true
     versionRange="[0.6.4,)"
