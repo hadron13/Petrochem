@@ -5,7 +5,7 @@ import com.simibubi.create.content.fluids.FluidTransportBehaviour;
 import com.simibubi.create.content.fluids.pipes.FluidPipeBlock;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.model.BakedModelWrapperWithData;
-import io.github.hadron13.gearbox.register.GearboxPartialModels;
+import io.github.hadron13.gearbox.register.PetrochemPartialModels;
 import net.createmod.catnip.data.Iterate;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
@@ -65,14 +65,14 @@ public class SteelPipeAttachmentModel extends BakedModelWrapperWithData {
         List<ChunkRenderTypeSet> set = new ArrayList<>();
 
         set.add(super.getRenderTypes(state, rand, data));
-        set.add(GearboxPartialModels.STEEL_FLUID_PIPE_CASING.get().getRenderTypes(state, rand, data));
+        set.add(PetrochemPartialModels.STEEL_FLUID_PIPE_CASING.get().getRenderTypes(state, rand, data));
 
         if (data.has(PIPE_PROPERTY)) {
             PipeModelData pipeData = data.get(PIPE_PROPERTY);
             for (Direction d : Iterate.directions) {
                 FluidTransportBehaviour.AttachmentTypes type = pipeData.getAttachment(d);
                 for (FluidTransportBehaviour.AttachmentTypes.ComponentPartials partial : type.partials) {
-                    ChunkRenderTypeSet attachmentRenderTypeSet = GearboxPartialModels.STEEL_PIPE_ATTACHMENTS.get(partial).get(d)
+                    ChunkRenderTypeSet attachmentRenderTypeSet = PetrochemPartialModels.STEEL_PIPE_ATTACHMENTS.get(partial).get(d)
                             .get().getRenderTypes(state, rand, data);
                     set.add(attachmentRenderTypeSet);
                 }
@@ -116,14 +116,14 @@ public class SteelPipeAttachmentModel extends BakedModelWrapperWithData {
         for (Direction d : Iterate.directions) {
             FluidTransportBehaviour.AttachmentTypes type = pipeData.getAttachment(d);
             for (FluidTransportBehaviour.AttachmentTypes.ComponentPartials partial : type.partials) {
-                quads.addAll(GearboxPartialModels.STEEL_PIPE_ATTACHMENTS.get(partial)
+                quads.addAll(PetrochemPartialModels.STEEL_PIPE_ATTACHMENTS.get(partial)
                         .get(d)
                         .get()
                         .getQuads(state, side, rand, data, renderType));
             }
         }
         if (pipeData.isEncased())
-            quads.addAll(GearboxPartialModels.STEEL_FLUID_PIPE_CASING.get()
+            quads.addAll(PetrochemPartialModels.STEEL_FLUID_PIPE_CASING.get()
                     .getQuads(state, side, rand, data, renderType));
     }
 

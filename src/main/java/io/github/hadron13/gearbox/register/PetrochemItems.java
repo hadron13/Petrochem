@@ -1,16 +1,13 @@
 package io.github.hadron13.gearbox.register;
 
-import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.CombustibleItem;
 import com.tterrag.registrate.util.entry.ItemEntry;
-import io.github.hadron13.gearbox.Gearbox;
-import io.github.hadron13.gearbox.item.RadioactiveItem;
+import io.github.hadron13.gearbox.Petrochem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
 
-public class GearboxItems {
-    private static final CreateRegistrate REGISTRATE = Gearbox.registrate().setCreativeTab(GearboxCreativeTabs.MAIN_TAB);
+public class PetrochemItems {
+    private static final CreateRegistrate REGISTRATE = Petrochem.registrate().setCreativeTab(PetrochemCreativeTabs.MAIN_TAB);
 
     public static void register() {}
 

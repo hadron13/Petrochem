@@ -3,8 +3,8 @@ package io.github.hadron13.gearbox.blocks.pumpjack;
 
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.foundation.block.IBE;
-import io.github.hadron13.gearbox.register.GearboxBlockEntities;
-import io.github.hadron13.gearbox.register.GearboxShapes;
+import io.github.hadron13.gearbox.register.PetrochemBlockEntities;
+import io.github.hadron13.gearbox.register.PetrochemShapes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -45,13 +45,13 @@ public class PumpjackWellBlock extends Block implements IBE<PumpjackWellBlockEnt
     }
     @Override
     public BlockEntityType<? extends PumpjackWellBlockEntity> getBlockEntityType() {
-        return GearboxBlockEntities.PUMPJACK_WELL.get();
+        return PetrochemBlockEntities.PUMPJACK_WELL.get();
     }
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter worldIn,
                                BlockPos pos, CollisionContext context) {
-        return GearboxShapes.PUMPJACK_WELL.get(state.getValue(HORIZONTAL_FACING));
+        return PetrochemShapes.PUMPJACK_WELL.get(state.getValue(HORIZONTAL_FACING));
     }
 
 }

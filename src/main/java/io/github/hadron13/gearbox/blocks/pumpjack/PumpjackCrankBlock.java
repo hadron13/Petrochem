@@ -3,8 +3,8 @@ package io.github.hadron13.gearbox.blocks.pumpjack;
 
 import com.simibubi.create.content.kinetics.base.HorizontalKineticBlock;
 import com.simibubi.create.foundation.block.IBE;
-import io.github.hadron13.gearbox.register.GearboxBlockEntities;
-import io.github.hadron13.gearbox.register.GearboxShapes;
+import io.github.hadron13.gearbox.register.PetrochemBlockEntities;
+import io.github.hadron13.gearbox.register.PetrochemShapes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
@@ -29,7 +29,7 @@ public class PumpjackCrankBlock extends HorizontalKineticBlock implements IBE<Pu
     }
     @Override
     public BlockEntityType<? extends PumpjackCrankBlockEntity> getBlockEntityType() {
-        return GearboxBlockEntities.PUMPJACK_CRANK.get();
+        return PetrochemBlockEntities.PUMPJACK_CRANK.get();
     }
 
     @Override
@@ -43,6 +43,6 @@ public class PumpjackCrankBlock extends HorizontalKineticBlock implements IBE<Pu
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter worldIn,
                                BlockPos pos, CollisionContext context) {
-        return GearboxShapes.PUMPJACK_CRANK.get(state.getValue(HORIZONTAL_FACING));
+        return PetrochemShapes.PUMPJACK_CRANK.get(state.getValue(HORIZONTAL_FACING));
     }
 }

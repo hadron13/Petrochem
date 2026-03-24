@@ -10,7 +10,7 @@ import com.simibubi.create.foundation.blockEntity.ComparatorUtil;
 import com.simibubi.create.foundation.fluid.FluidHelper;
 import com.simibubi.create.foundation.fluid.FluidHelper.FluidExchange;
 
-import io.github.hadron13.gearbox.register.GearboxBlockEntities;
+import io.github.hadron13.gearbox.register.PetrochemBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -248,7 +248,7 @@ public class SteelTankBlock extends Block implements IWrenchable, IBE<SteelTankB
 
     @Override
     public BlockEntityType<? extends SteelTankBlockEntity> getBlockEntityType() {
-         return GearboxBlockEntities.STEEL_FLUID_TANK.get();
+         return PetrochemBlockEntities.STEEL_FLUID_TANK.get();
     }
 
     @Override

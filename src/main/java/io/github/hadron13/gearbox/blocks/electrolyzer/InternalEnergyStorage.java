@@ -1,6 +1,6 @@
 package io.github.hadron13.gearbox.blocks.electrolyzer;
 
-import io.github.hadron13.gearbox.GearboxLang;
+import io.github.hadron13.gearbox.PetrochemLang;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -81,26 +81,26 @@ public class InternalEnergyStorage extends EnergyStorage {
     }
 
     public void storedEnergyTooltip(List<Component> tooltip){
-        GearboxLang.translate("gui.goggles.energy_stats").forGoggles(tooltip);
+        PetrochemLang.translate("gui.goggles.energy_stats").forGoggles(tooltip);
 
-        GearboxLang.number(this.getEnergyStored())
-                .add(GearboxLang.text("/"))
-                .add(GearboxLang.number(this.getMaxEnergyStored()))
-                .add(GearboxLang.text(" FE"))
+        PetrochemLang.number(this.getEnergyStored())
+                .add(PetrochemLang.text("/"))
+                .add(PetrochemLang.number(this.getMaxEnergyStored()))
+                .add(PetrochemLang.text(" FE"))
                 .style(ChatFormatting.AQUA)
                 .space()
-                .add(GearboxLang.translate("gui.goggles.energy_stored")
+                .add(PetrochemLang.translate("gui.goggles.energy_stored")
                         .style(ChatFormatting.DARK_GRAY))
                 .forGoggles(tooltip, 1);
 
     }
 
     public static void energyConsumptionTooltip(List<Component> tooltip, int consumption){
-        GearboxLang.number(consumption)
-                .add(GearboxLang.text(" FE/tick"))
+        PetrochemLang.number(consumption)
+                .add(PetrochemLang.text(" FE/tick"))
                 .style(ChatFormatting.AQUA)
                 .space()
-                .add(GearboxLang.translate("gui.goggles.energy_consumption")
+                .add(PetrochemLang.translate("gui.goggles.energy_consumption")
                         .style(ChatFormatting.DARK_GRAY))
                 .forGoggles(tooltip, 1);
     }

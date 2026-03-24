@@ -20,7 +20,7 @@ import java.util.function.Supplier;
 @Mod.EventBusSubscriber(
         bus = Mod.EventBusSubscriber.Bus.MOD
 )
-public class GearboxConfig {
+public class PetrochemConfig {
     private static final Map<ModConfig.Type, ConfigBase> CONFIGS = new EnumMap<>(ModConfig.Type.class);
 
     private static GBClient client;
@@ -63,7 +63,7 @@ public class GearboxConfig {
             context.registerConfig(pair.getKey(), pair.getValue().specification);
         }
 
-        GearboxStress stress = server().kinetics.stressValues;
+        PetrochemStress stress = server().kinetics.stressValues;
         BlockStressValues.IMPACTS.registerProvider(stress::getImpact);
         BlockStressValues.CAPACITIES.registerProvider(stress::getCapacity);
     }

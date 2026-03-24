@@ -5,7 +5,7 @@ import com.simibubi.create.AllCreativeModeTabs;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.RegistryEntry;
-import io.github.hadron13.gearbox.Gearbox;
+import io.github.hadron13.gearbox.Petrochem;
 import it.unimi.dsi.fastutil.objects.ReferenceArrayList;
 import it.unimi.dsi.fastutil.objects.ReferenceLinkedOpenHashSet;
 import net.minecraft.core.registries.Registries;
@@ -25,16 +25,16 @@ import java.util.List;
 import java.util.function.Predicate;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class GearboxCreativeTabs {
+public class PetrochemCreativeTabs {
     private static final DeferredRegister<CreativeModeTab> TAB_REGISTER =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Gearbox.MODID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Petrochem.MODID);
 
     public static final RegistryObject<CreativeModeTab> MAIN_TAB = TAB_REGISTER.register("main",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.gearbox.main"))
                     .withTabsBefore(AllCreativeModeTabs.PALETTES_CREATIVE_TAB.getId())
                     .icon(AllBlocks.GEARBOX::asStack)
-                    .displayItems(new RegistrateDisplayItemsGenerator(GearboxCreativeTabs.MAIN_TAB))
+                    .displayItems(new RegistrateDisplayItemsGenerator(PetrochemCreativeTabs.MAIN_TAB))
                     .build());
 
     public static void register(IEventBus modEventBus) {
@@ -53,7 +53,7 @@ public class GearboxCreativeTabs {
 
         private List<Item> collectBlocks() {
             List<Item> items = new ReferenceArrayList<>();
-            for (RegistryEntry<Block> entry : Gearbox.registrate().getAll(Registries.BLOCK)) {
+            for (RegistryEntry<Block> entry : Petrochem.registrate().getAll(Registries.BLOCK)) {
                 if (!CreateRegistrate.isInCreativeTab(entry, tabFilter))
                     continue;
                 Item item = entry.get()
@@ -72,7 +72,7 @@ public class GearboxCreativeTabs {
             List<Item> items = new ReferenceArrayList<>();
 
 
-            for (RegistryEntry<Item> entry : Gearbox.registrate().getAll(Registries.ITEM)) {
+            for (RegistryEntry<Item> entry : Petrochem.registrate().getAll(Registries.ITEM)) {
                 if (!CreateRegistrate.isInCreativeTab(entry, tab))
                     continue;
                 Item item = entry.get();

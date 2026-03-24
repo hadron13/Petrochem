@@ -10,7 +10,7 @@ import dev.engine_room.flywheel.lib.instance.InstanceTypes;
 import dev.engine_room.flywheel.lib.instance.OrientedInstance;
 import dev.engine_room.flywheel.lib.model.Models;
 import dev.engine_room.flywheel.lib.visual.SimpleDynamicVisual;
-import io.github.hadron13.gearbox.register.GearboxPartialModels;
+import io.github.hadron13.gearbox.register.PetrochemPartialModels;
 import net.createmod.catnip.animation.AnimationTickHolder;
 import net.minecraft.core.Direction;
 
@@ -26,7 +26,7 @@ public class ReactorVisual extends SingleAxisRotatingVisual<ReactorBlockEntity> 
 
         head.setRotationAxis(Direction.Axis.Y);
 
-        pole = instancerProvider().instancer(InstanceTypes.ORIENTED, Models.partial(GearboxPartialModels.DIPPER_POLE)).createInstance();
+        pole = instancerProvider().instancer(InstanceTypes.ORIENTED, Models.partial(PetrochemPartialModels.DIPPER_POLE)).createInstance();
 
 
         transformInstances(partialTicks);

@@ -5,7 +5,7 @@ import com.simibubi.create.content.fluids.tank.*;
 import com.simibubi.create.content.processing.AssemblyOperatorBlockItem;
 import com.simibubi.create.foundation.data.*;
 import com.tterrag.registrate.util.entry.BlockEntry;
-import io.github.hadron13.gearbox.Gearbox;
+import io.github.hadron13.gearbox.Petrochem;
 import io.github.hadron13.gearbox.blocks.centrifuge.CentrifugeBlock;
 import io.github.hadron13.gearbox.blocks.distillation_tower.DistillationControllerBlock;
 import io.github.hadron13.gearbox.blocks.distillation_tower.DistillationControllerGenerator;
@@ -23,7 +23,7 @@ import io.github.hadron13.gearbox.blocks.steel_tank.SteelTankBlock;
 import io.github.hadron13.gearbox.blocks.steel_tank.SteelTankItem;
 import io.github.hadron13.gearbox.data.client.blockstates.*;
 import io.github.hadron13.gearbox.blocks.pumpjack.*;
-import io.github.hadron13.gearbox.config.GearboxStress;
+import io.github.hadron13.gearbox.config.PetrochemStress;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Block;
@@ -37,10 +37,10 @@ import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
 
-public class GearboxBlocks {
+public class PetrochemBlocks {
 
 
-    private static final CreateRegistrate REGISTRATE = Gearbox.registrate().setCreativeTab(GearboxCreativeTabs.MAIN_TAB);
+    private static final CreateRegistrate REGISTRATE = Petrochem.registrate().setCreativeTab(PetrochemCreativeTabs.MAIN_TAB);
 
     public static void register() {}
 
@@ -61,7 +61,7 @@ public class GearboxBlocks {
                                 .lightLevel(s -> s.getValue(KilnBlock.POWERED) ? 15 : 0))
             .transform(pickaxeOnly())
             .blockstate(new KilnGenerator()::generate)
-            .transform(GearboxStress.setImpact(4.0))
+            .transform(PetrochemStress.setImpact(4.0))
             .item()
             .transform(customItemModel())
             .register();
@@ -91,7 +91,7 @@ public class GearboxBlocks {
             .properties(p -> p.sound(SoundType.METAL).mapColor(MapColor.METAL))
             .transform(pickaxeOnly())
             .blockstate(new PartialAxisBlockStateGen()::generate)
-            .transform(GearboxStress.setImpact(8.0))
+            .transform(PetrochemStress.setImpact(8.0))
             .item()
             .transform(customItemModel())
             .register();
@@ -103,7 +103,7 @@ public class GearboxBlocks {
             .properties(p -> p.sound(SoundType.METAL).mapColor(MapColor.METAL).noOcclusion())
             .blockstate(PumpjackGenerator.arm()::generate)
             .item(PumpjackArmBlockItem::new)
-            .model((ctx, prov) -> prov.withExistingParent(prov.name(ctx), Gearbox.asResource("block/pumpjack/arm_item")))
+            .model((ctx, prov) -> prov.withExistingParent(prov.name(ctx), Petrochem.asResource("block/pumpjack/arm_item")))
             .build()
             .register();
     public static final BlockEntry<PumpjackCrankBlock> PUMPJACK_CRANK = REGISTRATE.block("pumpjack_crank", PumpjackCrankBlock::new)
@@ -111,9 +111,9 @@ public class GearboxBlocks {
             .properties(p -> p.sound(SoundType.METAL).mapColor(MapColor.METAL).noOcclusion())
             .transform(pickaxeOnly())
             .blockstate(PumpjackGenerator.crank()::generate)
-            .transform(GearboxStress.setImpact(32.0))
+            .transform(PetrochemStress.setImpact(32.0))
             .item()
-            .model((ctx, prov) -> prov.withExistingParent(prov.name(ctx), Gearbox.asResource("block/pumpjack/crank_item")))
+            .model((ctx, prov) -> prov.withExistingParent(prov.name(ctx), Petrochem.asResource("block/pumpjack/crank_item")))
             .build()
             .register();
 
@@ -124,7 +124,7 @@ public class GearboxBlocks {
             .properties(p -> p.mapColor(MapColor.METAL).noOcclusion())
             .blockstate(PumpjackGenerator.well()::generate)
             .item()
-            .model((ctx, prov) -> prov.withExistingParent(prov.name(ctx), Gearbox.asResource("block/pumpjack/well")))
+            .model((ctx, prov) -> prov.withExistingParent(prov.name(ctx), Petrochem.asResource("block/pumpjack/well")))
             .build()
             .register();
 
@@ -250,7 +250,7 @@ public class GearboxBlocks {
             .transform(pickaxeOnly())
             .blockstate(BlockStateGen.directionalBlockProviderIgnoresWaterlogged(true))
             .onRegister(CreateRegistrate.blockModel(() -> PipeAttachmentModel::withAO))
-            .transform(GearboxStress.setImpact(3.0))
+            .transform(PetrochemStress.setImpact(3.0))
             .item()
             .transform(customItemModel())
             .register();

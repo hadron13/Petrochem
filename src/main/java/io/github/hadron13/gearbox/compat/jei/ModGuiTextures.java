@@ -1,6 +1,6 @@
 package io.github.hadron13.gearbox.compat.jei;
 
-import io.github.hadron13.gearbox.Gearbox;
+import io.github.hadron13.gearbox.Petrochem;
 import net.createmod.catnip.gui.TextureSheetSegment;
 import net.createmod.catnip.gui.UIRenderHelper;
 import net.createmod.catnip.gui.element.ScreenElement;
@@ -30,7 +30,7 @@ public enum ModGuiTextures implements ScreenElement, TextureSheetSegment {
     }
 
     ModGuiTextures(String location, int startX, int startY, int width, int height) {
-        this(Gearbox.MODID, location, startX, startY, width, height);
+        this(Petrochem.MODID, location, startX, startY, width, height);
     }
 
     ModGuiTextures(String namespace, String location, int startX, int startY, int width, int height) {

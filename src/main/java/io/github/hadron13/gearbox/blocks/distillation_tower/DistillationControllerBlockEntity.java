@@ -10,12 +10,12 @@ import com.simibubi.create.foundation.blockEntity.behaviour.scrollValue.ScrollOp
 import com.simibubi.create.foundation.fluid.CombinedTankWrapper;
 import com.simibubi.create.foundation.fluid.FluidIngredient;
 import com.simibubi.create.foundation.gui.AllIcons;
-import io.github.hadron13.gearbox.GearboxLang;
+import io.github.hadron13.gearbox.PetrochemLang;
 import io.github.hadron13.gearbox.blocks.steel_tank.SteelTankBlockEntity;
-import io.github.hadron13.gearbox.register.GearboxBlocks;
-import io.github.hadron13.gearbox.register.GearboxFluids;
-import io.github.hadron13.gearbox.register.GearboxIcons;
-import io.github.hadron13.gearbox.register.GearboxRecipeTypes;
+import io.github.hadron13.gearbox.register.PetrochemBlocks;
+import io.github.hadron13.gearbox.register.PetrochemFluids;
+import io.github.hadron13.gearbox.register.PetrochemIcons;
+import io.github.hadron13.gearbox.register.PetrochemRecipeTypes;
 import net.createmod.catnip.animation.LerpedFloat;
 import net.createmod.catnip.data.Iterate;
 import net.createmod.catnip.lang.Lang;
@@ -72,11 +72,11 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
     @Override
     public void addBehaviours(List<BlockEntityBehaviour> behaviours) {
         distilMode = new ScrollOptionBehaviour<>(DistilMode.class,
-                GearboxLang.translate("gui.distil_mode").component(), this, new DistilModeBoxTransform());
+                PetrochemLang.translate("gui.distil_mode").component(), this, new DistilModeBoxTransform());
         distilMode.withCallback(i -> {
             switch (DistilMode.class.getEnumConstants()[i]){
                 case DISTIL_VACUUM -> {
-                    outputTank.getPrimaryHandler().setFluid(new FluidStack(GearboxFluids.AIR.get(), 8000));
+                    outputTank.getPrimaryHandler().setFluid(new FluidStack(PetrochemFluids.AIR.get(), 8000));
                 }
                 case DISTIL_FLASH, DISTIL_ATMOSPHERIC -> {
                     outputTank.getPrimaryHandler().setFluid(FluidStack.EMPTY);
@@ -140,7 +140,7 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
 
         for(int i = 0; i < availableFluids.getTanks();i++){
             FluidStack fluid = availableFluids.getFluidInTank(i);
-            if(fluid.getFluid() == GearboxFluids.STEAM.get().getSource()){
+            if(fluid.getFluid() == PetrochemFluids.STEAM.get().getSource()){
                 return fluid.getAmount();
             }
         }
@@ -212,7 +212,7 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
         if(distilMode.get() == DistilMode.DISTIL_VACUUM){
             if(outputTank.getPrimaryHandler().getFluidInTank(0).getAmount() < 8000)
                 sendData();
-            outputTank.getPrimaryHandler().fill(new FluidStack(GearboxFluids.AIR.get(), tankController.getHeight()*15), IFluidHandler.FluidAction.EXECUTE);
+            outputTank.getPrimaryHandler().fill(new FluidStack(PetrochemFluids.AIR.get(), tankController.getHeight()*15), IFluidHandler.FluidAction.EXECUTE);
         }
 
         if(!DistillingRecipe.match(this, currentRecipe)){
@@ -262,7 +262,7 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
             for (int tank = 0; tank < availableFluids.getTanks(); tank++) {
                 FluidStack fluidStack = availableFluids.getFluidInTank(tank);
                 if(distilMode.get() == DistilMode.DISTIL_FLASH){
-                    if(fluidStack.getFluid() == GearboxFluids.STEAM.getSource()){
+                    if(fluidStack.getFluid() == PetrochemFluids.STEAM.getSource()){
                         int drainedAmount = Math.min(500, fluidStack.getAmount());
                         fluidStack.shrink(drainedAmount);
                     }
@@ -297,7 +297,7 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
                 }
             }
         }else{
-            if(!getLevel().getBlockState(tankController).is(GearboxBlocks.STEEL_FLUID_TANK.get()))
+            if(!getLevel().getBlockState(tankController).is(PetrochemBlocks.STEEL_FLUID_TANK.get()))
                 tankController = null;
         }
         if(tankController == null)
@@ -312,7 +312,7 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
         if(level.isClientSide)
             return;
         if(currentRecipe == null) {
-            Optional<DistillingRecipe> recipeOptional = GearboxRecipeTypes.DISTILLING.find(this, level);
+            Optional<DistillingRecipe> recipeOptional = PetrochemRecipeTypes.DISTILLING.find(this, level);
 
             if (recipeOptional.isEmpty())
                 return;
@@ -352,8 +352,8 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
     @Override
     public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
 
-        GearboxLang.translate("gui.distil_mode").text(":").forGoggles(tooltip);
-        GearboxLang.translate(distilMode.get().getRawTranslationKey())
+        PetrochemLang.translate("gui.distil_mode").text(":").forGoggles(tooltip);
+        PetrochemLang.translate(distilMode.get().getRawTranslationKey())
                 .style(ChatFormatting.GRAY)
                 .forGoggles(tooltip, 1);
 
@@ -361,20 +361,20 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
 
 
         if(distilMode.get() == DistilMode.DISTIL_VACUUM && !hasVacuum()){
-            GearboxLang.text("")
+            PetrochemLang.text("")
                     .forGoggles(tooltip);
-            GearboxLang.addHint(tooltip, "hint.distil.vacuum");
+            PetrochemLang.addHint(tooltip, "hint.distil.vacuum");
         }
         if(distilMode.get() == DistilMode.DISTIL_FLASH && !hasSteam()){
-            GearboxLang.text("")
+            PetrochemLang.text("")
                     .forGoggles(tooltip);
-            GearboxLang.addHint(tooltip, "hint.distil.flash");
+            PetrochemLang.addHint(tooltip, "hint.distil.flash");
         }
 
         if(requiredOutputs > 0){
-            GearboxLang.text("")
+            PetrochemLang.text("")
                     .forGoggles(tooltip);
-            GearboxLang.addHint(tooltip, "hint.distil.missing");
+            PetrochemLang.addHint(tooltip, "hint.distil.missing");
         }
 
         SteelTankBlockEntity tank= getTankControllerBE().orElse(null);
@@ -382,15 +382,15 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
             return true;
 
         if(distilMode.get() != DistilMode.DISTIL_FLASH && tank.heat < 2) {
-            GearboxLang.text("")
+            PetrochemLang.text("")
                     .forGoggles(tooltip);
-            GearboxLang.addHint(tooltip, "hint.distil.heat");
+            PetrochemLang.addHint(tooltip, "hint.distil.heat");
         }
 
         if(tank.getWidth() < 2 || ( distilMode.get() == DistilMode.DISTIL_ATMOSPHERIC && tank.getWidth() < 3)){
-            GearboxLang.text("")
+            PetrochemLang.text("")
                     .forGoggles(tooltip);
-            GearboxLang.addHint(tooltip, "hint.distil.width");
+            PetrochemLang.addHint(tooltip, "hint.distil.width");
         }
 
         return true;
@@ -419,15 +419,15 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
 
 
     public static enum DistilMode implements INamedIconOptions {
-        DISTIL_FLASH(GearboxIcons.DISTIL_FLASH),
-        DISTIL_ATMOSPHERIC(GearboxIcons.DISTIL_ATMOSPHERIC),
-        DISTIL_VACUUM(GearboxIcons.DISTIL_VACUUM),
+        DISTIL_FLASH(PetrochemIcons.DISTIL_FLASH),
+        DISTIL_ATMOSPHERIC(PetrochemIcons.DISTIL_ATMOSPHERIC),
+        DISTIL_VACUUM(PetrochemIcons.DISTIL_VACUUM),
         ;
 
         private String translationKey;
-        private GearboxIcons icon;
+        private PetrochemIcons icon;
 
-        private DistilMode(GearboxIcons icon) {
+        private DistilMode(PetrochemIcons icon) {
             this.icon = icon;
             translationKey = "gui.distil_mode." + Lang.asId(name());
         }

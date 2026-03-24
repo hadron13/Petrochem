@@ -4,7 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.simibubi.create.AllPartialModels;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntityRenderer;
-import io.github.hadron13.gearbox.register.GearboxPartialModels;
+import io.github.hadron13.gearbox.register.PetrochemPartialModels;
 import net.createmod.catnip.render.CachedBuffers;
 import net.createmod.catnip.render.SuperByteBuffer;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -31,7 +31,7 @@ public class PumpjackCrankRenderer  extends KineticBlockEntityRenderer<PumpjackC
 
         BlockState blockstate = be.getBlockState();
         Direction facing = blockstate.getValue(HORIZONTAL_FACING);
-        SuperByteBuffer crank = CachedBuffers.partialFacing(GearboxPartialModels.PUMPJACK_CRANK, blockstate, facing);
+        SuperByteBuffer crank = CachedBuffers.partialFacing(PetrochemPartialModels.PUMPJACK_CRANK, blockstate, facing);
         SuperByteBuffer half_shaft = CachedBuffers.partialFacing(AllPartialModels.SHAFT_HALF, blockstate, facing);
 
         standardKineticRotationTransform(half_shaft, be, light);

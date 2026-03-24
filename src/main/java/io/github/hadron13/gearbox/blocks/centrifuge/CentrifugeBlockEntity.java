@@ -3,42 +3,27 @@ package io.github.hadron13.gearbox.blocks.centrifuge;
 import com.simibubi.create.content.kinetics.base.IRotate;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.content.kinetics.simpleRelays.ICogWheel;
-import com.simibubi.create.content.processing.basin.BasinBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
 import com.simibubi.create.foundation.fluid.CombinedTankWrapper;
-import com.simibubi.create.foundation.item.TooltipHelper;
-import io.github.hadron13.gearbox.GearboxLang;
-import io.github.hadron13.gearbox.register.GearboxRecipeTypes;
-import net.createmod.catnip.data.Iterate;
-import net.createmod.catnip.lang.FontHelper;
-import net.createmod.catnip.lang.LangBuilder;
-import net.minecraft.ChatFormatting;
-import net.minecraft.client.resources.language.I18n;
+import io.github.hadron13.gearbox.register.PetrochemRecipeTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.util.Mth;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.IFluidHandler;
-import net.minecraftforge.fluids.capability.templates.FluidTank;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
 import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Optional;
-
-import static com.simibubi.create.content.kinetics.base.RotatedPillarKineticBlock.AXIS;
-import static net.minecraft.ChatFormatting.GOLD;
 
 public class CentrifugeBlockEntity extends KineticBlockEntity {
 
@@ -100,7 +85,7 @@ public class CentrifugeBlockEntity extends KineticBlockEntity {
 
 
         if (lastRecipe == null || !CentrifugingRecipe.match(this, lastRecipe)) {
-            Optional<CentrifugingRecipe> recipe = GearboxRecipeTypes.CENTRIFUGING.find(this, level);
+            Optional<CentrifugingRecipe> recipe = PetrochemRecipeTypes.CENTRIFUGING.find(this, level);
             if (!recipe.isPresent()) {
                 recipeTimer = 100;
                 sendData();

@@ -1,7 +1,6 @@
 package io.github.hadron13.gearbox;
 
 import com.simibubi.create.foundation.item.TooltipHelper;
-import com.simibubi.create.foundation.utility.CreateLang;
 import net.createmod.catnip.lang.FontHelper;
 import net.createmod.catnip.lang.Lang;
 import net.createmod.catnip.lang.LangBuilder;
@@ -16,14 +15,14 @@ import net.minecraftforge.fluids.FluidStack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GearboxLang extends Lang {
+public class PetrochemLang extends Lang {
     /**
      * legacy-ish. Use CreateLang.translate and other builder methods where possible
      *
      */
     public static MutableComponent translateDirect(String key, Object... args) {
         Object[] args1 = LangBuilder.resolveBuilders(args);
-        return Component.translatable(Gearbox.MODID + "." + key, args1);
+        return Component.translatable(Petrochem.MODID + "." + key, args1);
     }
 
     public static List<Component> translatedOptions(String prefix, String... keys) {
@@ -36,7 +35,7 @@ public class GearboxLang extends Lang {
     //
 
     public static LangBuilder builder() {
-        return new LangBuilder(Gearbox.MODID);
+        return new LangBuilder(Petrochem.MODID);
     }
 
     public static LangBuilder blockName(BlockState state) {

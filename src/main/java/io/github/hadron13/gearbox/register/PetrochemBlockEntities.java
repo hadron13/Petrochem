@@ -10,7 +10,7 @@ import com.simibubi.create.content.fluids.pump.PumpRenderer;
 import com.simibubi.create.content.kinetics.base.SingleAxisRotatingVisual;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
-import io.github.hadron13.gearbox.Gearbox;
+import io.github.hadron13.gearbox.Petrochem;
 import io.github.hadron13.gearbox.blocks.centrifuge.CentrifugeBlockEntity;
 import io.github.hadron13.gearbox.blocks.centrifuge.CentrifugeVisual;
 import io.github.hadron13.gearbox.blocks.centrifuge.CentrifugeRenderer;
@@ -30,14 +30,14 @@ import io.github.hadron13.gearbox.blocks.steel_tank.SteelFluidTankRenderer;
 import io.github.hadron13.gearbox.blocks.steel_tank.SteelTankBlockEntity;
 
 
-public class GearboxBlockEntities {
+public class PetrochemBlockEntities {
 
-    private static final CreateRegistrate REGISTRATE = Gearbox.registrate();
+    private static final CreateRegistrate REGISTRATE = Petrochem.registrate();
 
     public static final BlockEntityEntry<KilnBlockEntity> KILN = REGISTRATE
             .blockEntity("kiln", KilnBlockEntity::new)
             .visual(() -> KilnVisual::new)
-            .validBlocks(GearboxBlocks.KILN)
+            .validBlocks(PetrochemBlocks.KILN)
             .renderer(() -> KilnRenderer::new)
             .register();
 
@@ -52,7 +52,7 @@ public class GearboxBlockEntities {
     public static final BlockEntityEntry<ElectrolyzerBlockEntity> ELECTROLYZER = REGISTRATE
             .blockEntity("electrolyzer", ElectrolyzerBlockEntity::new)
             .visual(() -> ElectrolyzerVisual::new)
-            .validBlocks(GearboxBlocks.ELECTROLYZER)
+            .validBlocks(PetrochemBlocks.ELECTROLYZER)
             .renderer(() -> ElectrolyzerRenderer::new)
             .register();
 
@@ -60,7 +60,7 @@ public class GearboxBlockEntities {
     public static final BlockEntityEntry<CentrifugeBlockEntity> CENTRIFUGE = REGISTRATE
             .blockEntity("centrifuge", CentrifugeBlockEntity::new)
             .visual(() -> CentrifugeVisual::new)
-            .validBlocks(GearboxBlocks.CENTRIFUGE)
+            .validBlocks(PetrochemBlocks.CENTRIFUGE)
             .renderer(() -> CentrifugeRenderer::new)
             .register();
 
@@ -69,21 +69,21 @@ public class GearboxBlockEntities {
     public static final BlockEntityEntry<PumpjackArmBlockEntity> PUMPJACK_ARM = REGISTRATE
             .blockEntity("pumpjack_arm", PumpjackArmBlockEntity::new)
             //.instance(() -> ::new)
-            .validBlocks(GearboxBlocks.PUMPJACK_ARM)
+            .validBlocks(PetrochemBlocks.PUMPJACK_ARM)
             .renderer(() -> PumpjackArmRenderer::new)
             // TODO: instance
             .register();
     public static final BlockEntityEntry<PumpjackCrankBlockEntity> PUMPJACK_CRANK = REGISTRATE
             .blockEntity("pumpjack_crank", PumpjackCrankBlockEntity::new)
             //.instance(() -> ::new)
-            .validBlocks(GearboxBlocks.PUMPJACK_CRANK)
+            .validBlocks(PetrochemBlocks.PUMPJACK_CRANK)
             .renderer(() -> PumpjackCrankRenderer::new)
             // TODO: instance
             .register();
 
     public static final BlockEntityEntry<PumpjackWellBlockEntity> PUMPJACK_WELL = REGISTRATE
             .blockEntity("pumpjack_well", PumpjackWellBlockEntity::new)
-            .validBlocks(GearboxBlocks.PUMPJACK_WELL)
+            .validBlocks(PetrochemBlocks.PUMPJACK_WELL)
             .register();
 
 //    public static final BlockEntityEntry<DipperBlockEntity> DIPPER = REGISTRATE
@@ -101,49 +101,49 @@ public class GearboxBlockEntities {
 
     public static final BlockEntityEntry<SteelTankBlockEntity> STEEL_FLUID_TANK = REGISTRATE
             .blockEntity("steel_fluid_tank", SteelTankBlockEntity::new)
-            .validBlocks(GearboxBlocks.STEEL_FLUID_TANK)
+            .validBlocks(PetrochemBlocks.STEEL_FLUID_TANK)
             .renderer(() -> SteelFluidTankRenderer::new)
             .register();
 
     public static final BlockEntityEntry<FluidPipeBlockEntity> STEEL_FLUID_PIPE = REGISTRATE
             .blockEntity("steel_fluid_pipe", FluidPipeBlockEntity::new)
-            .validBlocks(GearboxBlocks.STEEL_FLUID_PIPE)
+            .validBlocks(PetrochemBlocks.STEEL_FLUID_PIPE)
             .register();
 
     public static final BlockEntityEntry<StraightPipeBlockEntity> STEEL_GLASS_FLUID_PIPE = REGISTRATE
             .blockEntity("steel_glass_fluid_pipe", StraightPipeBlockEntity::new)
             .visual(() -> GlassPipeVisual::new, false)
-            .validBlocks(GearboxBlocks.STEEL_GLASS_FLUID_PIPE)
+            .validBlocks(PetrochemBlocks.STEEL_GLASS_FLUID_PIPE)
             .renderer(() -> TransparentStraightPipeRenderer::new)
             .register();
 
     public static final BlockEntityEntry<StraightPipeBlockEntity> STRAIGHT_STEEL_FLUID_PIPE = REGISTRATE
             .blockEntity("straight_steel_fluid_pipe", StraightPipeBlockEntity::new)
-            .validBlocks(GearboxBlocks.STRAIGHT_STEEL_FLUID_PIPE)
+            .validBlocks(PetrochemBlocks.STRAIGHT_STEEL_FLUID_PIPE)
             .register();
 
     public static final BlockEntityEntry<PumpBlockEntity> STEEL_FLUID_PUMP = REGISTRATE
             .blockEntity("steel_fluid_pump", PumpBlockEntity::new)
-            .visual(() -> SingleAxisRotatingVisual.ofZ(GearboxPartialModels.STEEL_PUMP_COG))
-            .validBlocks(GearboxBlocks.STEEL_PUMP)
+            .visual(() -> SingleAxisRotatingVisual.ofZ(PetrochemPartialModels.STEEL_PUMP_COG))
+            .validBlocks(PetrochemBlocks.STEEL_PUMP)
             .renderer(() -> PumpRenderer::new)
             .register();
 
     public static final BlockEntityEntry<DistillationControllerBlockEntity> DISTILLATION_CONTROLLER = REGISTRATE
             .blockEntity("distillation_controller", DistillationControllerBlockEntity::new)
-            .validBlocks(GearboxBlocks.DISTILLATION_CONTROLLER)
+            .validBlocks(PetrochemBlocks.DISTILLATION_CONTROLLER)
             .renderer(() -> DistillationControllerRenderer::new)
             .register();
 
     public static final BlockEntityEntry<DistillationOutputBlockEntity> DISTILLATION_OUTPUT = REGISTRATE
             .blockEntity("distillation_output", DistillationOutputBlockEntity::new)
-            .validBlocks(GearboxBlocks.DISTILLATION_OUTPUT)
+            .validBlocks(PetrochemBlocks.DISTILLATION_OUTPUT)
             .renderer(() -> DistillationOutputRenderer::new)
             .register();
 
     public static final BlockEntityEntry<FlarestackBlockEntity> FLARESTACK = REGISTRATE
             .blockEntity("flarestack", FlarestackBlockEntity::new)
-            .validBlocks(GearboxBlocks.FLARESTACK)
+            .validBlocks(PetrochemBlocks.FLARESTACK)
             .register();
 
 

@@ -1,20 +1,15 @@
 package io.github.hadron13.gearbox.blocks.distillation_tower;
 
-import com.google.common.collect.ImmutableMap;
-import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.content.fluids.FluidTransportBehaviour;
 import com.simibubi.create.content.fluids.pipes.AxisPipeBlock;
-import com.simibubi.create.content.fluids.pipes.FluidPipeBlock;
-import com.simibubi.create.content.fluids.pipes.FluidPipeBlockEntity;
 import com.simibubi.create.content.fluids.pipes.StraightPipeBlockEntity;
-import com.simibubi.create.content.kinetics.deployer.DeployerBlock;
 import com.simibubi.create.foundation.block.IBE;
 import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
 import io.github.hadron13.gearbox.blocks.steel_tank.SteelTankBlock;
-import io.github.hadron13.gearbox.register.GearboxBlockEntities;
-import io.github.hadron13.gearbox.register.GearboxBlocks;
-import io.github.hadron13.gearbox.register.GearboxShapes;
+import io.github.hadron13.gearbox.register.PetrochemBlockEntities;
+import io.github.hadron13.gearbox.register.PetrochemBlocks;
+import io.github.hadron13.gearbox.register.PetrochemShapes;
 import net.createmod.catnip.data.Iterate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -29,7 +24,6 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -103,12 +97,12 @@ public class DistillationOutputBlock extends Block implements IBE<DistillationOu
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return level.getBlockState(pos.relative(state.getValue(TANK_FACE))).is(GearboxBlocks.STEEL_FLUID_TANK.get());
+        return level.getBlockState(pos.relative(state.getValue(TANK_FACE))).is(PetrochemBlocks.STEEL_FLUID_TANK.get());
     }
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return GearboxShapes.DISTILLATION_OUTPUT.get(state.getValue(FACING));
+        return PetrochemShapes.DISTILLATION_OUTPUT.get(state.getValue(FACING));
     }
 
     @Override
@@ -118,7 +112,7 @@ public class DistillationOutputBlock extends Block implements IBE<DistillationOu
 
     @Override
     public BlockEntityType<? extends DistillationOutputBlockEntity> getBlockEntityType() {
-        return GearboxBlockEntities.DISTILLATION_OUTPUT.get();
+        return PetrochemBlockEntities.DISTILLATION_OUTPUT.get();
     }
 
     @Override

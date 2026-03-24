@@ -3,13 +3,11 @@ package io.github.hadron13.gearbox.blocks.steel_tank;
 import com.simibubi.create.api.boiler.BoilerHeater;
 import com.simibubi.create.api.connectivity.ConnectivityHandler;
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
-import com.simibubi.create.content.fluids.tank.BoilerData;
 import com.simibubi.create.content.fluids.tank.FluidTankBlock;
 import com.simibubi.create.content.fluids.tank.FluidTankBlockEntity;
 import com.simibubi.create.foundation.blockEntity.IMultiBlockEntityContainer;
-import io.github.hadron13.gearbox.GearboxLang;
+import io.github.hadron13.gearbox.PetrochemLang;
 import io.github.hadron13.gearbox.blocks.distillation_tower.DistillationControllerBlockEntity;
-import io.github.hadron13.gearbox.blocks.distillation_tower.DistillationOutputBlockEntity;
 import net.createmod.catnip.data.Iterate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -246,7 +244,7 @@ public class SteelTankBlockEntity extends FluidTankBlockEntity implements IHaveG
         SteelTankBlockEntity controllerTE = getControllerBE();
 
         if(controllerTE.isDistillingColumn){
-            GearboxLang.translate("gui.distil_layer")
+            PetrochemLang.translate("gui.distil_layer")
                     .text("#" + (getOutputNumber()))
                     .forGoggles(tooltip);
             return true;

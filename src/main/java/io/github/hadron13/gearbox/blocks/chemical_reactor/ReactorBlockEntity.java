@@ -7,8 +7,8 @@ import com.simibubi.create.foundation.advancement.CreateAdvancement;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
 import com.simibubi.create.foundation.item.SmartInventory;
-import io.github.hadron13.gearbox.GearboxLang;
-import io.github.hadron13.gearbox.register.GearboxRecipeTypes;
+import io.github.hadron13.gearbox.PetrochemLang;
+import io.github.hadron13.gearbox.register.PetrochemRecipeTypes;
 import net.createmod.catnip.lang.LangBuilder;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -112,7 +112,7 @@ public class ReactorBlockEntity extends MechanicalMixerBlockEntity {
                 .orElse(true))
             return new ArrayList<>();
 
-        List<ReactingRecipe> list= level.getRecipeManager().getAllRecipesFor(GearboxRecipeTypes.REACTING.getType());
+        List<ReactingRecipe> list= level.getRecipeManager().getAllRecipesFor(PetrochemRecipeTypes.REACTING.getType());
 
         return list.stream()
                 .filter(this::matchBasinRecipe)
@@ -158,17 +158,17 @@ public class ReactorBlockEntity extends MechanicalMixerBlockEntity {
     }
 
     @Override
-    public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) { LangBuilder mb = GearboxLang.translate("generic.unit.millibuckets");
+    public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) { LangBuilder mb = PetrochemLang.translate("generic.unit.millibuckets");
         boolean empty_tooltip = !super.addToGoggleTooltip(tooltip, isPlayerSneaking);
         FluidStack atmosphere = atmosphere_tank.getPrimaryHandler().getFluidInTank(0);
         if (!atmosphere.isEmpty()) {
             empty_tooltip = false;
-            GearboxLang.translate("hint.reactor.atmosphere")
+            PetrochemLang.translate("hint.reactor.atmosphere")
                 .forGoggles(tooltip);
-            GearboxLang.fluidName(atmosphere)
+            PetrochemLang.fluidName(atmosphere)
                 .space()
                 .style(ChatFormatting.GRAY)
-                    .add(GearboxLang.number(atmosphere.getAmount())
+                    .add(PetrochemLang.number(atmosphere.getAmount())
                     .add(mb)
                     .style(ChatFormatting.BLUE))
                 .forGoggles(tooltip, 1);

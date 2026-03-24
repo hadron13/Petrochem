@@ -1,9 +1,8 @@
 package io.github.hadron13.gearbox.config;
 
-import com.simibubi.create.Create;
 import com.tterrag.registrate.builders.BlockBuilder;
 import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
-import io.github.hadron13.gearbox.Gearbox;
+import io.github.hadron13.gearbox.Petrochem;
 import it.unimi.dsi.fastutil.objects.Object2DoubleMap;
 import it.unimi.dsi.fastutil.objects.Object2DoubleOpenHashMap;
 import net.createmod.catnip.config.ConfigBase;
@@ -17,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.DoubleSupplier;
 
-public class GearboxStress extends ConfigBase {
+public class PetrochemStress extends ConfigBase {
     // bump this version to reset configured values.
     private static final int VERSION = 2;
 
@@ -29,7 +28,7 @@ public class GearboxStress extends ConfigBase {
     protected final Map<ResourceLocation, ForgeConfigSpec.ConfigValue<Double>> capacities = new HashMap<>();
     protected final Map<ResourceLocation, ForgeConfigSpec.ConfigValue<Double>> impacts = new HashMap<>();
 
-    public GearboxStress() {
+    public PetrochemStress() {
     }
 
     public void registerAll(ForgeConfigSpec.Builder builder) {
@@ -71,7 +70,7 @@ public class GearboxStress extends ConfigBase {
     public static <B extends Block, P> NonNullUnaryOperator<BlockBuilder<B, P>> setImpact(double value) {
         return builder -> {
             assertFromGearbox(builder);
-            ResourceLocation id = Gearbox.asResource(builder.getName());
+            ResourceLocation id = Petrochem.asResource(builder.getName());
             DEFAULT_IMPACTS.put(id, value);
             return builder;
         };
@@ -80,14 +79,14 @@ public class GearboxStress extends ConfigBase {
     public static <B extends Block, P> NonNullUnaryOperator<BlockBuilder<B, P>> setCapacity(double value) {
         return builder -> {
             assertFromGearbox(builder);
-            ResourceLocation id = Gearbox.asResource(builder.getName());
+            ResourceLocation id = Petrochem.asResource(builder.getName());
             DEFAULT_CAPACITIES.put(id, value);
             return builder;
         };
     }
 
     private static void assertFromGearbox(BlockBuilder<?, ?> builder) {
-        if (!builder.getOwner().getModid().equals(Gearbox.MODID)) {
+        if (!builder.getOwner().getModid().equals(Petrochem.MODID)) {
             throw new IllegalStateException("Non-Gearbox blocks cannot be added to Gearbox's config.");
         }
     }

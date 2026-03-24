@@ -2,15 +2,15 @@ package io.github.hadron13.gearbox.compat.jei;
 
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.processing.basin.BasinRecipe;
-import io.github.hadron13.gearbox.Gearbox;
-import io.github.hadron13.gearbox.GearboxLang;
+import io.github.hadron13.gearbox.Petrochem;
+import io.github.hadron13.gearbox.PetrochemLang;
 import io.github.hadron13.gearbox.blocks.centrifuge.CentrifugingRecipe;
 import io.github.hadron13.gearbox.blocks.distillation_tower.DistillingRecipe;
 import io.github.hadron13.gearbox.blocks.kiln.PyroprocessingRecipe;
 import io.github.hadron13.gearbox.blocks.pumpjack.PumpjackRecipe;
 import io.github.hadron13.gearbox.compat.jei.category.*;
-import io.github.hadron13.gearbox.register.GearboxBlocks;
-import io.github.hadron13.gearbox.register.GearboxRecipeTypes;
+import io.github.hadron13.gearbox.register.PetrochemBlocks;
+import io.github.hadron13.gearbox.register.PetrochemRecipeTypes;
 import com.simibubi.create.compat.jei.*;
 import com.simibubi.create.compat.jei.category.CreateRecipeCategory;
 import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
@@ -42,9 +42,9 @@ import java.util.function.Supplier;
 @JeiPlugin
 @SuppressWarnings("unused")
 @ParametersAreNonnullByDefault
-public class GearboxJEI implements IModPlugin {
+public class PetrochemJEI implements IModPlugin {
 
-    private static final ResourceLocation ID = Gearbox.asResource("jei_plugin");
+    private static final ResourceLocation ID = Petrochem.asResource("jei_plugin");
 
     public IIngredientManager ingredientManager;
     private final List<CreateRecipeCategory<?>> modCategories = new ArrayList<>();
@@ -55,9 +55,9 @@ public class GearboxJEI implements IModPlugin {
         this.modCategories.clear();
         CreateRecipeCategory<?>
                 pyroprocessing = builder(PyroprocessingRecipe.class)
-                .addTypedRecipes(GearboxRecipeTypes.PYROPROCESSING)
-                .catalyst(GearboxBlocks.KILN::get)
-                .itemIcon(GearboxBlocks.KILN.get())
+                .addTypedRecipes(PetrochemRecipeTypes.PYROPROCESSING)
+                .catalyst(PetrochemBlocks.KILN::get)
+                .itemIcon(PetrochemBlocks.KILN.get())
                 .emptyBackground(177, 75)
                 .build("pyroprocessing", PyroprocessingCategory::new);
 
@@ -66,40 +66,40 @@ public class GearboxJEI implements IModPlugin {
 
         CreateRecipeCategory<?>
                 electrolyzing = builder(BasinRecipe.class)
-                .addTypedRecipes(GearboxRecipeTypes.ELECTROLYZING)
-                .catalyst(GearboxBlocks.ELECTROLYZER::get)
+                .addTypedRecipes(PetrochemRecipeTypes.ELECTROLYZING)
+                .catalyst(PetrochemBlocks.ELECTROLYZER::get)
                 .catalyst(AllBlocks.BASIN::get)
-                .doubleItemIcon(GearboxBlocks.ELECTROLYZER.get(), AllBlocks.BASIN.get())
+                .doubleItemIcon(PetrochemBlocks.ELECTROLYZER.get(), AllBlocks.BASIN.get())
                 .emptyBackground(177, 103)
                 .build("electrolyzing", ElectrolyzingCategory::new);
 
 
         CreateRecipeCategory<?>
                 centrifuging = builder(CentrifugingRecipe.class)
-                .addTypedRecipes(GearboxRecipeTypes.CENTRIFUGING)
-                .catalyst(GearboxBlocks.CENTRIFUGE::get)
-                .itemIcon(GearboxBlocks.CENTRIFUGE.get())
+                .addTypedRecipes(PetrochemRecipeTypes.CENTRIFUGING)
+                .catalyst(PetrochemBlocks.CENTRIFUGE::get)
+                .itemIcon(PetrochemBlocks.CENTRIFUGE.get())
                 .emptyBackground(177, 93)
                 .build("centrifuging", CentrifugingCategory::new);
 
         CreateRecipeCategory<?>
                 pumpjack = builder(PumpjackRecipe.class)
-                .addTypedRecipes(GearboxRecipeTypes.PUMPJACK)
-                .catalyst(GearboxBlocks.PUMPJACK_WELL::get)
-                .catalyst(GearboxBlocks.PUMPJACK_ARM::get)
-                .catalyst(GearboxBlocks.PUMPJACK_CRANK::get)
-                .itemIcon(GearboxBlocks.PUMPJACK_WELL.get())
+                .addTypedRecipes(PetrochemRecipeTypes.PUMPJACK)
+                .catalyst(PetrochemBlocks.PUMPJACK_WELL::get)
+                .catalyst(PetrochemBlocks.PUMPJACK_ARM::get)
+                .catalyst(PetrochemBlocks.PUMPJACK_CRANK::get)
+                .itemIcon(PetrochemBlocks.PUMPJACK_WELL.get())
                 .emptyBackground(177, 65)
                 .build("pumpjack", PumpjackCategory::new);
 
 
         CreateRecipeCategory<?>
                 distilling = builder(DistillingRecipe.class)
-                .addTypedRecipes(GearboxRecipeTypes.DISTILLING)
-                .catalyst(GearboxBlocks.DISTILLATION_CONTROLLER::get)
-                .catalyst(GearboxBlocks.DISTILLATION_OUTPUT::get)
-                .catalyst(GearboxBlocks.STEEL_FLUID_TANK::get)
-                .itemIcon(GearboxBlocks.DISTILLATION_CONTROLLER.get())
+                .addTypedRecipes(PetrochemRecipeTypes.DISTILLING)
+                .catalyst(PetrochemBlocks.DISTILLATION_CONTROLLER::get)
+                .catalyst(PetrochemBlocks.DISTILLATION_OUTPUT::get)
+                .catalyst(PetrochemBlocks.STEEL_FLUID_TANK::get)
+                .itemIcon(PetrochemBlocks.DISTILLATION_CONTROLLER.get())
                 .emptyBackground(177, 165)
                 .build("distilling", DistillingCategory::new);
 
@@ -295,8 +295,8 @@ public class GearboxJEI implements IModPlugin {
             }
 
             CreateRecipeCategory.Info<T> info = new CreateRecipeCategory.Info<>(
-                    new mezz.jei.api.recipe.RecipeType<>(Gearbox.asResource(name), recipeClass),
-                    GearboxLang.translateDirect("recipe." + name), background, icon, recipesSupplier, catalysts);
+                    new mezz.jei.api.recipe.RecipeType<>(Petrochem.asResource(name), recipeClass),
+                    PetrochemLang.translateDirect("recipe." + name), background, icon, recipesSupplier, catalysts);
             CreateRecipeCategory<T> category = factory.create(info);
             modCategories.add(category);
             return category;

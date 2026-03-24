@@ -3,8 +3,8 @@ package io.github.hadron13.gearbox.blocks.pumpjack;
 import com.google.gson.JsonObject;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
-import io.github.hadron13.gearbox.Gearbox;
-import io.github.hadron13.gearbox.register.GearboxRecipeTypes;
+import io.github.hadron13.gearbox.Petrochem;
+import io.github.hadron13.gearbox.register.PetrochemRecipeTypes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -21,7 +21,7 @@ public class PumpjackRecipe extends ProcessingRecipe<RecipeWrapper> {
     public float density;
 
     public PumpjackRecipe(ProcessingRecipeBuilder.ProcessingRecipeParams params) {
-        super(GearboxRecipeTypes.PUMPJACK, params);
+        super(PetrochemRecipeTypes.PUMPJACK, params);
     }
 
     public static boolean match(PumpjackWellBlockEntity be, PumpjackRecipe recipe){
@@ -56,7 +56,7 @@ public class PumpjackRecipe extends ProcessingRecipe<RecipeWrapper> {
     public void readAdditional(JsonObject json) {
         String biome_key = GsonHelper.getAsString(json, "biome");
         if(biome_key == null){
-            Gearbox.LOGGER.warn("invalid biome in recipe " + this.getId().getPath());
+            Petrochem.LOGGER.warn("invalid biome in recipe " + this.getId().getPath());
             return;
         }
         biome = ResourceKey.create(ForgeRegistries.BIOMES.getRegistryKey(), new ResourceLocation(biome_key));
@@ -65,7 +65,7 @@ public class PumpjackRecipe extends ProcessingRecipe<RecipeWrapper> {
     public void readAdditional(FriendlyByteBuf buffer) {
         String biome_key = buffer.readUtf();
         if(biome_key == null){
-            Gearbox.LOGGER.warn("invalid biome in recipe " + this.getId().getPath());
+            Petrochem.LOGGER.warn("invalid biome in recipe " + this.getId().getPath());
             return;
         }
         biome = ResourceKey.create(ForgeRegistries.BIOMES.getRegistryKey(), new ResourceLocation(biome_key));

@@ -4,7 +4,7 @@ import com.google.gson.JsonObject;
 import com.simibubi.create.content.processing.basin.BasinRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
 import com.simibubi.create.foundation.fluid.FluidIngredient;
-import io.github.hadron13.gearbox.register.GearboxRecipeTypes;
+import io.github.hadron13.gearbox.register.PetrochemRecipeTypes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.GsonHelper;
 
@@ -13,7 +13,7 @@ public class ReactingRecipe extends BasinRecipe {
     public FluidIngredient atmosphere = FluidIngredient.EMPTY;
 
     public ReactingRecipe(ProcessingRecipeBuilder.ProcessingRecipeParams params) {
-        super(GearboxRecipeTypes.REACTING, params);
+        super(PetrochemRecipeTypes.REACTING, params);
     }
 
     public static boolean match(ReactorBlockEntity be, ReactingRecipe recipe){

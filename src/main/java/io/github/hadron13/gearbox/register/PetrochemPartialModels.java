@@ -2,7 +2,7 @@ package io.github.hadron13.gearbox.register;
 
 import com.simibubi.create.content.fluids.FluidTransportBehaviour;
 import dev.engine_room.flywheel.lib.model.baked.PartialModel;
-import io.github.hadron13.gearbox.Gearbox;
+import io.github.hadron13.gearbox.Petrochem;
 import net.createmod.catnip.data.Iterate;
 import net.createmod.catnip.lang.Lang;
 import net.minecraft.core.Direction;
@@ -11,7 +11,7 @@ import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GearboxPartialModels {
+public class PetrochemPartialModels {
     public static final PartialModel
             COMPRESSOR_ROLL = block("compressor/roll"),
             ELECTROLYZER_HEAD = block("electrolyzer/head"),
@@ -53,15 +53,15 @@ public class GearboxPartialModels {
     }
 
     private static PartialModel block(String path) {
-        return PartialModel.of(Gearbox.asResource("block/" + path));
+        return PartialModel.of(Petrochem.asResource("block/" + path));
     }
 
     private static PartialModel item(String path) {
-        return PartialModel.of(Gearbox.asResource("item/" + path));
+        return PartialModel.of(Petrochem.asResource("item/" + path));
     }
 
     private static PartialModel entity(String path) {
-        return PartialModel.of(Gearbox.asResource("entity/" + path));
+        return PartialModel.of(Petrochem.asResource("entity/" + path));
     }
 
     public static void init() {

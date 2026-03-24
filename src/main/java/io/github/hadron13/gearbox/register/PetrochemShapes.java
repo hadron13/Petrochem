@@ -12,7 +12,7 @@ import java.util.function.BiFunction;
 
 import static net.minecraft.core.Direction.*;
 
-public class GearboxShapes {
+public class PetrochemShapes {
 
 
     public static final VoxelShaper
@@ -24,11 +24,11 @@ public class GearboxShapes {
         FLARESTACK = shape(1, 0, 1, 15, 10, 15)
                 .add(2, 10, 2, 14, 20, 14).forDirectional();
 
-    private static GearboxShapes.Builder shape(VoxelShape shape) {
-        return new GearboxShapes.Builder(shape);
+    private static PetrochemShapes.Builder shape(VoxelShape shape) {
+        return new PetrochemShapes.Builder(shape);
     }
 
-    private static GearboxShapes.Builder shape(double x1, double y1, double z1, double x2, double y2, double z2) {
+    private static PetrochemShapes.Builder shape(double x1, double y1, double z1, double x2, double y2, double z2) {
         return shape(cuboid(x1, y1, z1, x2, y2, z2));
     }
 
@@ -44,16 +44,16 @@ public class GearboxShapes {
             this.shape = shape;
         }
 
-        public GearboxShapes.Builder add(VoxelShape shape) {
+        public PetrochemShapes.Builder add(VoxelShape shape) {
             this.shape = Shapes.or(this.shape, shape);
             return this;
         }
 
-        public GearboxShapes.Builder add(double x1, double y1, double z1, double x2, double y2, double z2) {
+        public PetrochemShapes.Builder add(double x1, double y1, double z1, double x2, double y2, double z2) {
             return add(cuboid(x1, y1, z1, x2, y2, z2));
         }
 
-        public GearboxShapes.Builder erase(double x1, double y1, double z1, double x2, double y2, double z2) {
+        public PetrochemShapes.Builder erase(double x1, double y1, double z1, double x2, double y2, double z2) {
             this.shape = Shapes.join(shape, cuboid(x1, y1, z1, x2, y2, z2), BooleanOp.ONLY_FIRST);
             return this;
         }

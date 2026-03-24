@@ -6,8 +6,8 @@ import com.simibubi.create.content.fluids.pipes.FluidPipeBlock;
 import com.simibubi.create.content.fluids.pipes.GlassFluidPipeBlock;
 import com.simibubi.create.content.fluids.pipes.StraightPipeBlockEntity;
 import com.simibubi.create.content.schematics.requirement.ItemRequirement;
-import io.github.hadron13.gearbox.register.GearboxBlockEntities;
-import io.github.hadron13.gearbox.register.GearboxBlocks;
+import io.github.hadron13.gearbox.register.PetrochemBlockEntities;
+import io.github.hadron13.gearbox.register.PetrochemBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
@@ -44,7 +44,7 @@ public class SteelGlassPipeBlock extends GlassFluidPipeBlock {
         Map<Direction, BooleanProperty> facingToPropertyMap = FluidPipeBlock.PROPERTY_BY_DIRECTION;
 
         newState = AllBlocks.FLUID_PIPE.get()
-            .updateBlockState(GearboxBlocks.STEEL_FLUID_PIPE.getDefaultState()
+            .updateBlockState(PetrochemBlocks.STEEL_FLUID_PIPE.getDefaultState()
                 .setValue(facingToPropertyMap.get(side), true)
                 .setValue(facingToPropertyMap.get(side.getOpposite()), true), side, null, world, pos)
                 .setValue(BlockStateProperties.WATERLOGGED, state.getValue(BlockStateProperties.WATERLOGGED));
@@ -56,17 +56,17 @@ public class SteelGlassPipeBlock extends GlassFluidPipeBlock {
 
     @Override
     public ItemRequirement getRequiredItems(BlockState state, BlockEntity be) {
-        return ItemRequirement.of(GearboxBlocks.STEEL_FLUID_PIPE.getDefaultState(), be);
+        return ItemRequirement.of(PetrochemBlocks.STEEL_FLUID_PIPE.getDefaultState(), be);
     }
     @Override
     public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter world, BlockPos pos, Player player) {
-        return GearboxBlocks.STEEL_FLUID_PIPE.asStack();
+        return PetrochemBlocks.STEEL_FLUID_PIPE.asStack();
     }
 
 
 
     @Override
     public BlockEntityType<? extends StraightPipeBlockEntity> getBlockEntityType() {
-        return GearboxBlockEntities.STEEL_GLASS_FLUID_PIPE.get();
+        return PetrochemBlockEntities.STEEL_GLASS_FLUID_PIPE.get();
     }
 }

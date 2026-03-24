@@ -1,8 +1,8 @@
 package io.github.hadron13.gearbox.blocks.flarestack;
 
 import com.simibubi.create.foundation.block.IBE;
-import io.github.hadron13.gearbox.register.GearboxBlockEntities;
-import io.github.hadron13.gearbox.register.GearboxShapes;
+import io.github.hadron13.gearbox.register.PetrochemBlockEntities;
+import io.github.hadron13.gearbox.register.PetrochemShapes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
@@ -19,7 +19,7 @@ public class FlarestackBlock extends Block implements IBE<FlarestackBlockEntity>
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return GearboxShapes.FLARESTACK.get(Direction.UP);
+        return PetrochemShapes.FLARESTACK.get(Direction.UP);
     }
 
     @Override
@@ -29,6 +29,6 @@ public class FlarestackBlock extends Block implements IBE<FlarestackBlockEntity>
 
     @Override
     public BlockEntityType<? extends FlarestackBlockEntity> getBlockEntityType() {
-        return GearboxBlockEntities.FLARESTACK.get();
+        return PetrochemBlockEntities.FLARESTACK.get();
     }
 }

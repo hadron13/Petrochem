@@ -1,14 +1,13 @@
 package io.github.hadron13.gearbox;
 
 import com.mojang.logging.LogUtils;
-import com.simibubi.create.content.fluids.FluidTransportBehaviour;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipModifier;
-import io.github.hadron13.gearbox.config.GearboxConfig;
-import io.github.hadron13.gearbox.data.GearboxDatagen;
-import io.github.hadron13.gearbox.ponder.GearboxPonderPlugin;
+import io.github.hadron13.gearbox.config.PetrochemConfig;
+import io.github.hadron13.gearbox.data.PetrochemDatagen;
+import io.github.hadron13.gearbox.ponder.PetrochemPonderPlugin;
 import io.github.hadron13.gearbox.register.*;
 import net.createmod.catnip.lang.FontHelper;
 import net.createmod.ponder.foundation.PonderIndex;
@@ -28,8 +27,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(Gearbox.MODID)
-public class Gearbox {
+@Mod(Petrochem.MODID)
+public class Petrochem {
 
     public static final String MODID = "gearbox";
     public static boolean oculusLoaded = false;
@@ -44,7 +43,7 @@ public class Gearbox {
         REGISTRATE.setTooltipModifierFactory((item) -> (new ItemDescription.Modifier(item, FontHelper.Palette.STANDARD_CREATE)).andThen(TooltipModifier.mapNull(KineticStats.create(item))));
     }
 
-    public Gearbox() {
+    public Petrochem() {
         ModLoadingContext modLoadingContext = ModLoadingContext.get();
         modEventBus = FMLJavaModLoadingContext.get()
                 .getModEventBus();
@@ -53,20 +52,20 @@ public class Gearbox {
 
         REGISTRATE.registerEventListeners(modEventBus);
 
-        GearboxCreativeTabs.register(modEventBus);
-        GearboxBlocks.register();
-        GearboxItems.register();
-        GearboxBlockEntities.register();
-        GearboxEntities.register();
-        GearboxFluids.register();
-        GearboxPartialModels.init();
-        GearboxRecipeTypes.register(modEventBus);
+        PetrochemCreativeTabs.register(modEventBus);
+        PetrochemBlocks.register();
+        PetrochemItems.register();
+        PetrochemBlockEntities.register();
+        PetrochemEntities.register();
+        PetrochemFluids.register();
+        PetrochemPartialModels.init();
+        PetrochemRecipeTypes.register(modEventBus);
 
 
-        GearboxConfig.register(modLoadingContext);
+        PetrochemConfig.register(modLoadingContext);
 
-        modEventBus.addListener(EventPriority.LOWEST, GearboxDatagen::gatherData);
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> modEventBus.addListener(Gearbox::clientInit) );
+        modEventBus.addListener(EventPriority.LOWEST, PetrochemDatagen::gatherData);
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> modEventBus.addListener(Petrochem::clientInit) );
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -76,7 +75,7 @@ public class Gearbox {
 
     public static void clientInit(final FMLClientSetupEvent event){
 
-        PonderIndex.addPlugin(new GearboxPonderPlugin());
+        PonderIndex.addPlugin(new PetrochemPonderPlugin());
 
     }
 

@@ -1,11 +1,8 @@
 package io.github.hadron13.gearbox.item;
 
-import io.github.hadron13.gearbox.data.GearboxDatagen;
-import io.github.hadron13.gearbox.register.GearboxBlockEntities;
-import io.github.hadron13.gearbox.register.GearboxEntities;
+import io.github.hadron13.gearbox.register.PetrochemEntities;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -34,7 +31,7 @@ public class RadioactiveItem extends Item {
 
     @Override
     public @Nullable Entity createEntity(Level level, Entity location, ItemStack stack) {
-        ItemEntity e = GearboxEntities.RADIACTIVE_ITEM_ENTITY.create(level);
+        ItemEntity e = PetrochemEntities.RADIACTIVE_ITEM_ENTITY.create(level);
         e.setItem(stack);
         e.setPos(location.position());
         e.setDeltaMovement(location.getDeltaMovement());

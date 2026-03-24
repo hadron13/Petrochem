@@ -1,29 +1,26 @@
 package io.github.hadron13.gearbox.blocks.centrifuge;
 
-import com.simibubi.create.content.processing.basin.BasinRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
 import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
 import com.simibubi.create.foundation.fluid.FluidIngredient;
-import io.github.hadron13.gearbox.register.GearboxRecipeTypes;
+import io.github.hadron13.gearbox.register.PetrochemRecipeTypes;
 import net.createmod.catnip.data.Iterate;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 public class CentrifugingRecipe extends ProcessingRecipe<RecipeWrapper> {
     public CentrifugingRecipe(ProcessingRecipeBuilder.ProcessingRecipeParams params) {
-        super(GearboxRecipeTypes.CENTRIFUGING, params);
+        super(PetrochemRecipeTypes.CENTRIFUGING, params);
     }
 
     public static boolean match(CentrifugeBlockEntity centrifuge, CentrifugingRecipe recipe) {

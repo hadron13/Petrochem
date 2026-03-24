@@ -5,9 +5,8 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.simibubi.create.foundation.gui.AllIcons;
-import io.github.hadron13.gearbox.Gearbox;
+import io.github.hadron13.gearbox.Petrochem;
 import net.createmod.catnip.gui.element.DelegatedStencilElement;
-import net.createmod.catnip.gui.element.ScreenElement;
 import net.createmod.catnip.theme.Color;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.LightTexture;
@@ -19,34 +18,34 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.joml.Matrix4f;
 
-public class GearboxIcons extends AllIcons{
+public class PetrochemIcons extends AllIcons{
 
-    public static final ResourceLocation ICON_ATLAS = Gearbox.asResource("textures/gui/icons.png");
+    public static final ResourceLocation ICON_ATLAS = Petrochem.asResource("textures/gui/icons.png");
     public static final int ICON_ATLAS_SIZE = 256;
 
     private static int x = 0, y = -1;
     private int iconX;
     private int iconY;
 
-    public static final GearboxIcons DISTIL_FLASH = newRow(),
+    public static final PetrochemIcons DISTIL_FLASH = newRow(),
                                      DISTIL_ATMOSPHERIC = next(),
                                      DISTIL_VACUUM = next();
 
 
 
 
-    public GearboxIcons(int x, int y) {
+    public PetrochemIcons(int x, int y) {
         super(0, 0);
         iconX = x * 16;
         iconY = y * 16;
     }
 
-    private static GearboxIcons next() {
-        return new GearboxIcons(++x, y);
+    private static PetrochemIcons next() {
+        return new PetrochemIcons(++x, y);
     }
 
-    private static GearboxIcons newRow() {
-        return new GearboxIcons(x = 0, ++y);
+    private static PetrochemIcons newRow() {
+        return new PetrochemIcons(x = 0, ++y);
     }
 
     @OnlyIn(Dist.CLIENT)

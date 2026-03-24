@@ -5,7 +5,7 @@ import com.simibubi.create.AllTags;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer;
 import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
-import io.github.hadron13.gearbox.Gearbox;
+import io.github.hadron13.gearbox.Petrochem;
 import io.github.hadron13.gearbox.blocks.centrifuge.CentrifugeBlockEntity;
 import io.github.hadron13.gearbox.blocks.centrifuge.CentrifugingRecipe;
 import io.github.hadron13.gearbox.blocks.chemical_reactor.ReactingRecipe;
@@ -19,7 +19,6 @@ import net.createmod.catnip.lang.Lang;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -38,7 +37,7 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-public enum GearboxRecipeTypes implements IRecipeTypeInfo {
+public enum PetrochemRecipeTypes implements IRecipeTypeInfo {
     PYROPROCESSING(PyroprocessingRecipe::new),
     ELECTROLYZING(ElectrolyzingRecipe::new),
     CENTRIFUGING(CentrifugingRecipe::new),
@@ -57,14 +56,14 @@ public enum GearboxRecipeTypes implements IRecipeTypeInfo {
             .endsWith("_manual_only");
 
 
-    GearboxRecipeTypes(Supplier<RecipeSerializer<?>> serializerSupplier) {
+    PetrochemRecipeTypes(Supplier<RecipeSerializer<?>> serializerSupplier) {
         String name = Lang.asId(name());
-        id = Gearbox.asResource(name);
+        id = Petrochem.asResource(name);
         serializerObject = Registers.SERIALIZER_REGISTER.register(name, serializerSupplier);
         typeObject = Registers.TYPE_REGISTER.register(name, () -> simpleType(id));
         type = typeObject;
     }
-    GearboxRecipeTypes(ProcessingRecipeBuilder.ProcessingRecipeFactory<?> processingFactory) {
+    PetrochemRecipeTypes(ProcessingRecipeBuilder.ProcessingRecipeFactory<?> processingFactory) {
         this(() -> new ProcessingRecipeSerializer<>(processingFactory));
     }
 
@@ -114,7 +113,7 @@ public enum GearboxRecipeTypes implements IRecipeTypeInfo {
     public Optional<CentrifugingRecipe> find(CentrifugeBlockEntity blockEntity, Level world){
         if(world.isClientSide())
             return Optional.empty();
-        List<CentrifugingRecipe> allRecipes = world.getRecipeManager().getAllRecipesFor(GearboxRecipeTypes.CENTRIFUGING.getType());
+        List<CentrifugingRecipe> allRecipes = world.getRecipeManager().getAllRecipesFor(PetrochemRecipeTypes.CENTRIFUGING.getType());
 
         Stream<CentrifugingRecipe> matchingRecipes =
                 allRecipes.stream().filter(recipe -> CentrifugingRecipe.match(blockEntity, recipe) );
@@ -124,7 +123,7 @@ public enum GearboxRecipeTypes implements IRecipeTypeInfo {
     public Optional<PumpjackRecipe> find(PumpjackWellBlockEntity blockEntity, Level world){
         if(world.isClientSide())
             return Optional.empty();
-        List<PumpjackRecipe> allRecipes = world.getRecipeManager().getAllRecipesFor(GearboxRecipeTypes.PUMPJACK.getType());
+        List<PumpjackRecipe> allRecipes = world.getRecipeManager().getAllRecipesFor(PetrochemRecipeTypes.PUMPJACK.getType());
 
         Stream<PumpjackRecipe> matchingRecipes =
                 allRecipes.stream().filter(recipe -> PumpjackRecipe.match(blockEntity, recipe) );
@@ -135,7 +134,7 @@ public enum GearboxRecipeTypes implements IRecipeTypeInfo {
     public Optional<DistillingRecipe> find(DistillationControllerBlockEntity blockEntity, Level world){
         if(world.isClientSide())
             return Optional.empty();
-        List<DistillingRecipe> allRecipes = world.getRecipeManager().getAllRecipesFor(GearboxRecipeTypes.DISTILLING.getType());
+        List<DistillingRecipe> allRecipes = world.getRecipeManager().getAllRecipesFor(PetrochemRecipeTypes.DISTILLING.getType());
 
         Stream<DistillingRecipe> matchingRecipes =
                 allRecipes.stream().filter(recipe -> DistillingRecipe.match(blockEntity, recipe) );
@@ -156,8 +155,8 @@ public enum GearboxRecipeTypes implements IRecipeTypeInfo {
     }
 
     private static class Registers {
-        private static final DeferredRegister<RecipeSerializer<?>> SERIALIZER_REGISTER = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Gearbox.MODID);
-        private static final DeferredRegister<RecipeType<?>> TYPE_REGISTER = DeferredRegister.create(Registries.RECIPE_TYPE, Gearbox.MODID);
+        private static final DeferredRegister<RecipeSerializer<?>> SERIALIZER_REGISTER = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Petrochem.MODID);
+        private static final DeferredRegister<RecipeType<?>> TYPE_REGISTER = DeferredRegister.create(Registries.RECIPE_TYPE, Petrochem.MODID);
     }
 
 }

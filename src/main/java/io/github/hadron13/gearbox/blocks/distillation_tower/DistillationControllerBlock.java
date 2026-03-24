@@ -2,8 +2,8 @@ package io.github.hadron13.gearbox.blocks.distillation_tower;
 
 import com.simibubi.create.foundation.block.IBE;
 import io.github.hadron13.gearbox.blocks.steel_tank.SteelTankBlock;
-import io.github.hadron13.gearbox.register.GearboxBlockEntities;
-import io.github.hadron13.gearbox.register.GearboxBlocks;
+import io.github.hadron13.gearbox.register.PetrochemBlockEntities;
+import io.github.hadron13.gearbox.register.PetrochemBlocks;
 import net.createmod.catnip.data.Iterate;
 import net.createmod.catnip.levelWrappers.WrappedLevel;
 import net.minecraft.core.BlockPos;
@@ -36,7 +36,7 @@ public class DistillationControllerBlock extends Block implements IBE<Distillati
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return level.getBlockState(pos.above()).is(GearboxBlocks.STEEL_FLUID_TANK.get());
+        return level.getBlockState(pos.above()).is(PetrochemBlocks.STEEL_FLUID_TANK.get());
     }
 
     @Override
@@ -133,6 +133,6 @@ public class DistillationControllerBlock extends Block implements IBE<Distillati
 
     @Override
     public BlockEntityType<? extends DistillationControllerBlockEntity> getBlockEntityType() {
-        return GearboxBlockEntities.DISTILLATION_CONTROLLER.get();
+        return PetrochemBlockEntities.DISTILLATION_CONTROLLER.get();
     }
 }

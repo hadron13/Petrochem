@@ -3,7 +3,7 @@ package io.github.hadron13.gearbox.blocks.distillation_tower;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.simibubi.create.foundation.blockEntity.renderer.SafeBlockEntityRenderer;
-import io.github.hadron13.gearbox.register.GearboxPartialModels;
+import io.github.hadron13.gearbox.register.PetrochemPartialModels;
 import net.createmod.catnip.data.Iterate;
 import net.createmod.catnip.render.CachedBuffers;
 import net.createmod.catnip.render.SuperByteBuffer;
@@ -24,7 +24,7 @@ public class DistillationControllerRenderer extends SafeBlockEntityRenderer<Dist
 
         BlockState state = be.getBlockState();
 
-        SuperByteBuffer headBuffer = CachedBuffers.partial(GearboxPartialModels.DISTILLATION_SELECTOR, state);
+        SuperByteBuffer headBuffer = CachedBuffers.partial(PetrochemPartialModels.DISTILLATION_SELECTOR, state);
 
         for (Direction facing : Iterate.directions) {
             if (!DistillationControllerBlock.shouldRenderHeadOnFace(be.getLevel(), be.getBlockPos(), state,

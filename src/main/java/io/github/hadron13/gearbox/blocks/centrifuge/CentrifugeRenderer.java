@@ -3,7 +3,7 @@ package io.github.hadron13.gearbox.blocks.centrifuge;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntityRenderer;
 import dev.engine_room.flywheel.api.visualization.VisualizationManager;
-import io.github.hadron13.gearbox.register.GearboxPartialModels;
+import io.github.hadron13.gearbox.register.PetrochemPartialModels;
 import net.createmod.catnip.render.CachedBuffers;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -24,7 +24,7 @@ public class CentrifugeRenderer extends KineticBlockEntityRenderer<CentrifugeBlo
         Direction.Axis axis = getRotationAxisOf(be);
         Direction facing = Direction.fromAxisAndDirection(axis, Direction.AxisDirection.POSITIVE);
         renderRotatingBuffer(be,
-                CachedBuffers.partialFacingVertical(GearboxPartialModels.CENTRIFUGE_COG, be.getBlockState(), facing),
+                CachedBuffers.partialFacingVertical(PetrochemPartialModels.CENTRIFUGE_COG, be.getBlockState(), facing),
                 ms, buffer.getBuffer(RenderType.solid()), light);
     }
 }

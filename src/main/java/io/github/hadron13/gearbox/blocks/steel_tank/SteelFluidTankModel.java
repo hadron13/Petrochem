@@ -4,9 +4,7 @@ package io.github.hadron13.gearbox.blocks.steel_tank;
 import com.simibubi.create.api.connectivity.ConnectivityHandler;
 import com.simibubi.create.content.fluids.tank.FluidTankCTBehaviour;
 import com.simibubi.create.foundation.block.connected.CTModel;
-import com.simibubi.create.foundation.block.connected.CTSpriteShiftEntry;
-import io.github.hadron13.gearbox.Gearbox;
-import io.github.hadron13.gearbox.register.GearboxSpriteShifts;
+import io.github.hadron13.gearbox.register.PetrochemSpriteShifts;
 import net.createmod.catnip.data.Iterate;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.block.model.BakedQuad;
@@ -29,7 +27,7 @@ public class SteelFluidTankModel extends CTModel {
     protected static final ModelProperty<CullData> CULL_PROPERTY = new ModelProperty<>();
 
     public SteelFluidTankModel(BakedModel originalModel) {
-        super(originalModel, new FluidTankCTBehaviour(GearboxSpriteShifts.STEEL_FLUID_TANK, GearboxSpriteShifts.STEEL_FLUID_TANK_TOP, GearboxSpriteShifts.STEEL_FLUID_TANK_INNER));
+        super(originalModel, new FluidTankCTBehaviour(PetrochemSpriteShifts.STEEL_FLUID_TANK, PetrochemSpriteShifts.STEEL_FLUID_TANK_TOP, PetrochemSpriteShifts.STEEL_FLUID_TANK_INNER));
     }
 
     @Override

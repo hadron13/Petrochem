@@ -11,7 +11,7 @@ import dev.engine_room.flywheel.lib.instance.InstanceTypes;
 import dev.engine_room.flywheel.lib.instance.OrientedInstance;
 import dev.engine_room.flywheel.lib.model.Models;
 import dev.engine_room.flywheel.lib.visual.SimpleDynamicVisual;
-import io.github.hadron13.gearbox.register.GearboxPartialModels;
+import io.github.hadron13.gearbox.register.PetrochemPartialModels;
 import net.minecraft.core.Direction;
 
 import java.util.function.Consumer;
@@ -26,7 +26,7 @@ public class ElectrolyzerVisual extends KineticBlockEntityVisual<ElectrolyzerBlo
         super(context, blockEntity, partialTicks);
         this.electrolyzer = blockEntity;
 
-        head = instancerProvider().instancer(AllInstanceTypes.ROTATING, Models.partial(GearboxPartialModels.ELECTROLYZER_HEAD))
+        head = instancerProvider().instancer(AllInstanceTypes.ROTATING, Models.partial(PetrochemPartialModels.ELECTROLYZER_HEAD))
                 .createInstance();
 
         head.setRotationAxis(Direction.Axis.Y);

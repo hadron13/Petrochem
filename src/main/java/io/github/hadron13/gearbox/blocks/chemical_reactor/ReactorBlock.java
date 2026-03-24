@@ -3,8 +3,7 @@ package io.github.hadron13.gearbox.blocks.chemical_reactor;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.kinetics.base.HorizontalKineticBlock;
 import com.simibubi.create.foundation.block.IBE;
-import io.github.hadron13.gearbox.register.GearboxBlockEntities;
-import io.github.hadron13.gearbox.register.GearboxShapes;
+import io.github.hadron13.gearbox.register.PetrochemShapes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
@@ -44,7 +43,7 @@ public class ReactorBlock extends HorizontalKineticBlock implements IBE<ReactorB
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
-        return GearboxShapes.DIPPER.get(Direction.DOWN);
+        return PetrochemShapes.DIPPER.get(Direction.DOWN);
     }
 
     @Override

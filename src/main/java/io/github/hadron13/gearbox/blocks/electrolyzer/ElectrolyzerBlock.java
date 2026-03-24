@@ -4,7 +4,7 @@ import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllShapes;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.foundation.block.IBE;
-import io.github.hadron13.gearbox.register.GearboxBlockEntities;
+import io.github.hadron13.gearbox.register.PetrochemBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.player.Player;
@@ -61,6 +61,6 @@ public class ElectrolyzerBlock extends Block implements IBE<ElectrolyzerBlockEnt
 
     @Override
     public BlockEntityType<? extends ElectrolyzerBlockEntity> getBlockEntityType() {
-        return GearboxBlockEntities.ELECTROLYZER.get();
+        return PetrochemBlockEntities.ELECTROLYZER.get();
     }
 }

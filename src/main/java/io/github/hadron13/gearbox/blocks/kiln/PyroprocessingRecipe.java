@@ -6,7 +6,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import com.simibubi.create.content.kinetics.crusher.AbstractCrushingRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder.ProcessingRecipeParams;
 
-import io.github.hadron13.gearbox.register.GearboxRecipeTypes;
+import io.github.hadron13.gearbox.register.PetrochemRecipeTypes;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
 
@@ -14,7 +14,7 @@ import net.minecraftforge.items.wrapper.RecipeWrapper;
 public class PyroprocessingRecipe extends AbstractCrushingRecipe {
 
     public PyroprocessingRecipe(ProcessingRecipeParams params) {
-        super(GearboxRecipeTypes.PYROPROCESSING, params);
+        super(PetrochemRecipeTypes.PYROPROCESSING, params);
     }
 
     @Override

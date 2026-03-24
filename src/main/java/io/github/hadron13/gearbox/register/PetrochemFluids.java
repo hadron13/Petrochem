@@ -1,38 +1,29 @@
 package io.github.hadron13.gearbox.register;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.simibubi.create.AllFluids;
 import com.simibubi.create.AllTags;
 import com.simibubi.create.content.fluids.VirtualFluid;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.builders.FluidBuilder;
 import com.tterrag.registrate.util.entry.FluidEntry;
-import io.github.hadron13.gearbox.Gearbox;
+import io.github.hadron13.gearbox.Petrochem;
 import net.createmod.catnip.theme.Color;
-import net.minecraft.client.Camera;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.BlockAndTintGetter;
-import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class GearboxFluids {
-    private static final CreateRegistrate REGISTRATE = Gearbox.registrate().setCreativeTab(GearboxCreativeTabs.MAIN_TAB);
+public class PetrochemFluids {
+    private static final CreateRegistrate REGISTRATE = Petrochem.registrate().setCreativeTab(PetrochemCreativeTabs.MAIN_TAB);
 
 //    public static final FluidEntry<ForgeFlowingFluid.Flowing> PETROLEUM = REGISTRATE
 //            .fluid("petroleum",
@@ -72,8 +63,8 @@ public class GearboxFluids {
 
     public static final FluidEntry<ForgeFlowingFluid.Flowing> RESIN = REGISTRATE
             .fluid("resin",
-                    Gearbox.asResource("fluid/resin_still"),
-                    Gearbox.asResource("fluid/resin_flow"))
+                    Petrochem.asResource("fluid/resin_still"),
+                    Petrochem.asResource("fluid/resin_flow"))
             .lang("Resin")
             .properties(p -> p.density(1500).viscosity(2000))
             .fluidProperties(p -> p.levelDecreasePerBlock(3)
@@ -112,7 +103,7 @@ public class GearboxFluids {
 
     public static FluidEntry<ForgeFlowingFluid.Flowing> gas(String name){
         return REGISTRATE
-            .fluid(name, Gearbox.asResource("fluid/" + name + "_still"), Gearbox.asResource("fluid/" + name + "_flow"), TransparentFluidType::new)
+            .fluid(name, Petrochem.asResource("fluid/" + name + "_still"), Petrochem.asResource("fluid/" + name + "_flow"), TransparentFluidType::new)
             .properties(p -> p.viscosity(0).density(-100))
             .fluidProperties(p -> p.levelDecreasePerBlock(7)
                     .tickRate(1)

@@ -5,8 +5,8 @@ import com.mojang.math.Axis;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllPartialModels;
 import com.simibubi.create.compat.jei.category.animations.AnimatedKinetics;
-import io.github.hadron13.gearbox.register.GearboxBlocks;
-import io.github.hadron13.gearbox.register.GearboxPartialModels;
+import io.github.hadron13.gearbox.register.PetrochemBlocks;
+import io.github.hadron13.gearbox.register.PetrochemPartialModels;
 import net.createmod.catnip.animation.AnimationTickHolder;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
@@ -21,7 +21,7 @@ public class AnimatedElectrolyzer extends AnimatedKinetics {
         poseStack.mulPose(Axis.YP.rotationDegrees(22.5f));
         int scale = 23;
 
-        blockElement(GearboxBlocks.ELECTROLYZER.getDefaultState())
+        blockElement(PetrochemBlocks.ELECTROLYZER.getDefaultState())
                 .atLocal(0, 0, 0)
                 .scale(scale)
                 .render(graphics);
@@ -33,7 +33,7 @@ public class AnimatedElectrolyzer extends AnimatedKinetics {
                 .scale(scale)
                 .render(graphics);
 
-        blockElement(GearboxPartialModels.ELECTROLYZER_HEAD)
+        blockElement(PetrochemPartialModels.ELECTROLYZER_HEAD)
                 .rotateBlock(0, getCurrentAngle() * 2, 0)
                 .atLocal(0, animation, 0)
                 .scale(scale)

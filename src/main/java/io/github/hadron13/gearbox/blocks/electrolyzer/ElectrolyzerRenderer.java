@@ -5,7 +5,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.simibubi.create.AllPartialModels;
 import com.simibubi.create.foundation.blockEntity.renderer.SafeBlockEntityRenderer;
 import dev.engine_room.flywheel.api.visualization.VisualizationManager;
-import io.github.hadron13.gearbox.register.GearboxPartialModels;
+import io.github.hadron13.gearbox.register.PetrochemPartialModels;
 import net.createmod.catnip.animation.AnimationTickHolder;
 import net.createmod.catnip.render.CachedBuffers;
 import net.createmod.catnip.render.SuperByteBuffer;
@@ -42,7 +42,7 @@ public class ElectrolyzerRenderer extends SafeBlockEntityRenderer<ElectrolyzerBl
                 .renderInto(ms, vb);
 
         VertexConsumer vbCutout = bufferSource.getBuffer(RenderType.cutoutMipped());
-        SuperByteBuffer headRender = CachedBuffers.partial(GearboxPartialModels.ELECTROLYZER_HEAD, blockState);
+        SuperByteBuffer headRender = CachedBuffers.partial(PetrochemPartialModels.ELECTROLYZER_HEAD, blockState);
         headRender.rotateCentered(angle, Direction.UP)
                 .translate(0, -renderedHeadOffset, 0)
                 .light(light)

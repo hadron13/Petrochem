@@ -3,7 +3,7 @@ package io.github.hadron13.gearbox.blocks.distillation_tower;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.simibubi.create.foundation.blockEntity.renderer.SafeBlockEntityRenderer;
 import dev.engine_room.flywheel.lib.model.baked.PartialModel;
-import io.github.hadron13.gearbox.register.GearboxPartialModels;
+import io.github.hadron13.gearbox.register.PetrochemPartialModels;
 import net.createmod.catnip.render.CachedBuffers;
 import net.createmod.catnip.render.SuperByteBuffer;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -20,8 +20,8 @@ public class DistillationOutputRenderer extends SafeBlockEntityRenderer<Distilla
     protected void renderSafe(DistillationOutputBlockEntity be, float partialTicks, PoseStack ms, MultiBufferSource bufferSource, int light, int overlay) {
 
         BlockState state = be.getBlockState();
-        PartialModel model = state.getValue(POWERED)?   GearboxPartialModels.DISTILLATION_OUTPUT_BASE_POWERED:
-                                                        GearboxPartialModels.DISTILLATION_OUTPUT_BASE_UNPOWERED;
+        PartialModel model = state.getValue(POWERED)?   PetrochemPartialModels.DISTILLATION_OUTPUT_BASE_POWERED:
+                                                        PetrochemPartialModels.DISTILLATION_OUTPUT_BASE_UNPOWERED;
         SuperByteBuffer baseBuffer = CachedBuffers.partialFacing(model, state, state.getValue(TANK_FACE));
 
         baseBuffer.light(light)

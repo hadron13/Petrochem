@@ -2,13 +2,10 @@ package io.github.hadron13.gearbox.blocks.steel_tank;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.simibubi.create.AllPartialModels;
-import com.simibubi.create.content.fluids.tank.FluidTankBlockEntity;
-import com.simibubi.create.content.fluids.tank.FluidTankRenderer;
 import com.simibubi.create.foundation.blockEntity.renderer.SafeBlockEntityRenderer;
 import dev.engine_room.flywheel.lib.transform.TransformStack;
 import io.github.hadron13.gearbox.blocks.distillation_tower.DistillationControllerBlockEntity;
-import io.github.hadron13.gearbox.register.GearboxPartialModels;
+import io.github.hadron13.gearbox.register.PetrochemPartialModels;
 import net.createmod.catnip.animation.LerpedFloat;
 import net.createmod.catnip.data.Iterate;
 import net.createmod.catnip.render.CachedBuffers;
@@ -102,13 +99,13 @@ public class SteelFluidTankRenderer extends SafeBlockEntityRenderer<SteelTankBlo
                 continue;
             ms.pushPose();
             float yRot = -d.toYRot() - 90;
-            CachedBuffers.partial(GearboxPartialModels.DISTILLATION_GAUGE, blockState)
+            CachedBuffers.partial(PetrochemPartialModels.DISTILLATION_GAUGE, blockState)
                     .rotateYDegrees(yRot)
                     .uncenter()
                     .translate(be.getWidth()/ 2f - 6 / 16f, 0, 0)
                     .light(light)
                     .renderInto(ms, vb);
-            CachedBuffers.partial(GearboxPartialModels.DISTILLATION_GAUGE_DIAL, blockState)
+            CachedBuffers.partial(PetrochemPartialModels.DISTILLATION_GAUGE_DIAL, blockState)
                     .rotateYDegrees(yRot)
                     .uncenter()
                     .translate(be.getWidth()/ 2f - 6 / 16f, 0, 0)

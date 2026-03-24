@@ -1,12 +1,11 @@
 package io.github.hadron13.gearbox.blocks.steel_pipe;
 
-import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.fluids.FluidTransportBehaviour;
 import com.simibubi.create.content.fluids.pipes.GlassFluidPipeBlock;
 import com.simibubi.create.content.fluids.pipes.StraightPipeBlockEntity;
 import com.simibubi.create.content.schematics.requirement.ItemRequirement;
-import io.github.hadron13.gearbox.register.GearboxBlockEntities;
-import io.github.hadron13.gearbox.register.GearboxBlocks;
+import io.github.hadron13.gearbox.register.PetrochemBlockEntities;
+import io.github.hadron13.gearbox.register.PetrochemBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -35,7 +34,7 @@ public class StraightSteelPipeBlock extends GlassFluidPipeBlock {
         BlockPos pos = context.getClickedPos();
         FluidTransportBehaviour.cacheFlows(world, pos);
 
-        world.setBlockAndUpdate(pos, GearboxBlocks.STEEL_GLASS_FLUID_PIPE.getDefaultState()
+        world.setBlockAndUpdate(pos, PetrochemBlocks.STEEL_GLASS_FLUID_PIPE.getDefaultState()
                 .setValue(GlassFluidPipeBlock.AXIS, state.getValue(AXIS))
                 .setValue(BlockStateProperties.WATERLOGGED, state.getValue(BlockStateProperties.WATERLOGGED)));
 
@@ -46,17 +45,17 @@ public class StraightSteelPipeBlock extends GlassFluidPipeBlock {
 
     @Override
     public ItemRequirement getRequiredItems(BlockState state, BlockEntity be) {
-        return ItemRequirement.of(GearboxBlocks.STEEL_FLUID_PIPE.getDefaultState(), be);
+        return ItemRequirement.of(PetrochemBlocks.STEEL_FLUID_PIPE.getDefaultState(), be);
     }
     @Override
     public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter world, BlockPos pos,
                                        Player player) {
-        return GearboxBlocks.STEEL_FLUID_PIPE.asStack();
+        return PetrochemBlocks.STEEL_FLUID_PIPE.asStack();
     }
 
 
     @Override
     public BlockEntityType<? extends StraightPipeBlockEntity> getBlockEntityType() {
-        return GearboxBlockEntities.STRAIGHT_STEEL_FLUID_PIPE.get();
+        return PetrochemBlockEntities.STRAIGHT_STEEL_FLUID_PIPE.get();
     }
 }

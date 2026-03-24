@@ -2,7 +2,6 @@ package io.github.hadron13.gearbox.compat.jei.category;
 
 import com.simibubi.create.compat.jei.category.CreateRecipeCategory;
 import com.simibubi.create.foundation.gui.AllGuiTextures;
-import io.github.hadron13.gearbox.GearboxLang;
 import io.github.hadron13.gearbox.blocks.pumpjack.PumpjackRecipe;
 import io.github.hadron13.gearbox.compat.jei.category.animations.AnimatedPumpjackWell;
 import mezz.jei.api.forge.ForgeTypes;
@@ -14,7 +13,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.ComponentUtils;
 import net.minecraftforge.fluids.FluidStack;
 
 public class PumpjackCategory extends CreateRecipeCategory<PumpjackRecipe>{

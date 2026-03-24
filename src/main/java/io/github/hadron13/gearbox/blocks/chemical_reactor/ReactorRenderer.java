@@ -5,7 +5,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.simibubi.create.AllPartialModels;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntityRenderer;
 import dev.engine_room.flywheel.api.visualization.VisualizationManager;
-import io.github.hadron13.gearbox.register.GearboxPartialModels;
+import io.github.hadron13.gearbox.register.PetrochemPartialModels;
 import net.createmod.catnip.animation.AnimationTickHolder;
 import net.createmod.catnip.platform.ForgeCatnipServices;
 import net.createmod.catnip.render.CachedBuffers;
@@ -59,7 +59,7 @@ public class ReactorRenderer extends KineticBlockEntityRenderer<ReactorBlockEnti
         float time = AnimationTickHolder.getRenderTime(be.getLevel());
         float angle = ((time * speed * 6 / 10f) % 360) / 180 * (float) Math.PI;
 
-        SuperByteBuffer poleRender = CachedBuffers.partial(GearboxPartialModels.DIPPER_POLE, blockState);
+        SuperByteBuffer poleRender = CachedBuffers.partial(PetrochemPartialModels.DIPPER_POLE, blockState);
         poleRender.translate(0, -renderedHeadOffset, 0)
                 .light(light)
                 .renderInto(ms, vb);

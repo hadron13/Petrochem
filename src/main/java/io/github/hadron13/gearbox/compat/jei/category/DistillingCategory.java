@@ -2,12 +2,10 @@ package io.github.hadron13.gearbox.compat.jei.category;
 
 import com.simibubi.create.compat.jei.category.CreateRecipeCategory;
 import com.simibubi.create.foundation.gui.AllGuiTextures;
-import io.github.hadron13.gearbox.GearboxLang;
-import io.github.hadron13.gearbox.blocks.distillation_tower.DistillationControllerBlockEntity;
+import io.github.hadron13.gearbox.PetrochemLang;
 import io.github.hadron13.gearbox.blocks.distillation_tower.DistillingRecipe;
 import io.github.hadron13.gearbox.compat.jei.ModGuiTextures;
-import io.github.hadron13.gearbox.register.GearboxFluids;
-import io.github.hadron13.gearbox.register.GearboxIcons;
+import io.github.hadron13.gearbox.register.PetrochemFluids;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.builder.ITooltipBuilder;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
@@ -26,7 +24,7 @@ public class DistillingCategory extends CreateRecipeCategory<DistillingRecipe> {
     public void setRecipe(IRecipeLayoutBuilder builder, DistillingRecipe recipe, IFocusGroup focuses) {
 
         if(recipe.mode == DISTIL_FLASH){
-            addFluidSlot(builder, (177/2) - 54, 130+4 - 19, new FluidStack(GearboxFluids.STEAM.getSource(), 500));
+            addFluidSlot(builder, (177/2) - 54, 130+4 - 19, new FluidStack(PetrochemFluids.STEAM.getSource(), 500));
         }
         addFluidSlot(builder, (177/2) - 54, 130+4, recipe.getFluidIngredients().get(0));
 
@@ -66,7 +64,7 @@ public class DistillingCategory extends CreateRecipeCategory<DistillingRecipe> {
     public void getTooltip(ITooltipBuilder tooltip, DistillingRecipe recipe, IRecipeSlotsView recipeSlotsView, double mouseX, double mouseY) {
 
         if(mouseX > (177/2)-74 && mouseX < (177/2)-56 && mouseY >= 133 && mouseY <= 151){
-            tooltip.add(GearboxLang.translate(recipe.mode.getRawTranslationKey()).component() );
+            tooltip.add(PetrochemLang.translate(recipe.mode.getRawTranslationKey()).component() );
         }
 
         super.getTooltip(tooltip, recipe, recipeSlotsView, mouseX, mouseY);

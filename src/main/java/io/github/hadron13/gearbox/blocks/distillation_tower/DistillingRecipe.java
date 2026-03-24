@@ -4,9 +4,8 @@ import com.google.gson.JsonObject;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
 import com.simibubi.create.foundation.fluid.FluidIngredient;
-import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
-import io.github.hadron13.gearbox.Gearbox;
-import io.github.hadron13.gearbox.register.GearboxRecipeTypes;
+import io.github.hadron13.gearbox.Petrochem;
+import io.github.hadron13.gearbox.register.PetrochemRecipeTypes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.level.Level;
@@ -20,7 +19,7 @@ public class DistillingRecipe extends ProcessingRecipe<RecipeWrapper> {
     public DistillationControllerBlockEntity.DistilMode mode;
 
     public DistillingRecipe(ProcessingRecipeBuilder.ProcessingRecipeParams params) {
-        super(GearboxRecipeTypes.DISTILLING, params);
+        super(PetrochemRecipeTypes.DISTILLING, params);
     }
 
     public static  boolean match(DistillationControllerBlockEntity be, DistillingRecipe recipe){
@@ -68,7 +67,7 @@ public class DistillingRecipe extends ProcessingRecipe<RecipeWrapper> {
     public void readAdditional(JsonObject json) {
         String mode_name = GsonHelper.getAsString(json, "mode");
         if(mode_name == null){
-            Gearbox.LOGGER.warn("invalid mode in recipe " + this.getId().getPath());
+            Petrochem.LOGGER.warn("invalid mode in recipe " + this.getId().getPath());
             return;
         }
         switch (mode_name){
@@ -81,7 +80,7 @@ public class DistillingRecipe extends ProcessingRecipe<RecipeWrapper> {
     public void readAdditional(FriendlyByteBuf buffer) {
         String mode_name = buffer.readUtf();
         if(mode_name== null){
-            Gearbox.LOGGER.warn("invalid mode in recipe " + this.getId().getPath());
+            Petrochem.LOGGER.warn("invalid mode in recipe " + this.getId().getPath());
             return;
         }
         switch (mode_name){

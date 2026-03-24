@@ -7,9 +7,9 @@ import com.simibubi.create.content.fluids.pipes.FluidPipeBlock;
 import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
-import io.github.hadron13.gearbox.GearboxLang;
-import io.github.hadron13.gearbox.register.GearboxFluids;
-import io.github.hadron13.gearbox.register.GearboxRecipeTypes;
+import io.github.hadron13.gearbox.PetrochemLang;
+import io.github.hadron13.gearbox.register.PetrochemFluids;
+import io.github.hadron13.gearbox.register.PetrochemRecipeTypes;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -18,7 +18,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
@@ -29,7 +28,6 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.fluids.FluidStack;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -93,7 +91,7 @@ public class PumpjackWellBlockEntity extends SmartBlockEntity implements IHaveGo
 
     public void updateRecipe(){
         if(currentRecipe == null || !PumpjackRecipe.match(this, currentRecipe)){
-            Optional<PumpjackRecipe> match = GearboxRecipeTypes.PUMPJACK.find(this, getLevel());
+            Optional<PumpjackRecipe> match = PetrochemRecipeTypes.PUMPJACK.find(this, getLevel());
             if(match.isEmpty())
                 return;
             currentRecipe = match.get();
@@ -141,7 +139,7 @@ public class PumpjackWellBlockEntity extends SmartBlockEntity implements IHaveGo
         isPipingValid = validatePiping();
         if(isVirtual()){
             tank.allowInsertion();
-            tank.getPrimaryHandler().fill(new FluidStack(GearboxFluids.PETROLEUM.get(), 2000), EXECUTE);
+            tank.getPrimaryHandler().fill(new FluidStack(PetrochemFluids.PETROLEUM.get(), 2000), EXECUTE);
         }
     }
 
@@ -184,16 +182,16 @@ public class PumpjackWellBlockEntity extends SmartBlockEntity implements IHaveGo
         if(efficiency < 1f){
             int percentage = (int)(efficiency * 100f);
 
-            GearboxLang.translate("gui.pumpjack_well.efficiency")
-                    .add(GearboxLang.text(" " + percentage + "%"))
+            PetrochemLang.translate("gui.pumpjack_well.efficiency")
+                    .add(PetrochemLang.text(" " + percentage + "%"))
                     .forGoggles(tooltip);
-            GearboxLang.translate("gui.pumpjack_well.other_wells")
+            PetrochemLang.translate("gui.pumpjack_well.other_wells")
                     .style(ChatFormatting.GRAY)
                     .forGoggles(tooltip);
         }
         if(!isPipingValid){
-            GearboxLang.addHint(tooltip, "hint.pumpjack_well.pipes");
-            GearboxLang.text("").forGoggles(tooltip);
+            PetrochemLang.addHint(tooltip, "hint.pumpjack_well.pipes");
+            PetrochemLang.text("").forGoggles(tooltip);
         }
 
         return containedFluidTooltip(tooltip, isPlayerSneaking, tank.getCapability().cast());

@@ -1,16 +1,14 @@
 package io.github.hadron13.gearbox.register;
 
-import com.simibubi.create.AllSpriteShifts;
-import com.simibubi.create.Create;
 import com.simibubi.create.foundation.block.connected.AllCTTypes;
 import com.simibubi.create.foundation.block.connected.CTSpriteShiftEntry;
 import com.simibubi.create.foundation.block.connected.CTSpriteShifter;
 import com.simibubi.create.foundation.block.connected.CTType;
-import io.github.hadron13.gearbox.Gearbox;
+import io.github.hadron13.gearbox.Petrochem;
 import net.createmod.catnip.render.SpriteShiftEntry;
 import net.createmod.catnip.render.SpriteShifter;
 
-public class GearboxSpriteShifts {
+public class PetrochemSpriteShifts {
 
     public static final CTSpriteShiftEntry
             STEEL_FLUID_TANK = getCT(AllCTTypes.RECTANGLE, "steel_tank/steel_fluid_tank"),
@@ -37,12 +35,12 @@ public class GearboxSpriteShifts {
     //
 
     private static SpriteShiftEntry get(String originalLocation, String targetLocation) {
-        return SpriteShifter.get(Gearbox.asResource(originalLocation), Gearbox.asResource(targetLocation));
+        return SpriteShifter.get(Petrochem.asResource(originalLocation), Petrochem.asResource(targetLocation));
     }
 
     private static CTSpriteShiftEntry getCT(CTType type, String blockTextureName, String connectedTextureName) {
-        return CTSpriteShifter.getCT(type, Gearbox.asResource("block/" + blockTextureName),
-                Gearbox.asResource("block/" + connectedTextureName + "_connected"));
+        return CTSpriteShifter.getCT(type, Petrochem.asResource("block/" + blockTextureName),
+                Petrochem.asResource("block/" + connectedTextureName + "_connected"));
     }
 
     private static CTSpriteShiftEntry getCT(CTType type, String blockTextureName) {

@@ -4,7 +4,7 @@ import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
-import io.github.hadron13.gearbox.GearboxLang;
+import io.github.hadron13.gearbox.PetrochemLang;
 import io.github.hadron13.gearbox.blocks.steel_tank.SteelTankBlockEntity;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -98,17 +98,17 @@ public class DistillationOutputBlockEntity extends SmartBlockEntity implements I
 
 
         if(duplicate){
-            GearboxLang.translate("gui.distil_duplicate")
+            PetrochemLang.translate("gui.distil_duplicate")
                     .style(ChatFormatting.DARK_RED)
                     .forGoggles(tooltip);
         }
 
         int output = getOutputNumber();
         if(output != -1) {
-            GearboxLang.translate("gui.distil_layer")
+            PetrochemLang.translate("gui.distil_layer")
                     .text("#" + output)
                     .forGoggles(tooltip);
-            GearboxLang.text("").forGoggles(tooltip);
+            PetrochemLang.text("").forGoggles(tooltip);
         }
 
 
@@ -116,8 +116,8 @@ public class DistillationOutputBlockEntity extends SmartBlockEntity implements I
 
 
         if(getBlockState().getValue(POWERED)) {
-            GearboxLang.text("").forGoggles(tooltip);
-            GearboxLang.addHint(tooltip, "hint.distil.discard");
+            PetrochemLang.text("").forGoggles(tooltip);
+            PetrochemLang.addHint(tooltip, "hint.distil.discard");
         }
         return true;
     }

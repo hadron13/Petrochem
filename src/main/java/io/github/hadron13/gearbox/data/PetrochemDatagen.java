@@ -2,13 +2,10 @@ package io.github.hadron13.gearbox.data;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.simibubi.create.AllKeys;
-import com.simibubi.create.AllSoundEvents;
-import com.simibubi.create.foundation.advancement.AllAdvancements;
 import com.simibubi.create.foundation.utility.FilesHelper;
 import com.tterrag.registrate.providers.ProviderType;
-import io.github.hadron13.gearbox.Gearbox;
-import io.github.hadron13.gearbox.ponder.GearboxPonderPlugin;
+import io.github.hadron13.gearbox.Petrochem;
+import io.github.hadron13.gearbox.ponder.PetrochemPonderPlugin;
 import net.createmod.ponder.foundation.PonderIndex;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -20,7 +17,7 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;
 
-public class GearboxDatagen {
+public class PetrochemDatagen {
     public static void gatherData(GatherDataEvent event) {
         addExtraRegistrateData();
 
@@ -29,7 +26,7 @@ public class GearboxDatagen {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
-        GearboxGeneratedEntriesProvider generatedEntriesProvider = new GearboxGeneratedEntriesProvider(output, lookupProvider);
+        PetrochemGeneratedEntriesProvider generatedEntriesProvider = new PetrochemGeneratedEntriesProvider(output, lookupProvider);
         lookupProvider = generatedEntriesProvider.getRegistryProvider();
         generator.addProvider(event.includeServer(), generatedEntriesProvider);
 
@@ -37,7 +34,7 @@ public class GearboxDatagen {
 
     private static void addExtraRegistrateData() {
 
-        Gearbox.registrate().addDataGenerator(ProviderType.LANG, provider -> {
+        Petrochem.registrate().addDataGenerator(ProviderType.LANG, provider -> {
             BiConsumer<String, String> langConsumer = provider::add;
 
             provideDefaultLang("interface", langConsumer);
@@ -65,8 +62,8 @@ public class GearboxDatagen {
 
     private static void providePonderLang(BiConsumer<String, String> consumer) {
         // Register this since FMLClientSetupEvent does not run during datagen
-        PonderIndex.addPlugin(new GearboxPonderPlugin());
+        PonderIndex.addPlugin(new PetrochemPonderPlugin());
 
-        PonderIndex.getLangAccess().provideLang(Gearbox.MODID, consumer);
+        PonderIndex.getLangAccess().provideLang(Petrochem.MODID, consumer);
     }
 }

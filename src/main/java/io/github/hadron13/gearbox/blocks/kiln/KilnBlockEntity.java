@@ -13,8 +13,8 @@ import com.simibubi.create.foundation.item.ItemHelper;
 import com.simibubi.create.foundation.sound.SoundScapes;
 import com.simibubi.create.foundation.sound.SoundScapes.AmbienceGroup;
 
-import io.github.hadron13.gearbox.GearboxLang;
-import io.github.hadron13.gearbox.register.GearboxRecipeTypes;
+import io.github.hadron13.gearbox.PetrochemLang;
+import io.github.hadron13.gearbox.register.PetrochemRecipeTypes;
 import net.createmod.catnip.math.VecHelper;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -126,7 +126,7 @@ public class KilnBlockEntity extends KineticBlockEntity implements IHaveHovering
 
         RecipeWrapper inventoryIn = new RecipeWrapper(inputInv);
         if (lastRecipe == null || !lastRecipe.matches(inventoryIn, level)) {
-            Optional<PyroprocessingRecipe> recipe = GearboxRecipeTypes.PYROPROCESSING.find(inventoryIn, level);
+            Optional<PyroprocessingRecipe> recipe = PetrochemRecipeTypes.PYROPROCESSING.find(inventoryIn, level);
             if (!recipe.isPresent()) {
                 timer = 100;
                 sendData();
@@ -159,7 +159,7 @@ public class KilnBlockEntity extends KineticBlockEntity implements IHaveHovering
         RecipeWrapper inventoryIn = new RecipeWrapper(inputInv);
 
         if (lastRecipe == null || !lastRecipe.matches(inventoryIn, level)) {
-            Optional<PyroprocessingRecipe> recipe = GearboxRecipeTypes.PYROPROCESSING.find(inventoryIn, level);
+            Optional<PyroprocessingRecipe> recipe = PetrochemRecipeTypes.PYROPROCESSING.find(inventoryIn, level);
             if (!recipe.isPresent())
                 return;
             lastRecipe = recipe.get();
@@ -218,7 +218,7 @@ public class KilnBlockEntity extends KineticBlockEntity implements IHaveHovering
 
         if (lastRecipe != null && lastRecipe.matches(inventoryIn, level))
             return true;
-        return GearboxRecipeTypes.PYROPROCESSING.find(inventoryIn, level)
+        return PetrochemRecipeTypes.PYROPROCESSING.find(inventoryIn, level)
                 .isPresent();
     }
 
@@ -261,10 +261,10 @@ public class KilnBlockEntity extends KineticBlockEntity implements IHaveHovering
             ItemStack stackInSlot = inputInv.getStackInSlot(i);
             if (stackInSlot.isEmpty())
                 continue;
-            GearboxLang.text("")
+            PetrochemLang.text("")
                     .add(Component.translatable(stackInSlot.getDescriptionId())
                             .withStyle(ChatFormatting.GRAY))
-                    .add(GearboxLang.text(" x" + stackInSlot.getCount())
+                    .add(PetrochemLang.text(" x" + stackInSlot.getCount())
                             .style(ChatFormatting.GREEN))
                     .forGoggles(tooltip, 1);
         }
@@ -273,10 +273,10 @@ public class KilnBlockEntity extends KineticBlockEntity implements IHaveHovering
             ItemStack stackInSlot = outputInv.getStackInSlot(i);
             if (stackInSlot.isEmpty())
                 continue;
-            GearboxLang.text("")
+            PetrochemLang.text("")
                     .add(Component.translatable(stackInSlot.getDescriptionId())
                             .withStyle(ChatFormatting.GRAY))
-                    .add(GearboxLang.text(" x" + stackInSlot.getCount())
+                    .add(PetrochemLang.text(" x" + stackInSlot.getCount())
                             .style(ChatFormatting.GREEN))
                     .forGoggles(tooltip, 1);
         }

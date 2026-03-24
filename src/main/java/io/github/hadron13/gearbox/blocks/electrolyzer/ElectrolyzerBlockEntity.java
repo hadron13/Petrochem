@@ -10,7 +10,7 @@ import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTank
 import com.simibubi.create.foundation.blockEntity.behaviour.scrollValue.ScrollValueBehaviour;
 import com.simibubi.create.foundation.item.SmartInventory;
 import com.simibubi.create.foundation.recipe.RecipeFinder;
-import io.github.hadron13.gearbox.GearboxLang;
+import io.github.hadron13.gearbox.PetrochemLang;
 import net.createmod.catnip.math.VecHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -23,7 +23,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
@@ -60,7 +59,7 @@ public class ElectrolyzerBlockEntity extends MechanicalMixerBlockEntity {
     @Override
     public void addBehaviours(List<BlockEntityBehaviour> behaviours) {
         super.addBehaviours(behaviours);
-        speed = new ScrollValueBehaviour(GearboxLang.translateDirect("gui.electrolyzer.speed"), this, new SpeedValueBoxTransform())
+        speed = new ScrollValueBehaviour(PetrochemLang.translateDirect("gui.electrolyzer.speed"), this, new SpeedValueBoxTransform())
                 .between(0, 100);
         speed.setValue(50);
 

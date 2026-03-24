@@ -2,7 +2,7 @@ package io.github.hadron13.gearbox.blocks.steel_tank;
 
 
 import com.simibubi.create.api.connectivity.ConnectivityHandler;
-import io.github.hadron13.gearbox.register.GearboxBlockEntities;
+import io.github.hadron13.gearbox.register.PetrochemBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -77,7 +77,7 @@ public class SteelTankItem extends BlockItem {
             return;
 
         SteelTankBlockEntity tankAt = ConnectivityHandler.partAt(
-                GearboxBlockEntities.STEEL_FLUID_TANK.get(), world, placedOnPos
+                PetrochemBlockEntities.STEEL_FLUID_TANK.get(), world, placedOnPos
         );
         if (tankAt == null)
             return;

@@ -2,7 +2,7 @@ package io.github.hadron13.gearbox.blocks.steel_pump;
 
 import com.simibubi.create.content.fluids.pump.PumpBlock;
 import com.simibubi.create.content.fluids.pump.PumpBlockEntity;
-import io.github.hadron13.gearbox.register.GearboxBlockEntities;
+import io.github.hadron13.gearbox.register.PetrochemBlockEntities;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 
 public class SteelPumpBlock extends PumpBlock {
@@ -12,6 +12,6 @@ public class SteelPumpBlock extends PumpBlock {
 
     @Override
     public BlockEntityType<? extends PumpBlockEntity> getBlockEntityType() {
-        return GearboxBlockEntities.STEEL_FLUID_PUMP.get();
+        return PetrochemBlockEntities.STEEL_FLUID_PUMP.get();
     }
 }

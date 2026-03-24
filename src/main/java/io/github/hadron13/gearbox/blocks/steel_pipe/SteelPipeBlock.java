@@ -1,16 +1,14 @@
 package io.github.hadron13.gearbox.blocks.steel_pipe;
 
 
-import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.fluids.FluidPropagator;
 import com.simibubi.create.content.fluids.FluidTransportBehaviour;
 import com.simibubi.create.content.fluids.pipes.FluidPipeBlock;
 import com.simibubi.create.content.fluids.pipes.FluidPipeBlockEntity;
 import com.simibubi.create.content.fluids.pipes.GlassFluidPipeBlock;
-import com.simibubi.create.content.kinetics.waterwheel.WaterWheelBlockEntity;
 import com.simibubi.create.foundation.advancement.AllAdvancements;
-import io.github.hadron13.gearbox.register.GearboxBlockEntities;
-import io.github.hadron13.gearbox.register.GearboxBlocks;
+import io.github.hadron13.gearbox.register.PetrochemBlockEntities;
+import io.github.hadron13.gearbox.register.PetrochemBlocks;
 import net.createmod.catnip.data.Iterate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -77,7 +75,7 @@ public class SteelPipeBlock extends FluidPipeBlock {
                     .ifPresent($ -> AllAdvancements.GLASS_PIPE.awardTo(context.getPlayer())));
 
             FluidTransportBehaviour.cacheFlows(world, pos);
-            world.setBlockAndUpdate(pos, GearboxBlocks.STRAIGHT_STEEL_FLUID_PIPE.getDefaultState()
+            world.setBlockAndUpdate(pos, PetrochemBlocks.STRAIGHT_STEEL_FLUID_PIPE.getDefaultState()
                     .setValue(GlassFluidPipeBlock.AXIS, axis)
                     .setValue(BlockStateProperties.WATERLOGGED, state.getValue(BlockStateProperties.WATERLOGGED)));
             FluidTransportBehaviour.loadFlows(world, pos);
@@ -93,6 +91,6 @@ public class SteelPipeBlock extends FluidPipeBlock {
 
     @Override
     public BlockEntityType<? extends FluidPipeBlockEntity> getBlockEntityType() {
-        return GearboxBlockEntities.STEEL_FLUID_PIPE.get();
+        return PetrochemBlockEntities.STEEL_FLUID_PIPE.get();
     }
 }

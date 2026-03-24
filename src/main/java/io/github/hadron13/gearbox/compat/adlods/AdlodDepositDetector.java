@@ -5,7 +5,7 @@ import com.endertech.minecraft.mods.adlods.deposit.Deposit;
 import com.endertech.minecraft.mods.adlods.ore.AbstractOre;
 import com.endertech.minecraft.mods.adlods.target.TargetGenResult;
 import com.endertech.minecraft.mods.adlods.world.WorldTargets;
-import io.github.hadron13.gearbox.Gearbox;
+import io.github.hadron13.gearbox.Petrochem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.ChunkPos;
@@ -20,7 +20,7 @@ public class AdlodDepositDetector {
 
     public static Optional<Block> getDeposit(ServerLevel level, BlockPos position){
 
-        if(!Gearbox.adlodsLoaded)
+        if(!Petrochem.adlodsLoaded)
             return Optional.empty();
 
         List<TargetGenResult> deposits = WorldTargets.get(level).generated().values()
