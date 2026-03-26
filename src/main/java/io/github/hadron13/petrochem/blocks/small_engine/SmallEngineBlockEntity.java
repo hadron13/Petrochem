@@ -6,7 +6,19 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class SmallEngineBlockEntity extends GeneratingKineticBlockEntity {
+
     public SmallEngineBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
+    }
+
+    @Override
+    public void lazyTick() {
+        super.lazyTick();
+        updateGeneratedRotation();
+    }
+
+    @Override
+    public float getGeneratedSpeed() {
+        return 64f;
     }
 }

@@ -14,6 +14,7 @@
     "petrochem:steel_pump",
     "petrochem:distillation_output",
     "petrochem:asphalt",
-    "petrochem:flarestack"
+    "petrochem:flarestack",
+    "petrochem:small_engine"
   ]
 }

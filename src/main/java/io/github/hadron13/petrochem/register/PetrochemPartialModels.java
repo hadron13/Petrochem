@@ -13,7 +13,6 @@ import java.util.Map;
 
 public class PetrochemPartialModels {
     public static final PartialModel
-            COMPRESSOR_ROLL = block("compressor/roll"),
             ELECTROLYZER_HEAD = block("electrolyzer/head"),
             CENTRIFUGE_COG = block("centrifuge/cogwheel"),
             PUMPJACK_ARM = block("pumpjack/arm"),
@@ -23,15 +22,14 @@ public class PetrochemPartialModels {
             PUMPJACK_CRANK = block("pumpjack/crank"),
             PUMPJACK_SMOOTHROD = block("pumpjack/smooth_rod"),
             DIPPER_POLE = block("dipper/pole"),
-            ULTIMATE_MECH_CORE = item("ultimate_mechanism/core"),
-            TAU_CANNON_COIL = item("tau_cannon/coil"),
             STEEL_FLUID_PIPE_CASING = block("steel_fluid_pipe/casing"),
             STEEL_PUMP_COG = block("steel_pump/cog"),
             DISTILLATION_SELECTOR = block("distillation_controller/head"),
             DISTILLATION_GAUGE = block("distillation_controller/gauge"),
             DISTILLATION_GAUGE_DIAL = block("distillation_controller/gauge_dial"),
             DISTILLATION_OUTPUT_BASE_UNPOWERED = block("distillation_output/base_unpowered"),
-            DISTILLATION_OUTPUT_BASE_POWERED = block("distillation_output/base_powered");
+            DISTILLATION_OUTPUT_BASE_POWERED = block("distillation_output/base_powered"),
+            SMALL_PISTON = block("small_engine/piston");
     ;
 
 

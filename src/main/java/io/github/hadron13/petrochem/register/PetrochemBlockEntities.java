@@ -26,6 +26,9 @@ import io.github.hadron13.petrochem.blocks.kiln.KilnBlockEntity;
 import io.github.hadron13.petrochem.blocks.kiln.KilnRenderer;
 import io.github.hadron13.petrochem.blocks.kiln.KilnVisual;
 import io.github.hadron13.petrochem.blocks.pumpjack.*;
+import io.github.hadron13.petrochem.blocks.small_engine.SmallEngineBlock;
+import io.github.hadron13.petrochem.blocks.small_engine.SmallEngineBlockEntity;
+import io.github.hadron13.petrochem.blocks.small_engine.SmallEngineRenderer;
 import io.github.hadron13.petrochem.blocks.steel_tank.SteelFluidTankRenderer;
 import io.github.hadron13.petrochem.blocks.steel_tank.SteelTankBlockEntity;
 
@@ -144,6 +147,12 @@ public class PetrochemBlockEntities {
     public static final BlockEntityEntry<FlarestackBlockEntity> FLARESTACK = REGISTRATE
             .blockEntity("flarestack", FlarestackBlockEntity::new)
             .validBlocks(PetrochemBlocks.FLARESTACK)
+            .register();
+
+    public static final BlockEntityEntry<SmallEngineBlockEntity> SMALL_ENGINE = REGISTRATE
+            .blockEntity("small_engine", SmallEngineBlockEntity::new)
+            .validBlocks(PetrochemBlocks.SMALL_ENGINE)
+            .renderer(() -> SmallEngineRenderer::new)
             .register();
 
 

@@ -13,6 +13,7 @@ import io.github.hadron13.petrochem.blocks.distillation_tower.DistillationOutput
 import io.github.hadron13.petrochem.blocks.electrolyzer.ElectrolyzerBlock;
 import io.github.hadron13.petrochem.blocks.flarestack.FlarestackBlock;
 import io.github.hadron13.petrochem.blocks.kiln.KilnBlock;
+import io.github.hadron13.petrochem.blocks.small_engine.SmallEngineBlock;
 import io.github.hadron13.petrochem.blocks.steel_pipe.SteelGlassPipeBlock;
 import io.github.hadron13.petrochem.blocks.steel_pipe.SteelPipeAttachmentModel;
 import io.github.hadron13.petrochem.blocks.steel_pipe.SteelPipeBlock;
@@ -268,14 +269,14 @@ public class PetrochemBlocks {
 
 
     public static final BlockEntry<Block> ASPHALT_BLOCK =  REGISTRATE.block("asphalt", Block::new)
-                    .initialProperties(SharedProperties::stone)
-                    .properties(p -> p.mapColor(MapColor.TERRACOTTA_BLACK).speedFactor(1.5f))
-                    .blockstate((c, p) -> p.simpleBlock(c.get(), AssetLookup.standardModel(c, p)))
-                    .transform(pickaxeOnly())
-                    .lang("Asphalt Block")
-                    .item()
-                    .build()
-                    .register();
+            .initialProperties(SharedProperties::stone)
+            .properties(p -> p.mapColor(MapColor.TERRACOTTA_BLACK).speedFactor(1.5f))
+            .blockstate((c, p) -> p.simpleBlock(c.get(), AssetLookup.standardModel(c, p)))
+            .transform(pickaxeOnly())
+            .lang("Asphalt Block")
+            .item()
+            .build()
+            .register();
 
     public static final BlockEntry<FlarestackBlock> FLARESTACK = REGISTRATE.block("flarestack", FlarestackBlock::new)
             .initialProperties(SharedProperties::softMetal)
@@ -286,6 +287,18 @@ public class PetrochemBlocks {
             .item()
             .build()
             .register();
+
+
+    public static final BlockEntry<SmallEngineBlock> SMALL_ENGINE = REGISTRATE.block("small_engine", SmallEngineBlock::new)
+            .initialProperties(SharedProperties::softMetal)
+            .properties(p -> p.sound(SoundType.METAL).mapColor(MapColor.METAL).noOcclusion())
+            .transform(pickaxeOnly())
+            .blockstate(BlockStateGen.horizontalBlockProvider(true))
+            .transform(PetrochemStress.setCapacity(4096.0))
+            .item()
+            .transform(customItemModel())
+            .register();
+
 
 
 }
