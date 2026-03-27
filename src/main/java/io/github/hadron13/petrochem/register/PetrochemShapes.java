@@ -22,7 +22,10 @@ public class PetrochemShapes {
         DIPPER = shape(0, -16, 0, 16, 16, 16).forDirectional(DOWN),
         DISTILLATION_OUTPUT = shape(3, 3, 3, 13, 13, 16).forDirectional(SOUTH),
         FLARESTACK = shape(1, 0, 1, 15, 10, 15)
-                .add(2, 10, 2, 14, 20, 14).forDirectional();
+                .add(2, 10, 2, 14, 20, 14).forDirectional(),
+        SMALL_ENGINE = shape(1, 0, 0, 15, 3, 16)
+                .add(3, 3, 1, 13, 13, 15)
+                .forDirectional(NORTH);
 
     private static PetrochemShapes.Builder shape(VoxelShape shape) {
         return new PetrochemShapes.Builder(shape);

@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "petrochem:block/centrifuge/block",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "petrochem:block/centrifuge/block"
+    },
+    "axis=z": {
+      "model": "petrochem:block/centrifuge/block",
+      "x": 90,
+      "y": 180
+    }
+  }
+}

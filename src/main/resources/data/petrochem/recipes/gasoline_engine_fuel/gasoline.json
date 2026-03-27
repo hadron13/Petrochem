@@ -1,0 +1,12 @@
+{
+  "type": "petrochem:gasoline_engine_fuel",
+  "ingredients": [
+    {
+      "fluid": "kubejs:gasoline",
+      "amount": 1
+    }
+  ],
+  "results": [
+  ],
+  "processingTime": 100
+}

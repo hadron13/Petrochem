@@ -15,6 +15,7 @@ import io.github.hadron13.petrochem.blocks.electrolyzer.ElectrolyzingRecipe;
 import io.github.hadron13.petrochem.blocks.kiln.PyroprocessingRecipe;
 import io.github.hadron13.petrochem.blocks.pumpjack.PumpjackRecipe;
 import io.github.hadron13.petrochem.blocks.pumpjack.PumpjackWellBlockEntity;
+import io.github.hadron13.petrochem.blocks.small_engine.EngineFuelRecipe;
 import net.createmod.catnip.lang.Lang;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -43,7 +44,10 @@ public enum PetrochemRecipeTypes implements IRecipeTypeInfo {
     CENTRIFUGING(CentrifugingRecipe::new),
     PUMPJACK(PumpjackRecipe::new),
     REACTING(ReactingRecipe::new),
-    DISTILLING(DistillingRecipe::new);
+    DISTILLING(DistillingRecipe::new),
+    GASOLINE_ENGINE_FUEL(EngineFuelRecipe::gasoline),
+    DIESEL_ENGINE_FUEL(EngineFuelRecipe::diesel),
+    SHIP_ENGINE_FUEL(EngineFuelRecipe::ship);
 
     private final ResourceLocation id;
     private final RegistryObject<RecipeSerializer<?>> serializerObject;

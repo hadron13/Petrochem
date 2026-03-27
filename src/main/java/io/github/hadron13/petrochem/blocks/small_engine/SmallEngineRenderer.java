@@ -16,7 +16,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import org.joml.Vector3f;
 
 import static net.minecraft.world.level.block.state.properties.BlockStateProperties.HORIZONTAL_FACING;
 
@@ -39,30 +38,35 @@ public class SmallEngineRenderer extends KineticBlockEntityRenderer<SmallEngineB
         Vec3 right = front.cross(up);
         Vec3 left = right.scale(-1);
 
-        float t1 = AnimationTickHolder.getRenderTime();
-        float t2 = t1 + Mth.HALF_PI;
+        float t = AnimationTickHolder.getRenderTime()/20f * be.getSpeed()/60f * Mth.TWO_PI;
 
-        piston.translate(right.scale(Mth.sin(t1) * 1/16f + 1/16f))
-                .translate(up.scale(Mth.sin(t1) * 1/16f + 1/16f))
+        piston.translate(right.scale(Mth.sin(t) * 1/16f + 1/16f).scale(0.707))
+                .translate(up.scale(Mth.sin(t) * 1/16f + 1/16f).scale(0.707))
                 .light(light)
                 .renderInto(ms, solid);
+
+        t += Mth.HALF_PI;
 
         piston.translate(front.scale(7/16f))
-                .translate(right.scale(Mth.sin(t2) * 1/16f + 1/16f))
-                .translate(up.scale(Mth.sin(t2) * 1/16f + 1/16f))
+                .translate(right.scale(Mth.sin(t) * 1/16f + 1/16f).scale(0.707))
+                .translate(up.scale(Mth.sin(t) * 1/16f + 1/16f).scale(0.707))
                 .light(light)
                 .renderInto(ms, solid);
 
+        t += Mth.HALF_PI;
+
         piston.rotateCentered(Mth.PI, Direction.Axis.Y)
-                .translate(right.scale(Mth.sin(t1) * 1/16f + 1/16f))
-                .translate(up.scale(Mth.sin(t1) * 1/16f + 1/16f))
+                .translate(right.scale(Mth.sin(t) * 1/16f + 1/16f).scale(0.707))
+                .translate(up.scale(Mth.sin(t) * 1/16f + 1/16f).scale(0.707))
                 .light(light)
                 .renderInto(ms, solid);
+
+        t += Mth.HALF_PI;
 
         piston.translate(front.scale(-7/16f))
                 .rotateCentered(Mth.PI, Direction.Axis.Y)
-                .translate(right.scale(Mth.sin(t2) * 1/16f + 1/16f))
-                .translate(up.scale(Mth.sin(t2) * 1/16f + 1/16f))
+                .translate(right.scale(Mth.sin(t) * 1/16f + 1/16f).scale(0.707))
+                .translate(up.scale(Mth.sin(t) * 1/16f + 1/16f).scale(0.707))
                 .light(light)
                 .renderInto(ms, solid);
 

@@ -11,6 +11,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Mth;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -68,7 +69,7 @@ public class FlarestackBlockEntity extends SmartBlockEntity implements IHaveGogg
         if(level.isClientSide)
             return;
         int amount = tank.getPrimaryHandler().getFluidAmount();
-        tank.getPrimaryHandler().drain(amount/2, IFluidHandler.FluidAction.EXECUTE);
+        tank.getPrimaryHandler().drain(Mth.ceil(amount/2f), IFluidHandler.FluidAction.EXECUTE);
     }
 
     @Override

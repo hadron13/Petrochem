@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "petrochem:block/electrolyzer/block",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "petrochem:block/electrolyzer/block"
+    },
+    "facing=south": {
+      "model": "petrochem:block/electrolyzer/block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "petrochem:block/electrolyzer/block",
+      "y": 270
+    }
+  }
+}

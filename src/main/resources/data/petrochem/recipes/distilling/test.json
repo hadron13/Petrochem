@@ -1,0 +1,45 @@
+{
+  "type": "petrochem:distilling",
+  "mode": "distil_atmospheric",
+  "ingredients": [
+    {
+      "fluid": "petrochem:petroleum",
+      "amount": 500
+    }
+  ],
+  "results": [
+    {
+      "fluid": "minecraft:lava",
+      "amount": 500
+    },
+    {
+      "fluid": "minecraft:water",
+      "amount": 500
+    },
+    {
+      "fluid": "create:chocolate",
+      "amount": 500
+    },
+    {
+      "fluid": "create:honey",
+      "amount": 500
+    },
+    {
+      "fluid": "petrochem:resin",
+      "amount": 500
+    },
+    {
+      "fluid": "petrochem:ammonia",
+      "amount": 500
+    },
+    {
+      "fluid": "petrochem:hydrogen_sulfide",
+      "amount": 500
+    },
+    {
+      "fluid": "petrochem:hydrogen",
+      "amount": 500
+    }
+  ],
+  "processingTime": 250
+}
