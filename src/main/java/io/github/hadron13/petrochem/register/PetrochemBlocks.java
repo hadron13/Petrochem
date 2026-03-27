@@ -1,5 +1,6 @@
 package io.github.hadron13.petrochem.register;
 
+import com.simibubi.create.api.stress.BlockStressValues;
 import com.simibubi.create.content.fluids.PipeAttachmentModel;
 import com.simibubi.create.content.fluids.tank.*;
 import com.simibubi.create.content.processing.AssemblyOperatorBlockItem;
@@ -294,7 +295,8 @@ public class PetrochemBlocks {
             .properties(p -> p.sound(SoundType.METAL).mapColor(MapColor.METAL).noOcclusion())
             .transform(pickaxeOnly())
             .blockstate(BlockStateGen.horizontalBlockProvider(true))
-            .transform(PetrochemStress.setCapacity(4096.0))
+            .transform(PetrochemStress.setCapacity(256.0))
+            .onRegister(BlockStressValues.setGeneratorSpeed(256, true))
             .item()
             .transform(customItemModel())
             .register();

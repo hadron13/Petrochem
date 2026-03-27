@@ -1,6 +1,8 @@
 package io.github.hadron13.petrochem.blocks.small_engine;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import com.simibubi.create.content.kinetics.base.GeneratingKineticBlockEntity;
+import com.simibubi.create.content.kinetics.motor.CreativeMotorBlock;
 import com.simibubi.create.content.kinetics.motor.KineticScrollValueBehaviour;
 import com.simibubi.create.content.kinetics.speedController.SpeedControllerBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
@@ -8,13 +10,16 @@ import com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxTransform;
 import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.scrollValue.ScrollValueBehaviour;
 import com.simibubi.create.foundation.utility.CreateLang;
+import dev.engine_room.flywheel.lib.transform.TransformStack;
 import io.github.hadron13.petrochem.blocks.centrifuge.CentrifugingRecipe;
 import io.github.hadron13.petrochem.register.PetrochemRecipeTypes;
+import net.createmod.catnip.math.AngleHelper;
 import net.createmod.catnip.math.VecHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -30,6 +35,7 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 import static io.github.hadron13.petrochem.blocks.electrolyzer.ElectrolyzerBlock.HORIZONTAL_FACING;
+import static net.minecraft.core.Direction.Axis.X;
 
 public class SmallEngineBlockEntity extends GeneratingKineticBlockEntity {
 
@@ -59,14 +65,23 @@ public class SmallEngineBlockEntity extends GeneratingKineticBlockEntity {
 
 
     private class SpeedValueBoxTransform extends ValueBoxTransform.Sided {
+
+        @Override
+        public void rotate(LevelAccessor level, BlockPos pos, BlockState state, PoseStack ms) {
+            super.rotate(level, pos, state, ms);
+            TransformStack.of(ms)
+                    .rotateZDegrees(-AngleHelper.horizontalAngle(state.getValue(HORIZONTAL_FACING)) );
+
+        }
+
         @Override
         protected Vec3 getSouthLocation() {
-            return VecHelper.voxelSpace(8, 8, 16.0f);
+            return VecHelper.voxelSpace(8, 8, 12.5f);
         }
 
         @Override
         protected boolean isSideActive(BlockState state, Direction direction) {
-            return state.getValue(HORIZONTAL_FACING).getClockWise().getAxis() == direction.getAxis();
+            return direction == Direction.UP;
         }
     }
 
@@ -98,7 +113,7 @@ public class SmallEngineBlockEntity extends GeneratingKineticBlockEntity {
         super.tick();
 
         if(currentFuel != null){
-            consumptionCounter += currentFuel.getConsumptionRate();
+            consumptionCounter += currentFuel.getConsumptionRate() * (Mth.abs(getGeneratedSpeed())/64f);
             if(consumptionCounter > 1f){
                 tank.getPrimaryHandler().drain(Mth.floor(consumptionCounter), IFluidHandler.FluidAction.EXECUTE);
                 consumptionCounter = Mth.frac(consumptionCounter);
@@ -113,7 +128,11 @@ public class SmallEngineBlockEntity extends GeneratingKineticBlockEntity {
 
     @Override
     public float getGeneratedSpeed() {
-        return currentFuel != null? targetSpeed.value : 0f;
+        if(level.isClientSide)
+            return getSpeed();
+        if(currentFuel == null)
+            return 0;
+        return  convertToDirection(targetSpeed.getValue(), getBlockState().getValue(HORIZONTAL_FACING));
     }
 
     @Override

@@ -1,9 +1,9 @@
 package io.github.hadron13.petrochem.config;
 
 import com.simibubi.create.api.stress.BlockStressValues;
-import io.github.hadron13.petrochem.config.client.GBClient;
-import io.github.hadron13.petrochem.config.common.GBCommon;
-import io.github.hadron13.petrochem.config.server.GBServer;
+import io.github.hadron13.petrochem.config.client.PClient;
+import io.github.hadron13.petrochem.config.common.PCommon;
+import io.github.hadron13.petrochem.config.server.PServer;
 import net.createmod.catnip.config.ConfigBase;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -23,18 +23,18 @@ import java.util.function.Supplier;
 public class PetrochemConfig {
     private static final Map<ModConfig.Type, ConfigBase> CONFIGS = new EnumMap<>(ModConfig.Type.class);
 
-    private static GBClient client;
-    private static GBCommon common;
-    private static GBServer server;
-    public static GBClient client() {
+    private static PClient client;
+    private static PCommon common;
+    private static PServer server;
+    public static PClient client() {
         return client;
     }
 
-    public static GBCommon common() {
+    public static PCommon common() {
         return common;
     }
 
-    public static GBServer server() {
+    public static PServer server() {
         return server;
     }
 
@@ -55,9 +55,9 @@ public class PetrochemConfig {
     }
 
     public static void register(ModLoadingContext context) {
-        server = register(GBServer::new, ModConfig.Type.SERVER);
-        common = register(GBCommon::new, ModConfig.Type.COMMON);
-        client = register(GBClient::new, ModConfig.Type.CLIENT);
+        server = register(PServer::new, ModConfig.Type.SERVER);
+        common = register(PCommon::new, ModConfig.Type.COMMON);
+        client = register(PClient::new, ModConfig.Type.CLIENT);
 
         for (Map.Entry<ModConfig.Type, ConfigBase> pair : CONFIGS.entrySet()) {
             context.registerConfig(pair.getKey(), pair.getValue().specification);

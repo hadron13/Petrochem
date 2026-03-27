@@ -32,7 +32,6 @@ public class Petrochem {
 
     public static final String MODID = "petrochem";
     public static boolean oculusLoaded = false;
-    public static boolean adlodsLoaded = false;
 
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
@@ -70,7 +69,6 @@ public class Petrochem {
         MinecraftForge.EVENT_BUS.register(this);
 
         oculusLoaded = ModList.get().isLoaded("oculus");
-        adlodsLoaded = ModList.get().isLoaded("adlods");
     }
 
     public static void clientInit(final FMLClientSetupEvent event){
