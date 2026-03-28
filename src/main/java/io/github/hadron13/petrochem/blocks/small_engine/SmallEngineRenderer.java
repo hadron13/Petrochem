@@ -5,6 +5,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.simibubi.create.AllPartialModels;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntityRenderer;
 import com.simibubi.create.content.kinetics.press.MechanicalPressBlockEntity;
+import dev.engine_room.flywheel.api.visualization.VisualizationManager;
 import io.github.hadron13.petrochem.register.PetrochemPartialModels;
 import net.createmod.catnip.animation.AnimationTickHolder;
 import net.createmod.catnip.render.CachedBuffers;
@@ -29,6 +30,9 @@ public class SmallEngineRenderer extends KineticBlockEntityRenderer<SmallEngineB
     @Override
     protected void renderSafe(SmallEngineBlockEntity be, float partialTicks, PoseStack ms, MultiBufferSource bufferSource, int light, int overlay) {
         super.renderSafe(be, partialTicks, ms, bufferSource, light, overlay);
+
+        if (VisualizationManager.supportsVisualization(be.getLevel())) return;
+
         VertexConsumer solid = bufferSource.getBuffer(RenderType.solid());
         Direction facing = be.getBlockState().getValue(HORIZONTAL_FACING);
         SuperByteBuffer piston = CachedBuffers.partialFacing(PetrochemPartialModels.SMALL_PISTON, be.getBlockState(), facing);
@@ -36,7 +40,6 @@ public class SmallEngineRenderer extends KineticBlockEntityRenderer<SmallEngineB
         Vec3 front = new Vec3(facing.step());
         Vec3 up = new Vec3(Direction.UP.step());
         Vec3 right = front.cross(up);
-        Vec3 left = right.scale(-1);
 
         float t = AnimationTickHolder.getRenderTime()/20f * be.getSpeed()/60f * Mth.TWO_PI;
 
