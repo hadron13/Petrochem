@@ -1,6 +1,7 @@
 package io.github.hadron13.petrochem.blocks.small_engine;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.simibubi.create.AllSoundEvents;
 import com.simibubi.create.content.kinetics.base.GeneratingKineticBlockEntity;
 import com.simibubi.create.content.kinetics.motor.CreativeMotorBlock;
 import com.simibubi.create.content.kinetics.motor.KineticScrollValueBehaviour;
@@ -13,16 +14,21 @@ import com.simibubi.create.foundation.utility.CreateLang;
 import dev.engine_room.flywheel.lib.transform.TransformStack;
 import io.github.hadron13.petrochem.blocks.centrifuge.CentrifugingRecipe;
 import io.github.hadron13.petrochem.register.PetrochemRecipeTypes;
+import io.github.hadron13.petrochem.register.PetrochemSoundEvents;
 import net.createmod.catnip.math.AngleHelper;
 import net.createmod.catnip.math.VecHelper;
+import net.createmod.ponder.api.scene.VectorUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Vec3i;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
@@ -35,6 +41,7 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 import static io.github.hadron13.petrochem.blocks.electrolyzer.ElectrolyzerBlock.HORIZONTAL_FACING;
+import static net.minecraft.commands.arguments.coordinates.BlockPosArgument.getBlockPos;
 import static net.minecraft.core.Direction.Axis.X;
 
 public class SmallEngineBlockEntity extends GeneratingKineticBlockEntity {
@@ -122,13 +129,27 @@ public class SmallEngineBlockEntity extends GeneratingKineticBlockEntity {
     }
 
     @Override
+    @OnlyIn(Dist.CLIENT)
+    public void tickAudio() {
+        super.tickAudio();
+        if(getSpeed() == 0)
+            return;
+
+//        PetrochemSoundEvents.SMALL_ENGINE_HUMMING.playAt(level, getBlockPos(), 0.3f, 0.5f, false);
+    }
+
+    @Override
     public void lazyTick() {
         super.lazyTick();
     }
 
     @Override
     public float calculateAddedStressCapacity() {
-        return super.calculateAddedStressCapacity();
+//        return super.calculateAddedStressCapacity();
+        float speed = getGeneratedSpeed();
+        if(speed == 0.0)
+            return 0;
+        return super.calculateAddedStressCapacity() * 256f/Mth.abs(getGeneratedSpeed());
     }
 
     @Override
@@ -142,8 +163,9 @@ public class SmallEngineBlockEntity extends GeneratingKineticBlockEntity {
 
     @Override
     public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
-        return super.addToGoggleTooltip(tooltip, isPlayerSneaking) &&
-                containedFluidTooltip(tooltip, isPlayerSneaking, getCapability(ForgeCapabilities.FLUID_HANDLER));
+        super.addToGoggleTooltip(tooltip, isPlayerSneaking);
+        containedFluidTooltip(tooltip, isPlayerSneaking, getCapability(ForgeCapabilities.FLUID_HANDLER));
+        return true;
     }
 
     @Override

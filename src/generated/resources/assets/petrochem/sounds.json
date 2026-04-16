@@ -1,0 +1,11 @@
+{
+  "engine": {
+    "sounds": [
+      {
+        "type": "file",
+        "name": "petrochem:engine"
+      }
+    ],
+    "subtitle": "petrochem.subtitle.engine"
+  }
+}

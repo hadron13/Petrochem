@@ -2,10 +2,12 @@ package io.github.hadron13.petrochem.data;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.simibubi.create.AllSoundEvents;
 import com.simibubi.create.foundation.utility.FilesHelper;
 import com.tterrag.registrate.providers.ProviderType;
 import io.github.hadron13.petrochem.Petrochem;
 import io.github.hadron13.petrochem.ponder.PetrochemPonderPlugin;
+import io.github.hadron13.petrochem.register.PetrochemSoundEvents;
 import net.createmod.ponder.foundation.PonderIndex;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -24,10 +26,10 @@ public class PetrochemDatagen {
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
-        ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+
+        generator.addProvider(event.includeClient(), PetrochemSoundEvents.provider(generator));
 
         PetrochemGeneratedEntriesProvider generatedEntriesProvider = new PetrochemGeneratedEntriesProvider(output, lookupProvider);
-        lookupProvider = generatedEntriesProvider.getRegistryProvider();
         generator.addProvider(event.includeServer(), generatedEntriesProvider);
 
     }

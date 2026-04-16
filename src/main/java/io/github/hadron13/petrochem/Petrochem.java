@@ -1,6 +1,7 @@
 package io.github.hadron13.petrochem;
 
 import com.mojang.logging.LogUtils;
+import com.simibubi.create.AllSoundEvents;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
@@ -51,6 +52,7 @@ public class Petrochem {
 
         REGISTRATE.registerEventListeners(modEventBus);
 
+        PetrochemSoundEvents.prepare();
         PetrochemCreativeTabs.register(modEventBus);
         PetrochemBlocks.register();
         PetrochemItems.register();
@@ -64,6 +66,7 @@ public class Petrochem {
         PetrochemConfig.register(modLoadingContext);
 
         modEventBus.addListener(EventPriority.LOWEST, PetrochemDatagen::gatherData);
+        modEventBus.addListener(PetrochemSoundEvents::register);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> modEventBus.addListener(Petrochem::clientInit) );
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -74,6 +77,7 @@ public class Petrochem {
     public static void clientInit(final FMLClientSetupEvent event){
 
         PonderIndex.addPlugin(new PetrochemPonderPlugin());
+
 
     }
 
