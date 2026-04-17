@@ -3,7 +3,8 @@
     "sounds": [
       {
         "type": "file",
-        "name": "petrochem:engine"
+        "name": "petrochem:engine",
+        "attenuation_distance": 16
       }
     ],
     "subtitle": "petrochem.subtitle.engine"
