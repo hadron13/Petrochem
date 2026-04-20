@@ -10,18 +10,23 @@ import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour
 import com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxTransform;
 import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.scrollValue.ScrollValueBehaviour;
+import com.simibubi.create.foundation.sound.RepeatingSound;
+import com.simibubi.create.foundation.sound.SoundScapes;
 import com.simibubi.create.foundation.utility.CreateLang;
 import dev.engine_room.flywheel.lib.transform.TransformStack;
 import io.github.hadron13.petrochem.blocks.centrifuge.CentrifugingRecipe;
 import io.github.hadron13.petrochem.register.PetrochemRecipeTypes;
 import io.github.hadron13.petrochem.register.PetrochemSoundEvents;
+import net.createmod.catnip.animation.AnimationTickHolder;
 import net.createmod.catnip.math.AngleHelper;
 import net.createmod.catnip.math.VecHelper;
 import net.createmod.ponder.api.scene.VectorUtil;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Vec3i;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -46,14 +51,24 @@ import static net.minecraft.core.Direction.Axis.X;
 
 public class SmallEngineBlockEntity extends GeneratingKineticBlockEntity {
 
+    @OnlyIn(Dist.CLIENT)
+    public EngineSoundInstance soundInstance;
     public SmartFluidTankBehaviour tank;
     public EngineFuelRecipe currentFuel = null;
     public ScrollValueBehaviour targetSpeed;
     public float consumptionCounter = 0;
+
     public SmallEngineBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
     }
 
+    @Override
+    public void initialize() {
+        super.initialize();
+        if(!level.isClientSide)
+            return;
+
+    }
 
     @Override
     public void addBehaviours(List<BlockEntityBehaviour> behaviours) {
@@ -132,10 +147,19 @@ public class SmallEngineBlockEntity extends GeneratingKineticBlockEntity {
     @OnlyIn(Dist.CLIENT)
     public void tickAudio() {
         super.tickAudio();
-        if(getSpeed() == 0)
-            return;
 
-//        PetrochemSoundEvents.SMALL_ENGINE_HUMMING.playAt(level, getBlockPos(), 0.3f, 0.5f, false);
+        if(getSpeed() != 0){
+            if(soundInstance == null || soundInstance.isStopped()){
+                soundInstance = new EngineSoundInstance(PetrochemSoundEvents.SMALL_ENGINE_HUMMING.getMainEvent(),this, () -> (0.5f + Mth.abs(targetSpeed.value/256f) * 0.5f ));
+
+                Minecraft.getInstance().getSoundManager().play(soundInstance);
+            }
+        }else{
+            if(soundInstance != null)
+                soundInstance.cease();
+        }
+
+//        PetrochemSoundEvents.SMALL_ENGINE_HUMMING.playAt(level, getBlockPos(), 0.1f, 1.0f, false);
     }
 
     @Override
