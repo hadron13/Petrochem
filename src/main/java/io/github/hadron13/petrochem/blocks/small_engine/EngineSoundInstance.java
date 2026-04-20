@@ -1,6 +1,8 @@
 package io.github.hadron13.petrochem.blocks.small_engine;
 
 import dev.architectury.utils.value.FloatSupplier;
+import net.createmod.catnip.animation.AnimationTickHolder;
+import net.createmod.catnip.animation.LerpedFloat;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.resources.sounds.AbstractSoundInstance;
@@ -18,37 +20,55 @@ import java.lang.ref.WeakReference;
 
 public class EngineSoundInstance extends AbstractTickableSoundInstance {
 
-    public final WeakReference<BlockEntity> be;
-    public final FloatSupplier pitchSupplier;
+    public WeakReference<BlockEntity> be;
+    public final LerpedFloat lerpedPitch = LerpedFloat.linear();
+    public final LerpedFloat lerpedVolume = LerpedFloat.linear();
 
-    public EngineSoundInstance(SoundEvent soundEvent, BlockEntity be, FloatSupplier pitchSupplier) {
+    public EngineSoundInstance(SoundEvent soundEvent, BlockEntity be) {
         super(soundEvent, SoundSource.AMBIENT, SoundInstance.createUnseededRandom());
-        this.be = new WeakReference<>(be);
-        this.pitchSupplier = pitchSupplier;
         this.looping = true;
         this.attenuation = Attenuation.LINEAR;
         volume = 0.2f;
         pitch = 1.0f;
-        this.delay = 0;
+        lerpedPitch.chase(1.0, 1 / 20f, LerpedFloat.Chaser.EXP);
+        lerpedVolume.chase(0.2, 1 / 5f, LerpedFloat.Chaser.EXP);
 
-        BlockPos pos = be.getBlockPos();
-        this.x = pos.getX();
-        this.y = pos.getY();
-        this.z = pos.getZ();
+        this.be = new WeakReference<>(be);
+        BlockPos position = be.getBlockPos();
+
+        this.x = position.getX();
+        this.y = position.getY();
+        this.z = position.getZ();
+    }
+
+    public void setVolume(float volume){
+        lerpedVolume.updateChaseTarget(volume);
+    }
+
+    public void setPitch(float pitch){
+        lerpedPitch.updateChaseTarget(pitch);
     }
 
     public void cease(){
-        stop();
+        lerpedVolume.updateChaseTarget(0);
     }
 
     @Override
     public void tick() {
         ClientLevel level = Minecraft.getInstance().level;
-        if (level == null  || be.get() == null || level.getBlockEntity(be.get().getBlockPos()) == null || !level.isLoaded(be.get().getBlockPos())) {
-            this.stop();
+        if (level == null || be.get() == null || be.get().isRemoved() ) {
+            cease();
         }
 
-        pitch = pitchSupplier.getAsFloat();
+        lerpedPitch.tickChaser();
+        lerpedVolume.tickChaser();
+
+        pitch = lerpedPitch.getValue();
+        volume = lerpedVolume.getValue();
+
+        if(volume == 0){
+            stop();
+        }
     }
 
 }

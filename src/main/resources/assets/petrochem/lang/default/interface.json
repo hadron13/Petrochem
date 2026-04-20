@@ -50,6 +50,8 @@
   "petrochem.gui.distil_mode.distil_vacuum": "Vacuum Distillation",
   "petrochem.gui.distil_layer": "Distillation Layer",
   "petrochem.gui.distil_duplicate": "Duplicate Output",
+  "petrochem.gui.engine.load": "Engine Load:",
+  "petrochem.gui.engine.consumption": "Fuel Consumption:",
 
   "death.attack.petrochem.laserdeath": "%1$s received too much radiation",
   "death.attack.petrochem.laserdeath.player": "%1$s was enlightened by %2$s",

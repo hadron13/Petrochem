@@ -1,4 +1,4 @@
-// 1.20.1	2026-03-25T20:23:48.388240751	Registrate Provider for petrochem [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2026-04-20T08:51:34.809576369	Registrate Provider for petrochem [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 0ae1315e892dd56221b2caa76e10b02955109c53 assets/petrochem/blockstates/ammonia.json
 09c598b7174fee11a99569d4914686430adc0ceb assets/petrochem/blockstates/argon.json
 998bcd26022966bc3d97fe2502eac2b9a9bb1c29 assets/petrochem/blockstates/asphalt.json
@@ -31,8 +31,8 @@ adb621d2d455accf870b3b69f7b9af01fc20fc0d assets/petrochem/blockstates/steam.json
 5be1162e505f0143e6c00513e744ff484544dbd0 assets/petrochem/blockstates/steel_pump.json
 bd8a5f386a8775d9a2f78e5f175876b2f8098453 assets/petrochem/blockstates/straight_steel_fluid_pipe.json
 da00d7f51b325b06b7e8b523fc6433e69c118df7 assets/petrochem/blockstates/volatile_gas.json
-9b89c18db33c4d252a7d8f451e819a0e4820ad0f assets/petrochem/lang/en_ud.json
-d66f5bf75392a37c65ef736c1f511b6050781c2b assets/petrochem/lang/en_us.json
+7bcfc05c384bff50dcd72a9c5bba549cdd483d30 assets/petrochem/lang/en_ud.json
+7f2da220a5229a2391b04282a6f58b0f64e3c559 assets/petrochem/lang/en_us.json
 57eca0f89a1df3f976fa750be78e7da2ae226b82 assets/petrochem/models/block/ammonia.json
 f836885957c123f3fdc8d1e6c97f41c9f7b1ae5d assets/petrochem/models/block/argon.json
 0ea1936a87a157e8b826ed3db00971bbbb563326 assets/petrochem/models/block/butane.json

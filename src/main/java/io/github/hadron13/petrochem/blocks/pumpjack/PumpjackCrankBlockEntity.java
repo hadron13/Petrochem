@@ -34,8 +34,6 @@ public class PumpjackCrankBlockEntity extends KineticBlockEntity {
 //        if(level != null && level.isClientSide)
 //            return;
 
-
-
         float targetSpeed = Mth.log2((int)Mth.abs(getSpeed())) * 3.3f;
         if(Mth.abs(getSpeed()) < 32){
             targetSpeed = 0;

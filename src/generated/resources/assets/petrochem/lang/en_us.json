@@ -101,6 +101,8 @@
   "petrochem.gui.distil_mode.distil_flash": "Flash Distillation",
   "petrochem.gui.distil_mode.distil_vacuum": "Vacuum Distillation",
   "petrochem.gui.electrolyzer.speed": "Speed (%)",
+  "petrochem.gui.engine.consumption": "Fuel Consumption:",
+  "petrochem.gui.engine.load": "Engine Load:",
   "petrochem.gui.goggles.energy_consumption": "Consumption",
   "petrochem.gui.goggles.energy_stats": "Energy Stats",
   "petrochem.gui.goggles.energy_stored": "Energy Stored",
