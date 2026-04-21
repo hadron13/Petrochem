@@ -15,6 +15,7 @@
     "petrochem:distillation_output",
     "petrochem:asphalt",
     "petrochem:flarestack",
-    "petrochem:small_engine"
+    "petrochem:small_engine",
+    "petrochem:medium_engine"
   ]
 }

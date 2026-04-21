@@ -29,7 +29,10 @@ public class PetrochemPartialModels {
             DISTILLATION_GAUGE_DIAL = block("distillation_controller/gauge_dial"),
             DISTILLATION_OUTPUT_BASE_UNPOWERED = block("distillation_output/base_unpowered"),
             DISTILLATION_OUTPUT_BASE_POWERED = block("distillation_output/base_powered"),
-            SMALL_PISTON = block("small_engine/piston");
+            SMALL_PISTON = block("small_engine/piston"),
+            MEDIUM_PISTON = block("medium_engine/piston"),
+            MEDIUM_ENGINE_LINKAGE = block("medium_engine/linkage"),
+            MEDIUM_ENGINE_CONNECTOR = block("medium_engine/shaft_connector")
     ;
 
 

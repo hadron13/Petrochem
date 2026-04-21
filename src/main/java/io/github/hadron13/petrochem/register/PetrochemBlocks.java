@@ -3,8 +3,10 @@ package io.github.hadron13.petrochem.register;
 import com.simibubi.create.api.stress.BlockStressValues;
 import com.simibubi.create.content.fluids.PipeAttachmentModel;
 import com.simibubi.create.content.fluids.tank.*;
+import com.simibubi.create.content.kinetics.steamEngine.SteamEngineBlock;
 import com.simibubi.create.content.processing.AssemblyOperatorBlockItem;
 import com.simibubi.create.foundation.data.*;
+import com.simibubi.create.infrastructure.config.CStress;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import io.github.hadron13.petrochem.Petrochem;
 import io.github.hadron13.petrochem.blocks.centrifuge.CentrifugeBlock;
@@ -14,6 +16,7 @@ import io.github.hadron13.petrochem.blocks.distillation_tower.DistillationOutput
 import io.github.hadron13.petrochem.blocks.electrolyzer.ElectrolyzerBlock;
 import io.github.hadron13.petrochem.blocks.flarestack.FlarestackBlock;
 import io.github.hadron13.petrochem.blocks.kiln.KilnBlock;
+import io.github.hadron13.petrochem.blocks.medium_engine.MediumEngineBlock;
 import io.github.hadron13.petrochem.blocks.small_engine.SmallEngineBlock;
 import io.github.hadron13.petrochem.blocks.steel_pipe.SteelGlassPipeBlock;
 import io.github.hadron13.petrochem.blocks.steel_pipe.SteelPipeAttachmentModel;
@@ -301,6 +304,16 @@ public class PetrochemBlocks {
             .transform(customItemModel())
             .register();
 
+
+    public static final BlockEntry<MediumEngineBlock> MEDIUM_ENGINE = REGISTRATE.block("medium_engine", MediumEngineBlock::new)
+                    .initialProperties(SharedProperties::softMetal)
+                    .transform(pickaxeOnly())
+                    .blockstate((c, p) -> p.horizontalFaceBlock(c.get(), AssetLookup.partialBaseModel(c, p)))
+                    .transform(PetrochemStress.setCapacity(1024.0))
+                    .onRegister(BlockStressValues.setGeneratorSpeed(64, true))
+                    .item()
+                    .transform(customItemModel())
+                    .register();
 
 
 }

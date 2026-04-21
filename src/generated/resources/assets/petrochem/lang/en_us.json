@@ -26,6 +26,7 @@
   "block.petrochem.laser.tooltip.condition1": "",
   "block.petrochem.laser.tooltip.summary": "Emits a powerful laser when powered, _color_ can be changed with a redstone signal.",
   "block.petrochem.lpg": "Lpg",
+  "block.petrochem.medium_engine": "Medium Engine",
   "block.petrochem.mirror.tooltip": "MIRROR",
   "block.petrochem.mirror.tooltip.summary": "Reflects incoming lasers",
   "block.petrochem.nitrogen": "Nitrogen",

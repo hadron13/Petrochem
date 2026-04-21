@@ -144,7 +144,7 @@ public class SmallEngineBlockEntity extends GeneratingKineticBlockEntity {
     public void tick() {
         super.tick();
 
-        if(currentFuel != null){
+        if(currentFuel != null && getSpeed() != 0){
             consumptionCounter += getConsumption();
             if(consumptionCounter > 1f){
                 tank.getPrimaryHandler().drain(Mth.floor(consumptionCounter), IFluidHandler.FluidAction.EXECUTE);
@@ -160,24 +160,19 @@ public class SmallEngineBlockEntity extends GeneratingKineticBlockEntity {
     @OnlyIn(Dist.CLIENT)
     public void tickAudio() {
         super.tickAudio();
-        if(getSpeed() != 0){
+        if(calculateAddedStressCapacity() != 0){
             if(soundInstance == null || soundInstance.isStopped()){
                 soundInstance = new EngineSoundInstance(PetrochemSoundEvents.SMALL_ENGINE_HUMMING.getMainEvent(),this);
 
                 Minecraft.getInstance().getSoundManager().play(soundInstance);
             }
-//            soundInstance.setPitch( 0.5f +  );
+
             soundInstance.setPitch( 0.5f + load * 0.5f + Mth.abs(getSpeed()/256f) * 0.5f);
-            soundInstance.setVolume( 0.25f + Mth.abs(getSpeed()/256f) * 0.1f);
+            soundInstance.setVolume( 0.15f + Mth.abs(getSpeed()/256f) * 0.1f);
         }else{
             if(soundInstance != null)
                 soundInstance.cease();
         }
-    }
-
-    @Override
-    public void lazyTick() {
-        super.lazyTick();
     }
 
     @Override
@@ -223,7 +218,7 @@ public class SmallEngineBlockEntity extends GeneratingKineticBlockEntity {
                     .add(PetrochemLang.number(consumption))
                     .add(mb)
                     .text("/t")
-                    .style(ChatFormatting.GOLD)
+                    .style(ChatFormatting.AQUA)
                     .forGoggles(tooltip, 1);
         }
 

@@ -25,6 +25,9 @@ import io.github.hadron13.petrochem.blocks.flarestack.FlarestackBlockEntity;
 import io.github.hadron13.petrochem.blocks.kiln.KilnBlockEntity;
 import io.github.hadron13.petrochem.blocks.kiln.KilnRenderer;
 import io.github.hadron13.petrochem.blocks.kiln.KilnVisual;
+import io.github.hadron13.petrochem.blocks.medium_engine.MediumEngineBlockEntity;
+import io.github.hadron13.petrochem.blocks.medium_engine.MediumEngineRenderer;
+import io.github.hadron13.petrochem.blocks.medium_engine.MediumEngineVisual;
 import io.github.hadron13.petrochem.blocks.pumpjack.*;
 import io.github.hadron13.petrochem.blocks.small_engine.SmallEngineBlock;
 import io.github.hadron13.petrochem.blocks.small_engine.SmallEngineBlockEntity;
@@ -155,6 +158,13 @@ public class PetrochemBlockEntities {
             .visual(() -> SmallEngineVisual::new)
             .validBlocks(PetrochemBlocks.SMALL_ENGINE)
             .renderer(() -> SmallEngineRenderer::new)
+            .register();
+
+    public static final BlockEntityEntry<MediumEngineBlockEntity> MEDIUM_ENGINE = REGISTRATE
+            .blockEntity("medium_engine", MediumEngineBlockEntity::new)
+            .visual(() -> MediumEngineVisual::new)
+            .validBlocks(PetrochemBlocks.MEDIUM_ENGINE)
+            .renderer(() -> MediumEngineRenderer::new)
             .register();
 
 

@@ -1,0 +1,12 @@
+{
+  "type": "petrochem:diesel_engine_fuel",
+  "ingredients": [
+    {
+      "fluid": "kubejs:desulfurized_light_diesel",
+      "amount": 1
+    }
+  ],
+  "results": [
+  ],
+  "processingTime": 20
+}
