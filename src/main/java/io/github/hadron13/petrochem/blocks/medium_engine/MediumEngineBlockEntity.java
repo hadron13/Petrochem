@@ -170,8 +170,6 @@ public class MediumEngineBlockEntity extends SteamEngineBlockEntity implements I
         }
 
 
-
-
         if (!level.isClientSide)
             return;
 //        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> this::spawnParticles);
