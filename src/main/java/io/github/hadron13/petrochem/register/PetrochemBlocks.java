@@ -309,8 +309,8 @@ public class PetrochemBlocks {
                     .initialProperties(SharedProperties::softMetal)
                     .transform(pickaxeOnly())
                     .blockstate((c, p) -> p.horizontalFaceBlock(c.get(), AssetLookup.partialBaseModel(c, p)))
-                    .transform(PetrochemStress.setCapacity(1024.0))
-                    .onRegister(BlockStressValues.setGeneratorSpeed(64, true))
+                    .transform(PetrochemStress.setCapacity(131072.0))
+                    .onRegister(BlockStressValues.setGeneratorSpeed(1, true))
                     .item()
                     .transform(customItemModel())
                     .register();

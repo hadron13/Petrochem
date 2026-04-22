@@ -5,7 +5,9 @@
   "compatibilityLevel": "JAVA_16",
   "refmap": "petrochem.refmap.json",
   "mixins": [
-    "FluidPropagatorMixin"
+    "FluidPropagatorMixin",
+    "KineticBlockEntityAccessor",
+    "PoweredShaftBlockEntityMixin"
   ],
   "client": [],
   "injectors": {

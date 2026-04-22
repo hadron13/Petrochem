@@ -72,7 +72,7 @@ public class SmallEngineBlockEntity extends GeneratingKineticBlockEntity {
 
     @Override
     public void addBehaviours(List<BlockEntityBehaviour> behaviours) {
-        tank = new SmartFluidTankBehaviour(SmartFluidTankBehaviour.TYPE, this, 1, 4000, true);
+        tank = new SmartFluidTankBehaviour(SmartFluidTankBehaviour.TYPE, this, 1, 2000, true);
         tank.whenFluidUpdates(this::fluidUpdate);
         behaviours.add(tank);
 
@@ -118,6 +118,7 @@ public class SmallEngineBlockEntity extends GeneratingKineticBlockEntity {
         FluidStack fluid = tank.getPrimaryHandler().getFluidInTank(0);
         if(fluid.isEmpty()){
             if(currentFuel != null){
+                updateGeneratedRotation();
             }
             currentFuel = null;
         }else{
@@ -137,7 +138,7 @@ public class SmallEngineBlockEntity extends GeneratingKineticBlockEntity {
     public float getConsumption(){
         if(currentFuel == null)
             return 0;
-        return currentFuel.getConsumptionRate() * (float)Math.max(load, 0.3) ;
+        return currentFuel.getConsumptionRate() * (float)Math.max(load, 0.3) * 10;
     }
 
     @Override
@@ -150,9 +151,7 @@ public class SmallEngineBlockEntity extends GeneratingKineticBlockEntity {
                 tank.getPrimaryHandler().drain(Mth.floor(consumptionCounter), IFluidHandler.FluidAction.EXECUTE);
                 consumptionCounter = Mth.frac(consumptionCounter);
             }
-            if(tank.isEmpty()){
-                updateGeneratedRotation();
-            }
+
         }
     }
 
