@@ -3,6 +3,7 @@ package io.github.hadron13.petrochem.blocks.medium_engine;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.simibubi.create.Create;
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
+import com.simibubi.create.content.fluids.tank.FluidTankBlockEntity;
 import com.simibubi.create.content.kinetics.KineticNetwork;
 import com.simibubi.create.content.kinetics.RotationPropagator;
 import com.simibubi.create.content.kinetics.TorquePropagator;
@@ -10,10 +11,7 @@ import com.simibubi.create.content.kinetics.base.GeneratingKineticBlockEntity;
 import com.simibubi.create.content.kinetics.base.IRotate;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntityRenderer;
 import com.simibubi.create.content.kinetics.motor.KineticScrollValueBehaviour;
-import com.simibubi.create.content.kinetics.steamEngine.PoweredShaftBlockEntity;
-import com.simibubi.create.content.kinetics.steamEngine.SteamEngineBlock;
-import com.simibubi.create.content.kinetics.steamEngine.SteamEngineBlockEntity;
-import com.simibubi.create.content.kinetics.steamEngine.SteamEngineValueBox;
+import com.simibubi.create.content.kinetics.steamEngine.*;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxTransform;
 import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
@@ -71,6 +69,8 @@ public class MediumEngineBlockEntity extends SteamEngineBlockEntity implements I
     public float consumptionCounter = 0;
     public float load = 0;
     public float consumption = 0;
+
+    float prevAngle = 0;
 
     public MediumEngineBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
@@ -135,8 +135,9 @@ public class MediumEngineBlockEntity extends SteamEngineBlockEntity implements I
         if (facing.getAxis() == Direction.Axis.Y)
             facing = blockState.getValue(MediumEngineBlock.FACING);
 
-//        float efficiency = currentFuel != null? 1.0f : 0.0f;
-        float efficiency = 1.0f;
+
+        float efficiency = currentFuel != null? 1.0f : 0.0f;
+//        float efficiency = 1.0f;
 
         int rotationSpeed =
                 efficiency == 0 ? 1 : verticalTarget ? 1 : (int) GeneratingKineticBlockEntity.convertToDirection(1, facing);
@@ -174,15 +175,17 @@ public class MediumEngineBlockEntity extends SteamEngineBlockEntity implements I
 
         if(level.isClientSide){
             DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> this::tickAudio);
-//        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> this::spawnParticles);
+            DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> this::spawnParticles);
         }
 
-//        if(level.isClientSide)
-//            return;
+        if(level.isClientSide)
+            return;
 
         PoweredShaftBlockEntity shaft = getShaft();
-        if (shaft == null)
+        if (shaft == null){
+            currentFuel = null;
             return;
+        }
 
         Direction facing = MediumEngineBlock.getFacing(getBlockState());
 
@@ -197,8 +200,6 @@ public class MediumEngineBlockEntity extends SteamEngineBlockEntity implements I
         }
 
         if(currentFuel == null || tank.isEmpty()){
-            if (level.isClientSide())
-                return;
             if (!shaft.getBlockPos()
                     .subtract(worldPosition)
                     .equals(shaft.enginePos))
@@ -209,8 +210,6 @@ public class MediumEngineBlockEntity extends SteamEngineBlockEntity implements I
             if (level.isLoaded(worldPosition.relative(facing.getOpposite())))
                 shaft.update(worldPosition, 0, 0);
         }
-
-
     }
 
     public float getConsumption(){
@@ -228,7 +227,7 @@ public class MediumEngineBlockEntity extends SteamEngineBlockEntity implements I
 
         PoweredShaftBlockEntity shaft = getShaft();
         if(shaft != null) {
-            if (shaft.getSpeed() != 0) {
+            if (shaft.getGeneratedSpeed() != 0) {
                 PetrochemLang.translate("gui.engine.load")
                         .style(ChatFormatting.GRAY)
                         .forGoggles(tooltip);
@@ -256,6 +255,51 @@ public class MediumEngineBlockEntity extends SteamEngineBlockEntity implements I
         return true;
     }
 
+
+    @OnlyIn(Dist.CLIENT)
+    private void spawnParticles() {
+        Float targetAngle = getTargetAngle();
+        PoweredShaftBlockEntity ste = target.get();
+        if (ste == null)
+            return;
+        if (!ste.isPoweredBy(worldPosition) || ste.engineEfficiency == 0)
+            return;
+        if (targetAngle == null)
+            return;
+
+        float angle = AngleHelper.deg(targetAngle);
+        angle += (angle < 0) ? -180 + 75 : 360 - 75;
+        angle %= 360;
+
+        PoweredShaftBlockEntity shaft = getShaft();
+        if (shaft == null || shaft.getSpeed() == 0)
+            return;
+
+        if (angle >= 0 && !(prevAngle > 180 && angle < 180)) {
+            prevAngle = angle;
+            return;
+        }
+        if (angle < 0 && !(prevAngle < -180 && angle > -180)) {
+            prevAngle = angle;
+            return;
+        }
+
+        Direction facing = SteamEngineBlock.getFacing(getBlockState());
+
+        Vec3 offset = VecHelper.rotate(new Vec3(0, 0, 1).add(VecHelper.offsetRandomly(Vec3.ZERO, level.random, 1)
+                .multiply(1, 1, 0)
+                .normalize()
+                .scale(.5f)), AngleHelper.verticalAngle(facing), Direction.Axis.X);
+        offset = VecHelper.rotate(offset, AngleHelper.horizontalAngle(facing), Direction.Axis.Y);
+        Vec3 v = offset.scale(.5f)
+                .add(Vec3.atCenterOf(worldPosition));
+        Vec3 m = offset.subtract(Vec3.atLowerCornerOf(facing.getNormal())
+                .scale(.75f));
+        level.addParticle(new SteamJetParticleData(1), v.x, v.y, v.z, m.x, m.y, m.z);
+
+        prevAngle = angle;
+    }
+
     @OnlyIn(Dist.CLIENT)
     public void tickAudio() {
         PoweredShaftBlockEntity shaft = getShaft();
@@ -266,8 +310,10 @@ public class MediumEngineBlockEntity extends SteamEngineBlockEntity implements I
                 Minecraft.getInstance().getSoundManager().play(soundInstance);
             }
 
-            soundInstance.setPitch( 0.3f + load * 0.2f + Mth.abs(shaft.getSpeed()/256f) * 0.2f);
+            soundInstance.setPitch( 0.4f + load * 0.2f + Mth.abs(shaft.getSpeed()/256f) * 0.2f);
             soundInstance.setVolume( 0.2f + Mth.abs(shaft.getSpeed()/256f) * 0.1f);
+//            soundInstance.setVolume(1.0f);
+//            soundInstance.setPitch(1.0f);
         }else{
             if(soundInstance != null && !soundInstance.isStopped())
                 soundInstance.cease();
@@ -306,7 +352,9 @@ public class MediumEngineBlockEntity extends SteamEngineBlockEntity implements I
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, Direction side) {
-        if(cap == ForgeCapabilities.FLUID_HANDLER)
+        Direction dir = SteamEngineBlock.getConnectedDirection(getBlockState()).getOpposite();
+
+        if(cap == ForgeCapabilities.FLUID_HANDLER && (side == null || side == dir))
             return tank.getCapability().cast();
         return super.getCapability(cap, side);
     }
