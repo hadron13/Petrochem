@@ -21,7 +21,6 @@ import dev.engine_room.flywheel.lib.transform.TransformStack;
 import io.github.hadron13.petrochem.PetrochemLang;
 import io.github.hadron13.petrochem.blocks.small_engine.EngineFuelRecipe;
 import io.github.hadron13.petrochem.blocks.small_engine.EngineSoundInstance;
-import io.github.hadron13.petrochem.blocks.small_engine.SmallEngineBlockEntity;
 import io.github.hadron13.petrochem.mixin.KineticBlockEntityAccessor;
 import io.github.hadron13.petrochem.register.PetrochemBlocks;
 import io.github.hadron13.petrochem.register.PetrochemRecipeTypes;
@@ -74,6 +73,7 @@ public class MediumEngineBlockEntity extends SteamEngineBlockEntity implements I
 
     public MediumEngineBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
+        setLazyTickRate(5);
     }
 
     @Override
@@ -117,8 +117,19 @@ public class MediumEngineBlockEntity extends SteamEngineBlockEntity implements I
 
     public void updateRotation(){
         PoweredShaftBlockEntity shaft = getShaft();
-        if (shaft == null)
+        if (shaft == null){
             return;
+        }
+
+        if(currentFuel == null) {
+            if (!shaft.getBlockPos()
+                    .subtract(worldPosition)
+                    .equals(shaft.enginePos))
+                return;
+            if (shaft.engineEfficiency == 0)
+                return;
+            shaft.update(worldPosition, 0, 0);
+        }
 
         Direction facing = MediumEngineBlock.getFacing(getBlockState());
 
@@ -176,20 +187,23 @@ public class MediumEngineBlockEntity extends SteamEngineBlockEntity implements I
         if(level.isClientSide){
             DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> this::tickAudio);
             DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> this::spawnParticles);
+            return;
         }
 
-        if(level.isClientSide)
-            return;
 
         PoweredShaftBlockEntity shaft = getShaft();
         if (shaft == null){
-            currentFuel = null;
             return;
         }
 
         Direction facing = MediumEngineBlock.getFacing(getBlockState());
 
+        float previous_load = load;
         load = ((KineticBlockEntityAccessor)shaft).getStress() / ((KineticBlockEntityAccessor)shaft).getCapacity();
+        if(Float.isNaN(load))
+            load = 0;
+        if(previous_load != load)
+            sendData();
 
         if(currentFuel != null && shaft.getGeneratedSpeed() != 0){
             consumptionCounter += getConsumption();
@@ -198,18 +212,13 @@ public class MediumEngineBlockEntity extends SteamEngineBlockEntity implements I
                 consumptionCounter = Mth.frac(consumptionCounter);
             }
         }
+    }
 
-        if(currentFuel == null || tank.isEmpty()){
-            if (!shaft.getBlockPos()
-                    .subtract(worldPosition)
-                    .equals(shaft.enginePos))
-                return;
-            if (shaft.engineEfficiency == 0)
-                return;
-
-            if (level.isLoaded(worldPosition.relative(facing.getOpposite())))
-                shaft.update(worldPosition, 0, 0);
-        }
+    @Override
+    public void lazyTick() {
+        super.lazyTick();
+        if(!level.isClientSide)
+            updateRotation();
     }
 
     public float getConsumption(){
@@ -223,10 +232,10 @@ public class MediumEngineBlockEntity extends SteamEngineBlockEntity implements I
 
     @Override
     public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
-        super.addToGoggleTooltip(tooltip, isPlayerSneaking);
 
         PoweredShaftBlockEntity shaft = getShaft();
         if(shaft != null) {
+            shaft.addToEngineTooltip(tooltip, isPlayerSneaking);
             if (shaft.getGeneratedSpeed() != 0) {
                 PetrochemLang.translate("gui.engine.load")
                         .style(ChatFormatting.GRAY)
