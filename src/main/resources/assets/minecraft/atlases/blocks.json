@@ -135,6 +135,198 @@
     {
       "type": "single",
       "resource": "petrochem:fluid/ethylene_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/sulfuric_acid_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/sulfuric_acid_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/oil_brine_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/oil_brine_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/desalted_oil_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/desalted_oil_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/oil_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/oil_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/light_naphta_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/light_naphta_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/heavy_naphta_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/heavy_naphta_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/desulfurized_heavy_naphta_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/desulfurized_heavy_naphta_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/plastic_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/plastic_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/hydrocracked_gasoline_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/hydrocracked_gasoline_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/untreated_gasoline_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/untreated_gasoline_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/gasoline_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/gasoline_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/kerosene_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/kerosene_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/desulfurized_kerosene_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/desulfurized_kerosene_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/light_diesel_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/light_diesel_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/heavy_diesel_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/heavy_diesel_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/diesel_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/diesel_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/light_gas_oil_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/light_gas_oil_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/heavy_gas_oil_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/heavy_gas_oil_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/hydrotreated_gas_oil_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/hydrotreated_gas_oil_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/desulfurized_heavy_diesel_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/desulfurized_heavy_diesel_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/oil_residue_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/oil_residue_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/fuel_oil_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/fuel_oil_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/alkylate_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/alkylate_flow"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/lubricant_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/lubricant_flow"
     }
   ]
 }
