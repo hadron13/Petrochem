@@ -5,7 +5,7 @@ license="MIT License"
 [[mods]]
 modId="petrochem"
 version="${file.jarVersion}"
-displayName="Gearbox"
+displayName="Create Petrochem"
 credits="#devchat folks"
 authors="Redz aka terentre4e25caracteres" #optional
 description='''

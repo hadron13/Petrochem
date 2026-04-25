@@ -24,12 +24,6 @@ public class AnimatedReactor extends AnimatedKinetics {
                 .atLocal(0, 0, 0)
                 .scale(scale)
                 .render(graphics);
-//
-//        blockElement(GearboxBlocks.REACTOR.getDefaultState())
-//                .rotateBlock(0, 90f, 0)
-//                .atLocal(0, 0, 0)
-//                .scale(scale)
-//                .render(graphics);
 
         blockElement(PetrochemPartialModels.DIPPER_POLE)
                 .atLocal(0, 17/16f, 0)

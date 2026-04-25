@@ -3,10 +3,10 @@ package io.github.hadron13.petrochem.config.server;
 import io.github.hadron13.petrochem.config.PetrochemStress;
 import net.createmod.catnip.config.ConfigBase;
 
-public class GBKinetics extends ConfigBase {
+public class PKinetics extends ConfigBase {
     public final PetrochemStress stressValues;
 
-    public GBKinetics() {
+    public PKinetics() {
         this.stressValues = this.nested(1, PetrochemStress::new, Comments.stress);
     }
 

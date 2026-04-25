@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "petrochem:sulfur_dust"
+    },
+    {
+      "item": "create:golden_sheet"
+    },
+    {
+      "amount": 1000,
+      "fluid": "minecraft:water",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "item": "create:golden_sheet"
+    },
+    {
+      "amount": 1000,
+      "fluid": "petrochem:sulfuric_acid"
+    }
+  ]
+}

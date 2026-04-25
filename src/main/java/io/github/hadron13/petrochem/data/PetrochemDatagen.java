@@ -32,6 +32,11 @@ public class PetrochemDatagen {
         PetrochemGeneratedEntriesProvider generatedEntriesProvider = new PetrochemGeneratedEntriesProvider(output, lookupProvider);
         generator.addProvider(event.includeServer(), generatedEntriesProvider);
 
+
+        if (event.includeServer()) {
+            PetrochemRecipeProvider.registerAllProcessing(generator, output);
+        }
+
     }
 
     private static void addExtraRegistrateData() {

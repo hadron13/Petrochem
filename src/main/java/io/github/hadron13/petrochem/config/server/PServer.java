@@ -4,7 +4,7 @@ import net.createmod.catnip.config.ConfigBase;
 
 public class PServer extends ConfigBase {
 
-    public final GBKinetics kinetics = this.nested(0, GBKinetics::new, "Parameters and abilities of Gearbox's kinetic mechanisms");
+    public final PKinetics kinetics = this.nested(0, PKinetics::new, "Parameters and abilities of Petrochem's kinetic mechanisms");
 
     @Override
     public String getName() {

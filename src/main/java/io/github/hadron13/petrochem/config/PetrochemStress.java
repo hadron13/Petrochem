@@ -69,7 +69,7 @@ public class PetrochemStress extends ConfigBase {
 
     public static <B extends Block, P> NonNullUnaryOperator<BlockBuilder<B, P>> setImpact(double value) {
         return builder -> {
-            assertFromGearbox(builder);
+            assertFromPetrochem(builder);
             ResourceLocation id = Petrochem.asResource(builder.getName());
             DEFAULT_IMPACTS.put(id, value);
             return builder;
@@ -78,16 +78,16 @@ public class PetrochemStress extends ConfigBase {
 
     public static <B extends Block, P> NonNullUnaryOperator<BlockBuilder<B, P>> setCapacity(double value) {
         return builder -> {
-            assertFromGearbox(builder);
+            assertFromPetrochem(builder);
             ResourceLocation id = Petrochem.asResource(builder.getName());
             DEFAULT_CAPACITIES.put(id, value);
             return builder;
         };
     }
 
-    private static void assertFromGearbox(BlockBuilder<?, ?> builder) {
+    private static void assertFromPetrochem(BlockBuilder<?, ?> builder) {
         if (!builder.getOwner().getModid().equals(Petrochem.MODID)) {
-            throw new IllegalStateException("Non-Gearbox blocks cannot be added to Gearbox's config.");
+            throw new IllegalStateException("Non-Petrochem blocks cannot be added to Petrochem's config.");
         }
     }
 

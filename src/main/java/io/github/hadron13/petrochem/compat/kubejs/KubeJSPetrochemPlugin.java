@@ -20,8 +20,6 @@ public class KubeJSPetrochemPlugin extends KubeJSPlugin {
         recipeSchemas.put(PetrochemRecipeTypes.CENTRIFUGING, ProcessingRecipeSchema.PROCESSING_WITH_TIME);
         recipeSchemas.put(PetrochemRecipeTypes.PUMPJACK, ProcessingRecipeSchema.PUMPJACK_RECIPE);
         recipeSchemas.put(PetrochemRecipeTypes.DISTILLING, ProcessingRecipeSchema.DISTILLING_RECIPE);
-//        recipeSchemas.put(GearboxRecipeTypes.REACTING, ProcessingRecipeSchema.REACTING_RECIPE);
-//        recipeSchemas.put(GearboxRecipeTypes.DIPPING, ProcessingRecipeSchema.DIPPING_RECIPE);
     }
 
     @Override

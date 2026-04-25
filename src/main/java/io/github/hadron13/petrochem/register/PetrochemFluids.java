@@ -26,21 +26,6 @@ import java.util.function.Supplier;
 public class PetrochemFluids {
     private static final CreateRegistrate REGISTRATE = Petrochem.registrate().setCreativeTab(PetrochemCreativeTabs.MAIN_TAB);
 
-//    public static final FluidEntry<ForgeFlowingFluid.Flowing> PETROLEUM = REGISTRATE
-//            .fluid("petroleum",
-//                    Gearbox.asResource("fluid/petroleum_still"),
-//                    Gearbox.asResource("fluid/petroleum_flow"))
-//            .lang("Petroleum")
-//            .properties(p -> p.viscosity(2000).density(1500))
-//            .fluidProperties(p -> p.levelDecreasePerBlock(3)
-//                            .tickRate(25)
-//                            .slopeFindDistance(3)
-//                            .explosionResistance(100f))
-//            .source(ForgeFlowingFluid.Source::new)
-//            .bucket()
-//            .tag(AllTags.forgeItemTag("buckets/petroleum"))
-//            .build().register();
-
     public static final FluidEntry<ForgeFlowingFluid.Flowing> PETROLEUM =
             REGISTRATE.standardFluid("petroleum",
                             SolidRenderedPlaceableFluidType.create(0x352228,

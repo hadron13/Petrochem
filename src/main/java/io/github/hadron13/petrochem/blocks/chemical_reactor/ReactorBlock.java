@@ -53,7 +53,6 @@ public class ReactorBlock extends HorizontalKineticBlock implements IBE<ReactorB
 
     @Override
     public BlockEntityType<? extends ReactorBlockEntity> getBlockEntityType() {
-//        return GearboxBlockEntities.REACTOR.get();
         return null;
     }
 

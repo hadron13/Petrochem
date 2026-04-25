@@ -14,8 +14,8 @@ apply from: "gradle/property_loader.gradle"
 def archiveBaseName
 base {
     version = mod_version
-    group = 'io.github.hadron13.gearbox' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-    archivesName = "gearbox-${artifact_minecraft_version}"
+    group = 'io.github.hadron13.petrochem' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+    archivesName = "petrochem-${artifact_minecraft_version}"
     archiveBaseName = archivesName
 }
 

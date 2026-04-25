@@ -25,7 +25,6 @@ public class PetrochemPonderTags {
                 .add(PetrochemBlocks.STEEL_FLUID_TANK)
                 .add(PetrochemBlocks.DISTILLATION_CONTROLLER)
                 .add(PetrochemBlocks.DISTILLATION_OUTPUT);
-//                .add(GearboxBlocks.DIPPER);
 
         HELPER.addToTag(KINETIC_APPLIANCES)
                 .add(PetrochemBlocks.CENTRIFUGE)

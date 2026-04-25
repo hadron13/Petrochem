@@ -93,19 +93,6 @@ public class PetrochemBlockEntities {
             .validBlocks(PetrochemBlocks.PUMPJACK_WELL)
             .register();
 
-//    public static final BlockEntityEntry<DipperBlockEntity> DIPPER = REGISTRATE
-//            .blockEntity("dipper", DipperBlockEntity::new)
-//            .validBlocks(GearboxBlocks.DIPPER)
-//
-//            .register();
-//
-//    public static final BlockEntityEntry<ReactorBlockEntity> REACTOR = REGISTRATE
-//            .blockEntity("chemical_reactor", ReactorBlockEntity::new)
-//            .visual(() -> ReactorVisual::new)
-//            .validBlocks(GearboxBlocks.REACTOR)
-//            .renderer(() -> ReactorRenderer::new)
-//            .register();
-
     public static final BlockEntityEntry<SteelTankBlockEntity> STEEL_FLUID_TANK = REGISTRATE
             .blockEntity("steel_fluid_tank", SteelTankBlockEntity::new)
             .validBlocks(PetrochemBlocks.STEEL_FLUID_TANK)
