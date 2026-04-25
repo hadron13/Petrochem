@@ -59,7 +59,21 @@ public class RemapHelper {
                     Create.LOGGER.warn("Remapping item '{}' to '{}' failed: {}", key, remappedId, t);
                 }
             }
+        }
+        for (MissingMappingsEvent.Mapping<Item> mapping : event.getMappings(Registries.ITEM, "kubejs")) {
+            ResourceLocation key = mapping.getKey();
+            String path = key.getPath();
 
+            ResourceLocation remappedId = new ResourceLocation(Petrochem.MODID, path);
+            Item remapped = ForgeRegistries.ITEMS.getValue(new ResourceLocation(Petrochem.MODID, path));
+            if(remapped != null) {
+                Create.LOGGER.warn("Remapping item '{}' to '{}'", key, remappedId );
+                try {
+                    mapping.remap(remapped);
+                } catch (Throwable t) {
+                    Create.LOGGER.warn("Remapping item '{}' to '{}' failed: {}", key, remappedId, t);
+                }
+            }
         }
     }
 
@@ -80,6 +94,26 @@ public class RemapHelper {
                 }
             }
         }
+        for (MissingMappingsEvent.Mapping<Fluid> mapping : event.getMappings(Registries.FLUID, "kubejs")) {
+            ResourceLocation key = mapping.getKey();
+            String path = key.getPath();
+
+            if(path.equals("desulfurized_light_diesel")) path = "diesel";
+
+            ResourceLocation remappedId = new ResourceLocation(Petrochem.MODID, path);
+
+
+            Fluid remapped = ForgeRegistries.FLUIDS.getValue(new ResourceLocation(Petrochem.MODID, path));
+            if(remapped != null) {
+                Create.LOGGER.warn("Remapping fluid '{}' to '{}'", key, remappedId );
+                try {
+                    mapping.remap(remapped);
+                } catch (Throwable t) {
+                    Create.LOGGER.warn("Remapping fluid '{}' to '{}' failed: {}", key, remappedId, t);
+                }
+            }
+        }
+
     }
 
     @SubscribeEvent
