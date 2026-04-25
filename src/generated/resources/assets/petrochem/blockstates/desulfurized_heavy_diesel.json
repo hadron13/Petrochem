@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "petrochem:block/desulfurized_heavy_diesel"
+    }
+  }
+}
