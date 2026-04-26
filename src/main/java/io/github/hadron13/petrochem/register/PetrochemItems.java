@@ -7,7 +7,7 @@ import io.github.hadron13.petrochem.Petrochem;
 import net.minecraft.world.item.Item;
 
 public class PetrochemItems {
-    private static final CreateRegistrate REGISTRATE = Petrochem.registrate().setCreativeTab(PetrochemCreativeTabs.MAIN_TAB);
+    private static final CreateRegistrate REGISTRATE = Petrochem.registrate().setCreativeTab(PetrochemCreativeTabs.INGREDIENTS);
 
     public static void register() {}
 

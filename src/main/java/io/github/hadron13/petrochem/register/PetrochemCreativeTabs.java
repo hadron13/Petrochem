@@ -29,8 +29,16 @@ public class PetrochemCreativeTabs {
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.petrochem.main"))
                     .withTabsBefore(AllCreativeModeTabs.PALETTES_CREATIVE_TAB.getId())
-                    .icon(() -> new ItemStack(PetrochemFluids.PETROLEUM.getBucket().get()))
+                    .icon(() -> new ItemStack(PetrochemBlocks.SMALL_ENGINE.get()))
                     .displayItems(new RegistrateDisplayItemsGenerator(PetrochemCreativeTabs.MAIN_TAB))
+                    .build());
+
+    public static final RegistryObject<CreativeModeTab> INGREDIENTS = TAB_REGISTER.register("ingredients",
+            () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.petrochem.ingredients"))
+                    .withTabsBefore(PetrochemCreativeTabs.MAIN_TAB.getId())
+                    .icon(() -> new ItemStack(PetrochemFluids.PETROLEUM.getBucket().get()))
+                    .displayItems(new RegistrateDisplayItemsGenerator(PetrochemCreativeTabs.INGREDIENTS))
                     .build());
 
     public static void register(IEventBus modEventBus) {

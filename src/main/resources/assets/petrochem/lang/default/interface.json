@@ -1,5 +1,6 @@
 {
-  "itemGroup.petrochem.main": "Create: Petrochem",
+  "itemGroup.petrochem.main": "Create Petrochem's Blocks",
+  "itemGroup.petrochem.ingredients": "Create Petrochem's Ingredients",
 
   "petrochem.hint.sapper.full.title": "Internal Tank Full",
   "petrochem.hint.sapper.full": "",

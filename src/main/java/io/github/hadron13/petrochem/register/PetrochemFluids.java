@@ -24,7 +24,7 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class PetrochemFluids {
-    private static final CreateRegistrate REGISTRATE = Petrochem.registrate().setCreativeTab(PetrochemCreativeTabs.MAIN_TAB);
+    private static final CreateRegistrate REGISTRATE = Petrochem.registrate().setCreativeTab(PetrochemCreativeTabs.INGREDIENTS);
 
     public static final FluidEntry<ForgeFlowingFluid.Flowing> PETROLEUM =
             REGISTRATE.standardFluid("petroleum",

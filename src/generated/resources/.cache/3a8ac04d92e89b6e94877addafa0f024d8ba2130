@@ -1,4 +1,4 @@
-// 1.20.1	2026-04-24T21:09:40.684390703	Registrate Provider for petrochem [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2026-04-25T21:49:05.371966342	Registrate Provider for petrochem [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 998bcd26022966bc3d97fe2502eac2b9a9bb1c29 assets/petrochem/blockstates/asphalt.json
 850e2a21ec92b0cd645bf1479e4db56abc58a863 assets/petrochem/blockstates/butane.json
 91cf09b335b181a2856a768606402008beb2797f assets/petrochem/blockstates/centrifuge.json
@@ -52,8 +52,8 @@ bd8a5f386a8775d9a2f78e5f175876b2f8098453 assets/petrochem/blockstates/straight_s
 3c52fecc939ad9a645dfb11713630eadc540721d assets/petrochem/blockstates/sulfuric_acid.json
 5fb985075e0b1b77d883094e92729f4a9ffe7105 assets/petrochem/blockstates/untreated_gasoline.json
 da00d7f51b325b06b7e8b523fc6433e69c118df7 assets/petrochem/blockstates/volatile_gas.json
-776fa2234e7e929aeeb85ad31f1a4cc0ea0e20f4 assets/petrochem/lang/en_ud.json
-50000d2b4d27bd71a0e70a05a63c3787db8c488a assets/petrochem/lang/en_us.json
+ff6fd267c2838e50a815cad3f66118c6cf51cde2 assets/petrochem/lang/en_ud.json
+b68b762396db485d4194a666c847864fb611ff33 assets/petrochem/lang/en_us.json
 0ea1936a87a157e8b826ed3db00971bbbb563326 assets/petrochem/models/block/butane.json
 be42263101c780283f41b7e91216d3951e52c5fd assets/petrochem/models/block/chlorine.json
 f88df60cac6df81c02c1d9c7feef8f7c9b5e0501 assets/petrochem/models/block/desalted_oil.json
