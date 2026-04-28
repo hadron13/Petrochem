@@ -306,6 +306,14 @@
     },
     {
       "type": "single",
+      "resource": "petrochem:fluid/heavy_oil_residue_still"
+    },
+    {
+      "type": "single",
+      "resource": "petrochem:fluid/heavy_oil_residue_flow"
+    },
+    {
+      "type": "single",
       "resource": "petrochem:fluid/fuel_oil_still"
     },
     {

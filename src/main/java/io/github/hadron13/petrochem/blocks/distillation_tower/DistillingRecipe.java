@@ -5,6 +5,7 @@ import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
 import com.simibubi.create.foundation.fluid.FluidIngredient;
 import io.github.hadron13.petrochem.Petrochem;
+import io.github.hadron13.petrochem.data.recipe.base.DistillingRecipeGen;
 import io.github.hadron13.petrochem.register.PetrochemRecipeTypes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.GsonHelper;
@@ -62,6 +63,10 @@ public class DistillingRecipe extends ProcessingRecipe<RecipeWrapper> {
     @Override
     protected int getMaxFluidOutputCount() {
         return 8;
+    }
+    public DistillingRecipe setMode(DistillationControllerBlockEntity.DistilMode mode){
+        this.mode = mode;
+        return this;
     }
 
     public void readAdditional(JsonObject json) {

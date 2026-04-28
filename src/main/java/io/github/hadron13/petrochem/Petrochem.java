@@ -32,6 +32,7 @@ import org.slf4j.Logger;
 public class Petrochem {
 
     public static final String MODID = "petrochem";
+    public static final String REALISTIC_MODID = "petrochem_expert";
     public static boolean oculusLoaded = false;
 
     // Directly reference a slf4j logger

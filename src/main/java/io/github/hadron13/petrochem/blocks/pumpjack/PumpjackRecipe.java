@@ -52,6 +52,9 @@ public class PumpjackRecipe extends ProcessingRecipe<RecipeWrapper> {
         return false;
     }
 
+    public void setBiome(String location){
+        biome = ResourceKey.create(ForgeRegistries.BIOMES.getRegistryKey(), new ResourceLocation(location));
+    }
 
     public void readAdditional(JsonObject json) {
         String biome_key = GsonHelper.getAsString(json, "biome");
@@ -59,7 +62,7 @@ public class PumpjackRecipe extends ProcessingRecipe<RecipeWrapper> {
             Petrochem.LOGGER.warn("invalid biome in recipe " + this.getId().getPath());
             return;
         }
-        biome = ResourceKey.create(ForgeRegistries.BIOMES.getRegistryKey(), new ResourceLocation(biome_key));
+        setBiome(biome_key);
     }
 
     public void readAdditional(FriendlyByteBuf buffer) {

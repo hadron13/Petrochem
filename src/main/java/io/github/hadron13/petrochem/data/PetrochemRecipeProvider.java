@@ -1,7 +1,9 @@
 package io.github.hadron13.petrochem.data;
 
 import com.simibubi.create.api.data.recipe.ProcessingRecipeGen;
+import io.github.hadron13.petrochem.data.recipe.PetrochemGasolineEngineRecipeGen;
 import io.github.hadron13.petrochem.data.recipe.PetrochemMixingRecipeGen;
+import io.github.hadron13.petrochem.data.recipe.PetrochemPumpjackRecipeGen;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
@@ -33,6 +35,8 @@ public class PetrochemRecipeProvider extends RecipeProvider {
     public static void registerAllProcessing(DataGenerator gen, PackOutput output) {
 
         GENERATORS.add(new PetrochemMixingRecipeGen(output));
+        GENERATORS.add(new PetrochemGasolineEngineRecipeGen(output));
+        GENERATORS.add(new PetrochemPumpjackRecipeGen(output));
 
         gen.addProvider(true, new DataProvider() {
 

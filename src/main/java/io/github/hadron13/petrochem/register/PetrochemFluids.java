@@ -78,51 +78,48 @@ public class PetrochemFluids {
             .register();
 
 
-    public static final FluidEntry<ForgeFlowingFluid.Flowing> NITROGEN = gas("Nitrogen");
-    public static final FluidEntry<ForgeFlowingFluid.Flowing> OXYGEN = gas("Oxygen");
-    public static final FluidEntry<ForgeFlowingFluid.Flowing> HYDROGEN = gas("Hydrogen");
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> NITROGEN = gas("Nitrogen", true);
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> OXYGEN = gas("Oxygen", true);
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> HYDROGEN = gas("Hydrogen", true);
 
-    public static final FluidEntry<ForgeFlowingFluid.Flowing> STEAM = gas("Steam");
-    public static final FluidEntry<ForgeFlowingFluid.Flowing> CHLORINE = gas("Chlorine");
-    public static final FluidEntry<ForgeFlowingFluid.Flowing> HYDROGEN_SULFIDE = gas("hydrogen_sulfide");
-    public static final FluidEntry<ForgeFlowingFluid.Flowing> VOLATILE_GAS = gas("volatile_gas");
-    public static final FluidEntry<ForgeFlowingFluid.Flowing> BUTANE = gas("Butane");
-    public static final FluidEntry<ForgeFlowingFluid.Flowing> PROPANE = gas("Propane");
-    public static final FluidEntry<ForgeFlowingFluid.Flowing> LPG = gas("Lpg");
-    public static final FluidEntry<ForgeFlowingFluid.Flowing> ETHYLENE = gas("Ethylene");
-    //    public static final FluidEntry<ForgeFlowingFluid.Flowing> ARGON = gas("argon");
-//    public static final FluidEntry<ForgeFlowingFluid.Flowing> AMMONIA = gas("ammonia");
-//    public static final FluidEntry<ForgeFlowingFluid.Flowing> DINITROGEN_TETROXIDE = gas("dinitrogen_tetroxide");
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> STEAM = gas("Steam", true);
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> CHLORINE = gas("Chlorine", true);
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> HYDROGEN_SULFIDE = gas("hydrogen_sulfide", true);
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> VOLATILE_GAS = gas("volatile_gas", true);
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> BUTANE = gas("Butane", true);
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> PROPANE = gas("Propane", true);
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> LPG = gas("Lpg", false);
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> ETHYLENE = gas("Ethylene", true);
 
 
     public static final FluidEntry<ForgeFlowingFluid.Flowing>
-        OIL_BRINE    = oillike("oil_brine", "Petroleum Brine", 0x373e42),
-        DESALTED_OIL = oillike("desalted_oil", "Desalted Petroleum", 0x482e37),
-        OIL          = oillike("oil", "Oil", 0x11141d),
-        LIGHT_NAPHTA = oillike("light_naphta", "Light Naphta", 0xd9d8a3),
-        HEAVY_NAPHTA = oillike("heavy_naphta", "Heavy Naphta", 0xc4c26e),
-        DESULFURIZED_HEAVY_NAPHTA = oillike("desulfurized_heavy_naphta", "Desulfurized Heavy Naphta", 0xcfc254),
-        PLASTIC = oillike("plastic", "Liquid Polyethylene", 0xd8d8d5),
-        HYDROCRACKED_GASOLINE = oillike("hydrocracked_gasoline", "Raw Gasoline", 0xa68d3f),
-        UNTREATED_GASOLINE = oillike("untreated_gasoline", "Untreated Gasoline", 0xc49b21),
-        GASOLINE = oillike("gasoline", "Refined Gasoline", 0xcfc254),
-        KEROSENE = oillike("kerosene", "Kerosene", 0x26a69a),
-        DESULFURIZED_KEROSENE = oillike("desulfurized_kerosene", "Desulfurized Kerosene", 0x26a69a),
-        LIGHT_DIESEL = oillike("light_diesel", "Light Diesel", 0xb58c4f),
-        HEAVY_DIESEL = oillike("heavy_diesel", "Heavy Diesel", 0x856638),
-        REFINED_DIESEL = oillike("diesel", "Refined Diesel", 0xe57373),
-        LIGHT_GAS_OIL = oillike("light_gas_oil", "Light Gas Oil", 0x5e7a88),
-        HEAVY_GAS_OIL = oillike("heavy_gas_oil", "Heavy Gas Oil", 0x2c393f),
-        HYDROTREATED_GAS_OIL = oillike("hydrotreated_gas_oil", "Hydrotreated Gas Oil", 0x3c394f),
-        DESULFURIZED_HEAVY_DIESEL = oillike("desulfurized_heavy_diesel", "Desulfurized Heavy Diesel", 0xb54f4f),
-        OIL_RESIDUE = oillike("oil_residue", "Oil Residue", 0x311111),
-        HEAVY_OIL_RESIDUE = oillike("heavy_oil_residue", "Heavy Oil Residue", 0x111111),
-        FUEL_OIL =  oillike("fuel_oil", "Fuel Oil", 0x525252),
-        ALKYLATE =  oillike("fuel_oil", "Fuel Oil", 0xb1a7c3),
-        LUBRICANT = oillike("lubricant", "Lubricant", 0xffc107)
+        OIL_BRINE    = oillike("oil_brine", "Petroleum Brine", 0x373e42, true),
+        DESALTED_OIL = oillike("desalted_oil", "Desalted Petroleum", 0x482e37, false),
+        OIL          = oillike("oil", "Oil", 0x11141d, false),
+        LIGHT_NAPHTA = oillike("light_naphta", "Light Naphta", 0xd9d8a3, false),
+        HEAVY_NAPHTA = oillike("heavy_naphta", "Heavy Naphta", 0xc4c26e, false),
+        DESULFURIZED_HEAVY_NAPHTA = oillike("desulfurized_heavy_naphta", "Desulfurized Heavy Naphta", 0xcfc254, true),
+        PLASTIC = oillike("plastic", "Liquid Polyethylene", 0xd8d8d5, false),
+        HYDROCRACKED_GASOLINE = oillike("hydrocracked_gasoline", "Raw Gasoline", 0xa68d3f, true),
+        UNTREATED_GASOLINE = oillike("untreated_gasoline", "Untreated Gasoline", 0xc49b21, false),
+        GASOLINE = oillike("gasoline", "Refined Gasoline", 0xcfc254, false),
+        KEROSENE = oillike("kerosene", "Kerosene", 0x26a69a, false),
+        DESULFURIZED_KEROSENE = oillike("desulfurized_kerosene", "Desulfurized Kerosene", 0x26a69a,true),
+        LIGHT_DIESEL = oillike("light_diesel", "Light Diesel", 0xb58c4f, true),
+        HEAVY_DIESEL = oillike("heavy_diesel", "Heavy Diesel", 0x856638, true),
+        REFINED_DIESEL = oillike("diesel", "Refined Diesel", 0xe57373, false),
+        LIGHT_GAS_OIL = oillike("light_gas_oil", "Light Gas Oil", 0x5e7a88, false),
+        HEAVY_GAS_OIL = oillike("heavy_gas_oil", "Heavy Gas Oil", 0x2c393f, false),
+        HYDROTREATED_GAS_OIL = oillike("hydrotreated_gas_oil", "Hydrotreated Gas Oil", 0x3c394f, true),
+        DESULFURIZED_HEAVY_DIESEL = oillike("desulfurized_heavy_diesel", "Desulfurized Heavy Diesel", 0xb54f4f, true),
+        OIL_RESIDUE = oillike("oil_residue", "Oil Residue", 0x311111, false),
+        HEAVY_OIL_RESIDUE = oillike("heavy_oil_residue", "Heavy Oil Residue", 0x111111, false),
+        FUEL_OIL =  oillike("fuel_oil", "Fuel Oil", 0x525252, false),
+        ALKYLATE =  oillike("fuel_oil", "Fuel Oil", 0xb1a7c3, true),
+        LUBRICANT = oillike("lubricant", "Lubricant", 0xffc107, false)
     ;
 
-    public static FluidEntry<ForgeFlowingFluid.Flowing> gas(String name){
+    public static FluidEntry<ForgeFlowingFluid.Flowing> gas(String name, boolean expert){
         return REGISTRATE
             .fluid(name.toLowerCase(), Petrochem.asResource("fluid/" + name.toLowerCase() + "_still"), Petrochem.asResource("fluid/" + name.toLowerCase() + "_flow"), TransparentFluidType::new)
             .properties(p -> p.viscosity(0).density(-100))
@@ -137,9 +134,9 @@ public class PetrochemFluids {
     }
 
 
-    public static FluidEntry<ForgeFlowingFluid.Flowing> oillike(String name, String lang, int fogColor){
+    public static FluidEntry<ForgeFlowingFluid.Flowing> oillike(String name, String lang, int fogColor, boolean expert){
         return REGISTRATE.standardFluid(name,
-                            SolidRenderedPlaceableFluidType.create(0x352228,
+                            SolidRenderedPlaceableFluidType.create(fogColor,
                                     () -> 1f / 32f ))
                     .lang(lang)
                     .properties(b -> b.viscosity(2000)

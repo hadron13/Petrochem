@@ -13,6 +13,11 @@ public class ElectrolyzingRecipe extends BasinRecipe {
         super(PetrochemRecipeTypes.ELECTROLYZING, params);
     }
 
+    public ElectrolyzingRecipe setEnergy(int energy){
+        requiredEnergy = energy;
+        return this;
+    }
+
     public void readAdditional(JsonObject json) {
         requiredEnergy = GsonHelper.getAsInt(json, "energy", 1000);
     }
