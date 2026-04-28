@@ -1,10 +1,10 @@
 {
   "type": "petrochem:pumpjack",
-  "biome": "minecraft:desert",
+  "biome": "minecraft:deep_ocean",
   "ingredients": [],
   "results": [
     {
-      "amount": 50,
+      "amount": 20,
       "fluid": "petrochem:petroleum"
     }
   ]

@@ -1,5 +1,9 @@
-// 1.20.1	2026-04-27T20:20:12.098400567	Petrochem's Processing Recipes
+// 1.20.1	2026-04-27T21:45:02.111665592	Petrochem's Processing Recipes
 c4d236bea04217a3cac77303b887e396e09e6254 data/petrochem/recipes/gasoline_engine_fuel/gasoline.json
 d51603734cb8ec59c641f35f06add52c5487ebf0 data/petrochem/recipes/gasoline_engine_fuel/kerosene.json
 2c51373e4b3201a36e975208a9af525be3d6e654 data/petrochem/recipes/mixing/sulfuric_acid.json
-3c638354fdef1987748da1336c960b2581f27ab3 data/petrochem/recipes/pumpjack/desert.json
+1ec039ee780eb5af7d3d2874f1081d49b00c17c4 data/petrochem/recipes/pumpjack/cold_deep_ocean.json
+b1ae5acf17eaea35aae3d1d25443f92d9e90991d data/petrochem/recipes/pumpjack/deep_ocean.json
+101bf7fcdac6f64deaffb1c1acbf071345d4e96f data/petrochem/recipes/pumpjack/desert.json
+ef1cfade486ba8662bc2db5509fcf49bdbb172ca data/petrochem/recipes/pumpjack/jungle.json
+26308a0c185185a906ed4529e95a28c75e341983 data/petrochem/recipes/pumpjack/swamp.json

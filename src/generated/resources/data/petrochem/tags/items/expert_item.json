@@ -1,0 +1,14 @@
+{
+  "values": [
+    "petrochem:nitrogen_bucket",
+    "petrochem:oxygen_bucket",
+    "petrochem:hydrogen_bucket",
+    "petrochem:steam_bucket",
+    "petrochem:chlorine_bucket",
+    "petrochem:hydrogen_sulfide_bucket",
+    "petrochem:volatile_gas_bucket",
+    "petrochem:butane_bucket",
+    "petrochem:propane_bucket",
+    "petrochem:ethylene_bucket"
+  ]
+}

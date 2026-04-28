@@ -1,6 +1,6 @@
 {
   "type": "petrochem:pumpjack",
-  "biome": "minecraft:desert",
+  "biome": "minecraft:deep_cold_ocean",
   "ingredients": [],
   "results": [
     {

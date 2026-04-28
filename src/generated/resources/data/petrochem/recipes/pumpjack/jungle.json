@@ -1,11 +1,11 @@
 {
   "type": "petrochem:pumpjack",
-  "biome": "minecraft:desert",
+  "biome": "minecraft:jungle",
   "ingredients": [],
   "results": [
     {
       "amount": 50,
-      "fluid": "petrochem:petroleum"
+      "fluid": "petrochem:desalted_oil"
     }
   ]
 }

@@ -129,6 +129,7 @@ public class PetrochemFluids {
                     .explosionResistance(100f))
             .source(ForgeFlowingFluid.Source::new)
             .bucket()
+            .tag(expert? PetrochemTags.EXPERT_ONLY_ITEM : PetrochemTags.NON_EXPERT_ONLY_ITEM)
             .build()
             .register();
     }
