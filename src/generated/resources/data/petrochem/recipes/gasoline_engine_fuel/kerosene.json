@@ -1,0 +1,12 @@
+{
+  "type": "petrochem:gasoline_engine_fuel",
+  "ingredients": [
+    {
+      "amount": 1,
+      "fluid": "petrochem:kerosene",
+      "nbt": {}
+    }
+  ],
+  "processingTime": 25,
+  "results": []
+}
