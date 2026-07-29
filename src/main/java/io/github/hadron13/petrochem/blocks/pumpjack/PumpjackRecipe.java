@@ -1,13 +1,9 @@
 package io.github.hadron13.petrochem.blocks.pumpjack;
 
 import com.mojang.serialization.MapCodec;
-import com.simibubi.create.content.kinetics.deployer.ItemApplicationRecipe;
-import com.simibubi.create.content.kinetics.deployer.ItemApplicationRecipeParams;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
-import dev.latvian.mods.kubejs.util.Tags;
 import io.github.hadron13.petrochem.register.PetrochemRecipeTypes;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
@@ -30,7 +26,7 @@ public class PumpjackRecipe extends ProcessingRecipe<RecipeInput, PumpjackRecipe
         super(PetrochemRecipeTypes.PUMPJACK, params);
 
         if(params.biome.contains("#")){
-            biome_tag = Tags.biome(ResourceLocation.parse(params.biome.substring(1)));
+            biome_tag = TagKey.create(Registries.BIOME, ResourceLocation.parse(params.biome.substring(1)));
         }else{
             biome = ResourceKey.create(Registries.BIOME, ResourceLocation.parse(params.biome));
         }
