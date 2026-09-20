@@ -138,6 +138,17 @@ public class PetrochemStandardRecipeGen extends BaseRecipeProvider {
                             .pattern("ZSC")
                     );
 
+    GeneratedRecipe BASIN_SHROUD =
+            create(PetrochemBlocks.BASIN_SHROUD)
+                    .unlockedBy(AllBlocks.MECHANICAL_MIXER::get)
+                    .viaShaped(b -> b
+                            .define('G', Blocks.GLASS)
+                            .define('S', CommonMetal.STEEL.plates)
+                            .pattern(" S ")
+                            .pattern("SGS")
+                            .pattern(" S ")
+                    );
+
     GeneratedRecipe DISTILLATION_CONTROLLER =
             create(PetrochemBlocks.DISTILLATION_CONTROLLER)
                     .unlockedBy(PetrochemBlocks.STEEL_FLUID_TANK::get)

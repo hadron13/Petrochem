@@ -1,4 +1,5 @@
-// 1.21.1	2026-07-15T18:53:42.068839496	Recipes
+// 1.21.1	2026-09-19T22:09:59.527710802	Recipes
+0407ec99e54780764f0f83734a547e8412c4e5b6 data/petrochem/advancement/recipes/misc/crafting/null/basin_shroud.json
 16c6da1957f4d3bace320cbdc7b75b5cd47dc4b9 data/petrochem/advancement/recipes/misc/crafting/null/distillation_controller.json
 0ec7aaf4babc11291b621cc101cc4318f8b39d3e data/petrochem/advancement/recipes/misc/crafting/null/distillation_output.json
 553773e7ed3774e5444e5c795ce89a224d80bc97 data/petrochem/advancement/recipes/misc/crafting/null/electrolyzer.json
@@ -16,6 +17,7 @@ cd13b6446486cfd1197f0bd7d019748af543f28a data/petrochem/advancement/recipes/misc
 39284d0718a3e05aa4efb370af2de51ef1a444da data/petrochem/advancement/recipes/misc/crafting/null/steel_pump.json
 42c43e8091bcd8a3eb329a6479bea7a55b2a5594 data/petrochem/advancement/recipes/misc/crafting/null/steel_smart_fluid_pipe.json
 b6bc8ce5c98a9f701830d8ec44a17e4a62a3fcaf data/petrochem/advancement/recipes/misc/crafting/null/turbine.json
+ef4fb97de964fa0d5b9b10c8eefde84299f04cce data/petrochem/recipe/crafting/null/basin_shroud.json
 f9f6264b8c3703a7174ccd7eff5aa9872bdabb11 data/petrochem/recipe/crafting/null/distillation_controller.json
 09d5acecee563c2fba27ea8ac108092a482814bc data/petrochem/recipe/crafting/null/distillation_output.json
 5d4b1e8a6472dedad527a48a1004335f4e30998b data/petrochem/recipe/crafting/null/electrolyzer.json

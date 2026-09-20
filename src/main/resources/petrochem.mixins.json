@@ -3,6 +3,8 @@
   "package": "io.github.hadron13.petrochem.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "BasinBlockEntityMixin",
+    "BasinRendererMixin",
     "PoweredShaftBlockEntityMixin",
     "accessor.BasinBlockEntityAccessor",
     "accessor.KineticBlockEntityAccessor"

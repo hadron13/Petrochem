@@ -16,6 +16,8 @@
   "petrochem.hint.distil.width": "It appears that this Distillation Column is _not_ wide enough for this mode",
   "petrochem.hint.distil.discard.title": "Discard Mode:",
   "petrochem.hint.distil.discard": "Outputs will be automatically voided",
+  "petrochem.hint.basin_unsealed.title": "Basin Leaking",
+  "petrochem.hint.basin_unsealed": "It appears that gas is leaking out of the basin",
 
   "petrochem.gui.electrolyzer.speed": "Speed (%)",
 

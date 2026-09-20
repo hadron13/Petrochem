@@ -27,7 +27,7 @@ public class PetrochemShapes {
                     .add(3, 3, 1, 13, 13, 15)
                     .forDirectional(NORTH),
 
-    MEDIUM_ENGINE = shape(1, 0, 1, 15, 3, 15) //thick base
+            MEDIUM_ENGINE = shape(1, 0, 1, 15, 3, 15) //thick base
             .add(2, 0, 2, 14, 15, 14) //main body
 //                .add(1, 5, 4, 15, 13, 12)
             .forHorizontalAxis(),
@@ -39,6 +39,10 @@ public class PetrochemShapes {
                     .add(2, 2, 0, 14, 14, 15)
 //                .add(1, 4, 5, 15, 12, 13)
                     .forHorizontal(SOUTH);
+
+    public static final VoxelShape
+            BASIN_SHROUD = shape(0, 0, 0, 16, 18, 16).erase(1, 0, 1, 15, 18, 15).build();
+
     private static PetrochemShapes.Builder shape(VoxelShape shape) {
         return new PetrochemShapes.Builder(shape);
     }

@@ -22,6 +22,9 @@
   "block.petrochem.medium_engine.tooltip.summary": "Can use _Diesel_, _Fuel Oil_ or raw _Petroleum_ (at cost of efficiency)",
   "block.petrochem.turbine.tooltip": "GAS TURBINE",
   "block.petrochem.turbine.tooltip.summary": "Uses _LPG_ or _Steam_ (low efficiency) to produce electricity",
+  "block.petrochem.basin_shroud.tooltip": "BASIN SHROUD",
+  "block.petrochem.basin_shroud.tooltip.condition1": "When placed between a basin and it's operating block",
+  "block.petrochem.basin_shroud.tooltip.summary": "Seals the basin and it's operating block to allow for lossless gasworking",
   "item.petrochem.blaze_candy.tooltip": "BLAZE CANDY",
   "item.petrochem.blaze_candy.tooltip.summary": "An alternate delicious _lava free_ treat for your laborous _Blaze Burners_. Also gets them all fired up!"
 }

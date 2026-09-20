@@ -11,6 +11,7 @@ import com.simibubi.create.foundation.data.*;
 import com.simibubi.create.foundation.data.recipe.CommonMetal;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import io.github.hadron13.petrochem.Petrochem;
+import io.github.hadron13.petrochem.blocks.basin_shroud.BasinShroudBlock;
 import io.github.hadron13.petrochem.blocks.distillation_tower.DistillationControllerBlock;
 import io.github.hadron13.petrochem.blocks.distillation_tower.DistillationControllerGenerator;
 import io.github.hadron13.petrochem.blocks.distillation_tower.DistillationOutputBlock;
@@ -304,6 +305,17 @@ public class PetrochemBlocks {
             .tag(Tags.Items.STORAGE_BLOCKS)
             .build()
             .lang("Block of Steel")
+            .register();
+
+
+    public static final BlockEntry<BasinShroudBlock> BASIN_SHROUD =  REGISTRATE.block("basin_shroud", BasinShroudBlock::new)
+            .initialProperties(SharedProperties::stone)
+            .properties(p -> p.mapColor(MapColor.COLOR_GRAY).noOcclusion())
+            .blockstate((c, p) -> p.simpleBlock(c.get(), AssetLookup.standardModel(c, p)))
+            .transform(pickaxeOnly())
+            .lang("Basin Shroud")
+            .item()
+            .build()
             .register();
 
 }
