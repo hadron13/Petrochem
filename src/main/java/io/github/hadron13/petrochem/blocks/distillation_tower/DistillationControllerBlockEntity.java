@@ -111,13 +111,16 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
             return outputs.get(level) != pos;
         }
         outputs.put(level, pos);
-        if(currentRecipe != null)
+        if(currentRecipe != null){
             requiredOutputs = currentRecipe.getFluidResults().size() - outputs.size();
-        else{
-            SteelTankBlockEntity tankController = getTankControllerBE().orElse(null);
-            if(tankController != null)
-                requiredOutputs = (tankController.getHeight()/2)+2 - outputs.size();
+        } else{
+            requiredOutputs = 0;
         }
+//        else{
+//            SteelTankBlockEntity tankController = getTankControllerBE().orElse(null);
+//            if(tankController != null)
+//                requiredOutputs = (tankController.getHeight()/2)+2 - outputs.size();
+//        }
         sendData();
         return false;
     }
@@ -127,8 +130,11 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
         outputs.remove(level);
         if(this.level.isClientSide)
             return;
-        if(tankController != null)
-            requiredOutputs = (tankController.getHeight()/2)+2 - outputs.size();
+        if(currentRecipe != null){
+            requiredOutputs = currentRecipe.getFluidResults().size() - outputs.size();
+        } else{
+            requiredOutputs = 0;
+        }
         sendData();
     }
 
