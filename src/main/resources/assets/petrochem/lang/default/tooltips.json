@@ -23,8 +23,13 @@
   "block.petrochem.turbine.tooltip": "GAS TURBINE",
   "block.petrochem.turbine.tooltip.summary": "Uses _LPG_ or _Steam_ (low efficiency) to produce electricity",
   "block.petrochem.basin_shroud.tooltip": "BASIN SHROUD",
+  "block.petrochem.basin_shroud.tooltip.summary": "",
   "block.petrochem.basin_shroud.tooltip.condition1": "When placed between a basin and it's operating block",
-  "block.petrochem.basin_shroud.tooltip.summary": "Seals the basin and it's operating block to allow for lossless gasworking",
+  "block.petrochem.basin_shroud.tooltip.behaviour1": "Seals the basin and it's operating block to allow for lossless gasworking",
+  "block.petrochem.steam_output.tooltip": "STEAM OUTPUT",
+  "block.petrochem.steam_output.tooltip.summary": "",
+  "block.petrochem.steam_output.tooltip.condition1": "When placed on a working boiler",
+  "block.petrochem.steam_output.tooltip.behaviour1": "Outputs steam fluid",
   "item.petrochem.blaze_candy.tooltip": "BLAZE CANDY",
   "item.petrochem.blaze_candy.tooltip.summary": "An alternate delicious _lava free_ treat for your laborous _Blaze Burners_. Also gets them all fired up!"
 }

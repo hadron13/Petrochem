@@ -35,6 +35,7 @@
   "petrochem.gui.distil_duplicate": "Duplicate Output",
   "petrochem.gui.engine.load": "Engine Load:",
   "petrochem.gui.engine.consumption": "Fuel Consumption:",
+  "petrochem.gui.steam_output.output": "Output Rate:",
 
   "petrochem.recipe.electrolyzing": "Electrolyzing",
   "petrochem.recipe.pumpjack": "Pumping",

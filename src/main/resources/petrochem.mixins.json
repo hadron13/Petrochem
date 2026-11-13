@@ -5,6 +5,7 @@
   "mixins": [
     "BasinBlockEntityMixin",
     "BasinRendererMixin",
+    "BoilerDataMixin",
     "PoweredShaftBlockEntityMixin",
     "accessor.BasinBlockEntityAccessor",
     "accessor.KineticBlockEntityAccessor"

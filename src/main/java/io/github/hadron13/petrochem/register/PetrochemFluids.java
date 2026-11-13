@@ -81,8 +81,8 @@ public class PetrochemFluids {
     }
 
     public static final FluidEntry<BaseFlowingFluid.Flowing> NITROGEN = gas("Nitrogen", true);
-    public static final FluidEntry<BaseFlowingFluid.Flowing> OXYGEN = gas("Oxygen", true);
-    public static final FluidEntry<BaseFlowingFluid.Flowing> HYDROGEN = gas("Hydrogen", true);
+    public static final FluidEntry<BaseFlowingFluid.Flowing> OXYGEN = gas("Oxygen", false);
+    public static final FluidEntry<BaseFlowingFluid.Flowing> HYDROGEN = gas("Hydrogen", false);
 
     public static final FluidEntry<BaseFlowingFluid.Flowing> STEAM = gas("Steam", false);
     public static final FluidEntry<BaseFlowingFluid.Flowing> CHLORINE = gas("Chlorine", false);

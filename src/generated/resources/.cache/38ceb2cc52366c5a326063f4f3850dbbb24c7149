@@ -1,4 +1,4 @@
-// 1.21.1	2026-09-19T22:36:08.219324833	Registrate Provider for petrochem [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+// 1.21.1	2026-11-12T22:06:10.338658988	Registrate Provider for petrochem [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
 998bcd26022966bc3d97fe2502eac2b9a9bb1c29 assets/petrochem/blockstates/asphalt.json
 35a94a2526caa65e33963faa228d4d9689a3fee8 assets/petrochem/blockstates/basin_shroud.json
 850e2a21ec92b0cd645bf1479e4db56abc58a863 assets/petrochem/blockstates/butane.json
@@ -44,6 +44,7 @@ b5b96d9ce76644c4b3021b5b860a03ef889bdf34 assets/petrochem/blockstates/plastic.js
 cce69baf9d9072fa4e26e22c77d3c80b046ee8eb assets/petrochem/blockstates/pumpjack_well.json
 415f23612cf3bc2812ff115c66ebf01aef885fe0 assets/petrochem/blockstates/small_engine.json
 adb621d2d455accf870b3b69f7b9af01fc20fc0d assets/petrochem/blockstates/steam.json
+0dd5707207f8634acb3eda94fe22bbaf25e583fa assets/petrochem/blockstates/steam_output.json
 98b16b268e7f7cdda74e501894b18853d097902d assets/petrochem/blockstates/steel_block.json
 90f8472ad4dd3e61adf4738ec9293518e9f1f297 assets/petrochem/blockstates/steel_fluid_pipe.json
 8eae6df6cba746a2b535e32fb44a7124860e0f07 assets/petrochem/blockstates/steel_fluid_tank.json
@@ -55,8 +56,8 @@ bd8a5f386a8775d9a2f78e5f175876b2f8098453 assets/petrochem/blockstates/straight_s
 eacba25088da7f3023d0f06f4f66a1da451da370 assets/petrochem/blockstates/turbine.json
 5fb985075e0b1b77d883094e92729f4a9ffe7105 assets/petrochem/blockstates/untreated_gasoline.json
 da00d7f51b325b06b7e8b523fc6433e69c118df7 assets/petrochem/blockstates/volatile_gas.json
-48335c4a134d2e21e523435266acdd469873298c assets/petrochem/lang/en_ud.json
-d5f1ddb2421af80ea2c5852609d08bf77073dee7 assets/petrochem/lang/en_us.json
+27c4b01badc462b3ab6ae99c2f0bd768c6c3d08d assets/petrochem/lang/en_ud.json
+78acfc848b9ce65b89b05b5d0312853a049b112e assets/petrochem/lang/en_us.json
 0ea1936a87a157e8b826ed3db00971bbbb563326 assets/petrochem/models/block/butane.json
 be42263101c780283f41b7e91216d3951e52c5fd assets/petrochem/models/block/chlorine.json
 f88df60cac6df81c02c1d9c7feef8f7c9b5e0501 assets/petrochem/models/block/desalted_oil.json
@@ -131,6 +132,7 @@ c5384f0650f4e664d39829dead7eb3b0e6e28cea assets/petrochem/models/item/blaze_cand
 cee4798f0fb25d6effd2c3f3dbac6368ba1066a1 assets/petrochem/models/item/bronze_ingot.json
 cbda90f8087ea1eb5edacef70f5f5898b48ce736 assets/petrochem/models/item/bronze_sheet.json
 2893be722fe590326cee72ac5581304354f26d4e assets/petrochem/models/item/butane_bucket.json
+575b4b284e051c461b019650c8f554740c11a3bb assets/petrochem/models/item/carbon_dust.json
 ee9f6ec8f8abe0bc2fd4efecb809e15edb95b326 assets/petrochem/models/item/caustic_soda.json
 82ce4892830443b348b552fa8ebecef9e584d47e assets/petrochem/models/item/chlorine_bucket.json
 5ccd3da184b8c7b43cd521a81498ab4ba37a6266 assets/petrochem/models/item/desalted_oil_bucket.json
@@ -175,6 +177,7 @@ a8421b4de088c9b84bdc2ff8bd5aa4e66172362b assets/petrochem/models/item/pumpjack_w
 296f43fa3a9f1277f39a23b7ab4d8677d55969f5 assets/petrochem/models/item/salt_dust.json
 ee35649c2afafe6da867c869e491dc264beac389 assets/petrochem/models/item/small_engine.json
 f3d14a0c15827b2cd422c12ea2d1b3a1cee035b7 assets/petrochem/models/item/steam_bucket.json
+64ee14d3a23dbd6493f127efad962d7c41792bb0 assets/petrochem/models/item/steam_output.json
 f83a880ea7637c4b3146c24fa725241fb4fcbfa3 assets/petrochem/models/item/steel_block.json
 16efb9f5d7d80a9e7159e66eb836848b5f160452 assets/petrochem/models/item/steel_fluid_pipe.json
 bdaf17714d28f0364e4a63283b50c0d422048f0b assets/petrochem/models/item/steel_fluid_tank.json
@@ -206,10 +209,10 @@ e20d747d8b855457012fdfcc115e96d1816fb23f data/c/tags/item/storage_blocks/steel.j
 cbe371197c63645d64b78dd2aa224facc572b41b data/create/data_maps/item/superheated_blaze_burner_fuels.json
 e20d747d8b855457012fdfcc115e96d1816fb23f data/minecraft/tags/block/beacon_base_blocks.json
 65e486690862462934941e446d98ccb4cdff1145 data/minecraft/tags/block/mineable/axe.json
-7c5ed0270fa9f834a90e7f7b0d2a1c03c795082e data/minecraft/tags/block/mineable/pickaxe.json
+2951ce2e98622211324bb1ade101f56a2c4da0f3 data/minecraft/tags/block/mineable/pickaxe.json
 e20d747d8b855457012fdfcc115e96d1816fb23f data/minecraft/tags/block/needs_iron_tool.json
 f890531145e2a9feef8eff4424e5477ce76a2cf8 data/minecraft/tags/fluid/lava.json
-75aa4d7537f5ea3f33921f9972ec9402be7c2db9 data/neoforge/data_maps/item/furnace_fuels.json
+4ee05e48a01e8294bf210f9ba9a5d0d30533f724 data/neoforge/data_maps/item/furnace_fuels.json
 784d6641cc6d5d2605df866eb637a61438e7d33e data/petrochem/loot_table/blocks/asphalt.json
 ad89559aef79a06b4b6f9ad9e207864e2b8c3f1f data/petrochem/loot_table/blocks/basin_shroud.json
 faf00e2140fd12246725843681b16793273528a0 data/petrochem/loot_table/blocks/distillation_controller.json
@@ -222,6 +225,7 @@ af121ad167825a5a99b8605732b60d8d57bfdd52 data/petrochem/loot_table/blocks/distil
 410b116ef863a5d085f96235828ab65ccbddd37c data/petrochem/loot_table/blocks/pumpjack_crank.json
 ba42985c5b640769ef8a0016c7c54abe1f7cfa21 data/petrochem/loot_table/blocks/pumpjack_well.json
 d5e62ed6deaee3321cfe5f7b93e62d88a63919b3 data/petrochem/loot_table/blocks/small_engine.json
+b5ee98ff188eeb045f2916bf7ee4b3177313d877 data/petrochem/loot_table/blocks/steam_output.json
 fa413898e3d95529d9fa66da0c29c2d53a22b777 data/petrochem/loot_table/blocks/steel_block.json
 b5834a5c935db471f95e0f2a5adfb09cb2c2db9b data/petrochem/loot_table/blocks/steel_fluid_pipe.json
 c29dd05faf9f24068ba52b71a4fb4c0c7b076d02 data/petrochem/loot_table/blocks/steel_fluid_tank.json

@@ -149,6 +149,18 @@ public class PetrochemStandardRecipeGen extends BaseRecipeProvider {
                             .pattern(" S ")
                     );
 
+    GeneratedRecipe STEAM_OUTPUT =
+            create(PetrochemBlocks.STEAM_OUTPUT)
+                    .unlockedBy(AllBlocks.FLUID_TANK::get)
+                    .viaShaped(b -> b
+                            .define('B', CommonMetal.BRASS.plates)
+                            .define('C', CommonMetal.COPPER.storageBlocks.items())
+                            .define('P', AllBlocks.FLUID_PIPE)
+                            .pattern("P")
+                            .pattern("B")
+                            .pattern("C")
+                    );
+
     GeneratedRecipe DISTILLATION_CONTROLLER =
             create(PetrochemBlocks.DISTILLATION_CONTROLLER)
                     .unlockedBy(PetrochemBlocks.STEEL_FLUID_TANK::get)

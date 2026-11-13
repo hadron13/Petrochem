@@ -6,7 +6,7 @@ import net.createmod.catnip.config.ConfigBase;
 public class GBCommon extends ConfigBase {
 
     public final ConfigInt turbineEnergyProduction =
-            i(128, 1, "turbineProduction", "[in FE/tick]", Comments.turbine_production);
+            i(360, 1, "turbineProduction", "[in FE/tick]", Comments.turbine_production);
 
     public final ConfigBool basinsLeakGas = b(true, "basinsLeakGas", "", Comments.basin_leak);
 

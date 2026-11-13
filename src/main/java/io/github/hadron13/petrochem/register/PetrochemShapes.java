@@ -29,16 +29,24 @@ public class PetrochemShapes {
 
             MEDIUM_ENGINE = shape(1, 0, 1, 15, 3, 15) //thick base
             .add(2, 0, 2, 14, 15, 14) //main body
-//                .add(1, 5, 4, 15, 13, 12)
             .forHorizontalAxis(),
             MEDIUM_ENGINE_CEILING = shape(1, 13, 1, 15, 16, 15)
                     .add(2, 1, 2, 14, 16, 14)
-//                .add(1, 3, 4, 15, 11, 12)
                     .forHorizontalAxis(),
             MEDIUM_ENGINE_WALL = shape(1, 1, 0, 15, 15, 3)
                     .add(2, 2, 0, 14, 14, 15)
-//                .add(1, 4, 5, 15, 12, 13)
+                    .forHorizontal(SOUTH),
+            STEAM_OUTPUT = shape(1, 0, 1, 15, 3, 15).add(3, 0, 3, 13, 17, 13)
+                    .add(1, 5, 4, 15, 13, 12)
+                    .forHorizontalAxis(),
+            STEAM_OUTPUT_CEILING = shape(1, 13, 1, 15, 16, 15).add(3, -1, 3, 13, 16, 13)
+                    .add(1, 3, 4, 15, 11, 12)
+                    .forHorizontalAxis(),
+            STEAM_OUTPUT_WALL = shape(1, 1, 0, 15, 15, 3).add(3, 3, 0, 13, 13, 17)
+                    .add(1, 4, 5, 15, 12, 13)
                     .forHorizontal(SOUTH);
+
+    ;
 
     public static final VoxelShape
             BASIN_SHROUD = shape(0, 0, 0, 16, 18, 16).erase(1, 0, 1, 15, 18, 15).build();

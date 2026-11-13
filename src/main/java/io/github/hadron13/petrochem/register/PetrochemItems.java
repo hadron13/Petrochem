@@ -29,6 +29,12 @@ public class PetrochemItems {
             .burnTime(3200)
             .register();
 
+
+    public static final ItemEntry<Item> CARBON_DUST = REGISTRATE.item("carbon_dust", Item::new)
+            .burnTime(2000)
+            .register();
+
+
     public static final ItemEntry<Item> BLAZE_CANDY = REGISTRATE.item("blaze_candy", Item::new)
             .dataMap(CreateDataMaps.SUPERHEATED_BLAZE_BURNER_FUELS, new BlazeBurnerFuel(4000))
             .burnTime(8000)

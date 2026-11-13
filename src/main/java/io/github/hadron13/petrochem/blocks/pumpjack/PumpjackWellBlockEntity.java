@@ -1,6 +1,5 @@
 package io.github.hadron13.petrochem.blocks.pumpjack;
 
-import com.simibubi.create.AllBlocks;
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.content.fluids.pipes.AxisPipeBlock;
 import com.simibubi.create.content.fluids.pipes.FluidPipeBlock;
@@ -11,13 +10,14 @@ import io.github.hadron13.petrochem.PetrochemLang;
 import io.github.hadron13.petrochem.register.PetrochemBlockEntities;
 import io.github.hadron13.petrochem.register.PetrochemFluids;
 import io.github.hadron13.petrochem.register.PetrochemRecipeTypes;
+import net.createmod.catnip.data.Pair;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -28,9 +28,10 @@ import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.fluids.FluidStack;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import static io.github.hadron13.petrochem.blocks.pumpjack.PumpjackWellBlock.HORIZONTAL_FACING;
 import static net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE;
@@ -42,7 +43,7 @@ public class PumpjackWellBlockEntity extends SmartBlockEntity implements IHaveGo
     public PumpjackRecipe currentRecipe;
 
 
-    public static ArrayList<BlockPos> loadedWells = new ArrayList<>();
+    public static Set<Pair<ResourceKey<Level>,BlockPos>> loadedWells = new HashSet<>();
     public boolean isPipingValid = false;
     public float efficiency = 1f;
 
@@ -62,7 +63,7 @@ public class PumpjackWellBlockEntity extends SmartBlockEntity implements IHaveGo
     @Override
     public void setLevel(Level pLevel) {
         if(!hasLevel() && !pLevel.isClientSide){
-            loadedWells.add(getBlockPos());
+            loadedWells.add(Pair.of(level.dimension(), getBlockPos()));
         }
         super.setLevel(pLevel);
     }
@@ -71,14 +72,14 @@ public class PumpjackWellBlockEntity extends SmartBlockEntity implements IHaveGo
     public void remove() {
         super.remove();
         if(!level.isClientSide)
-            loadedWells.remove(getBlockPos());
+            loadedWells.remove(Pair.of(level.dimension(), getBlockPos()));
     }
 
     @Override
     public void onChunkUnloaded() {
         super.onChunkUnloaded();
         if(!level.isClientSide)
-            loadedWells.remove(getBlockPos());
+            loadedWells.remove(Pair.of(level.dimension(), getBlockPos()));
     }
 
     @Override
@@ -100,13 +101,17 @@ public class PumpjackWellBlockEntity extends SmartBlockEntity implements IHaveGo
     }
 
     public void updateEfficiency(){
+        if(level == null)
+            return;
         BlockPos pos = getBlockPos();
         efficiency = 1f;
-        for(BlockPos other : loadedWells){
-            if(pos.equals(other))
+        for(Pair<ResourceKey<Level>, BlockPos> other : loadedWells){
+            if(!level.dimension().equals(other.getFirst()))
+                continue;
+            if(pos.equals(other.getSecond()))
                 continue;
 
-            if(pos.closerThan(other.atY(pos.getY()), 8)){
+            if(pos.closerThan(other.getSecond().atY(pos.getY()), 4)){
                 efficiency *= 0.75f;
             }
         }

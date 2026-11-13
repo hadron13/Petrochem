@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "c:plates/brass"
+    },
+    "C": {
+      "tag": "c:storage_blocks/copper"
+    },
+    "P": {
+      "item": "create:fluid_pipe"
+    }
+  },
+  "pattern": [
+    "P",
+    "B",
+    "C"
+  ],
+  "result": {
+    "count": 1,
+    "id": "petrochem:steam_output"
+  }
+}

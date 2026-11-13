@@ -3,6 +3,9 @@
     "petrochem:blaze_candy": {
       "burn_time": 8000
     },
+    "petrochem:carbon_dust": {
+      "burn_time": 2000
+    },
     "petrochem:petroleum_coke": {
       "burn_time": 3200
     }

@@ -19,6 +19,7 @@
     "petrochem:steel_smart_fluid_pipe",
     "petrochem:turbine",
     "petrochem:steel_block",
-    "petrochem:basin_shroud"
+    "petrochem:basin_shroud",
+    "petrochem:steam_output"
   ]
 }

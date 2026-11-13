@@ -7,17 +7,22 @@
     },
     {
       "type": "neoforge:single",
-      "amount": 500,
+      "amount": 600,
       "fluid": "minecraft:water"
     }
   ],
   "results": [
     {
+      "count": 2,
       "id": "petrochem:caustic_soda"
     },
     {
       "amount": 250,
       "id": "petrochem:chlorine"
+    },
+    {
+      "amount": 400,
+      "id": "petrochem:hydrogen"
     }
   ]
 }

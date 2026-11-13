@@ -25,18 +25,16 @@ public class PetrochemElectrolyzingRecipeGen extends ElectrolyzingRecipeGen {
             .require(Fluids.WATER, 300)
             .output(PetrochemFluids.HYDROGEN.get(), 200)
             .output(PetrochemFluids.OXYGEN.get(), 100)
-            .whenModLoaded(Petrochem.REALISTIC_MODID)
     ),
     CHLOR_ALKALI = create("chlor_alkali", b -> b
             .energy(150)
-            .require(Fluids.WATER, 500)
+            .require(Fluids.WATER, 600)
             .require(PetrochemItems.SALT_DUST.get())
             .output(PetrochemFluids.CHLORINE.get(), 250)
-            .output(PetrochemItems.CAUSTIC_SODA)
+            .output(PetrochemFluids.HYDROGEN.get(), 400)
+            .output(PetrochemItems.CAUSTIC_SODA, 2)
     )
-
-
-            ;
+;
 
 
     public PetrochemElectrolyzingRecipeGen(PackOutput generator, CompletableFuture<HolderLookup.Provider> registries) {

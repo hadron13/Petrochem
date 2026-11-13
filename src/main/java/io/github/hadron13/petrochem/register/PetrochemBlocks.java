@@ -19,6 +19,7 @@ import io.github.hadron13.petrochem.blocks.electrolyzer.ElectrolyzerBlock;
 import io.github.hadron13.petrochem.blocks.flarestack.FlarestackBlock;
 import io.github.hadron13.petrochem.blocks.medium_engine.MediumEngineBlock;
 import io.github.hadron13.petrochem.blocks.small_engine.SmallEngineBlock;
+import io.github.hadron13.petrochem.blocks.steam_output.SteamOutputBlock;
 import io.github.hadron13.petrochem.blocks.steel_pipe.SteelGlassPipeBlock;
 import io.github.hadron13.petrochem.blocks.steel_pipe.SteelPipeAttachmentModel;
 import io.github.hadron13.petrochem.blocks.steel_pipe.SteelPipeBlock;
@@ -314,6 +315,16 @@ public class PetrochemBlocks {
             .blockstate((c, p) -> p.simpleBlock(c.get(), AssetLookup.standardModel(c, p)))
             .transform(pickaxeOnly())
             .lang("Basin Shroud")
+            .item()
+            .build()
+            .register();
+
+    public static final BlockEntry<SteamOutputBlock> STEAM_OUTPUT =  REGISTRATE.block("steam_output", SteamOutputBlock::new)
+            .initialProperties(SharedProperties::stone)
+            .properties(p -> p.mapColor(MapColor.COLOR_GRAY).noOcclusion())
+            .blockstate((c, p) -> p.horizontalFaceBlock(c.get(), AssetLookup.standardModel(c, p)))
+            .transform(pickaxeOnly())
+            .lang("Steam Output")
             .item()
             .build()
             .register();

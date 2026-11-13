@@ -1,4 +1,4 @@
-// 1.21.1	2026-09-19T22:09:59.527710802	Recipes
+// 1.21.1	2026-11-12T22:00:44.534626371	Recipes
 0407ec99e54780764f0f83734a547e8412c4e5b6 data/petrochem/advancement/recipes/misc/crafting/null/basin_shroud.json
 16c6da1957f4d3bace320cbdc7b75b5cd47dc4b9 data/petrochem/advancement/recipes/misc/crafting/null/distillation_controller.json
 0ec7aaf4babc11291b621cc101cc4318f8b39d3e data/petrochem/advancement/recipes/misc/crafting/null/distillation_output.json
@@ -8,6 +8,7 @@ a369cbd5b76bd7ddf19c1aeb828d0129be5aceaf data/petrochem/advancement/recipes/misc
 1255f0bba97f125c4501062866c9255e83b41cdc data/petrochem/advancement/recipes/misc/crafting/null/pumpjack_crank.json
 0f38770d465c971113f3328d73b4af24e92052aa data/petrochem/advancement/recipes/misc/crafting/null/pumpjack_well.json
 1faa3df8956b9c19d4f367d67bca06e5cc7de3c8 data/petrochem/advancement/recipes/misc/crafting/null/small_engine.json
+e33ae876258f7c364d92735e8b0b7682aff03c86 data/petrochem/advancement/recipes/misc/crafting/null/steam_output.json
 cd13b6446486cfd1197f0bd7d019748af543f28a data/petrochem/advancement/recipes/misc/crafting/null/steel_block.json
 01eb61dcec0eb9012fe15ecf6dce9b5034ac3530 data/petrochem/advancement/recipes/misc/crafting/null/steel_fluid_pipe.json
 5bc514269895be3b6443711c6322468b6e826367 data/petrochem/advancement/recipes/misc/crafting/null/steel_fluid_pipe_vertical.json
@@ -26,6 +27,7 @@ f9f6264b8c3703a7174ccd7eff5aa9872bdabb11 data/petrochem/recipe/crafting/null/dis
 d70156d76c681ebc76f7a9d5973d92e88ec53145 data/petrochem/recipe/crafting/null/pumpjack_crank.json
 a3294642f83f704539ff1f7f3307141593b8505d data/petrochem/recipe/crafting/null/pumpjack_well.json
 8f57182d69e644169b5f978f8262bf96a16ab949 data/petrochem/recipe/crafting/null/small_engine.json
+cbeb520cfe113a70c7af05e4a1d36787c2d1260b data/petrochem/recipe/crafting/null/steam_output.json
 34a90a3f11de24dd5bc41bf144a5da9384b2338e data/petrochem/recipe/crafting/null/steel_block.json
 99b21220eb03245b26cca640f11c82af9d449881 data/petrochem/recipe/crafting/null/steel_fluid_pipe.json
 fd2c76ce7b7577ffe8e0f8d13c33b107f95ae330 data/petrochem/recipe/crafting/null/steel_fluid_pipe_vertical.json

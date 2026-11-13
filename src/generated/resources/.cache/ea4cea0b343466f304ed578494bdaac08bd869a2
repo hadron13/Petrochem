@@ -1,4 +1,4 @@
-// 1.21.1	2026-07-31T19:01:56.624050401	petrochem's processing recipes: electrolyzing
+// 1.21.1	2026-11-12T09:19:46.707389563	petrochem's processing recipes: electrolyzing
 c504baa75559db34a4109115b3f8d68c58138ad0 data/petrochem/recipe/electrolyzing/basic_desalting.json
-e16225116830951ddd577d25f0c6b5148b3206f9 data/petrochem/recipe/electrolyzing/chlor_alkali.json
-eade6fd5d2516bf2efbb3bd4d438319740cf195a data/petrochem/recipe/electrolyzing/water_electrolysis.json
+5c9107532aa9c50453025c5d07acaffa1ae0f2bd data/petrochem/recipe/electrolyzing/chlor_alkali.json
+425fb78ab1e6687e6846a8409b8f249f33a54d0b data/petrochem/recipe/electrolyzing/water_electrolysis.json

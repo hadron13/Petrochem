@@ -31,6 +31,7 @@ import io.github.hadron13.petrochem.blocks.pumpjack.*;
 import io.github.hadron13.petrochem.blocks.small_engine.SmallEngineBlockEntity;
 import io.github.hadron13.petrochem.blocks.small_engine.SmallEngineRenderer;
 import io.github.hadron13.petrochem.blocks.small_engine.SmallEngineVisual;
+import io.github.hadron13.petrochem.blocks.steam_output.SteamOutputBlockEntity;
 import io.github.hadron13.petrochem.blocks.steel_pump.SteelPumpRenderer;
 import io.github.hadron13.petrochem.blocks.steel_tank.SteelFluidTankRenderer;
 import io.github.hadron13.petrochem.blocks.steel_tank.SteelTankBlockEntity;
@@ -150,6 +151,12 @@ public class PetrochemBlockEntities {
             .visual(() -> TurbineVisual::new)
             .validBlocks(PetrochemBlocks.TURBINE)
             .renderer(() -> TurbineRenderer::new)
+            .register();
+
+
+    public static final BlockEntityEntry<SteamOutputBlockEntity> STEAM_OUTPUT = REGISTRATE
+            .blockEntity("steam_output", SteamOutputBlockEntity::new)
+            .validBlocks(PetrochemBlocks.STEAM_OUTPUT)
             .register();
 
 
